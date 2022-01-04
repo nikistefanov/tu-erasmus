@@ -1,0 +1,44 @@
+<nav class="tu-navbar" [ngClass]="{'-sticked': sticked}">
+    <mat-toolbar color="primary">
+        <div class="lg:container lg:mx-auto w-full px-5 md:px-7 xl:px-14 h-full flex items-center justify-between">
+            <div class="tu-navbar__logo-wrapper">
+                <img class="pr-2 max-h-9" src="assets/images/tu-logo-large.png" alt="Technical University of Sofia logo">
+            </div>
+            <div class="ml-auto">
+                <ul class="tu-links list-none">
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/" routerLinkActive="-active">Начало</a>
+                    </li>
+                    <!-- <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/about" routerLinkActive="-active">За iGrant</a>
+                    </li>
+                    <li class="tu-links__item" *ngIf="authService.currentUser$ | async">
+                        <a class="tu-links__link" routerLink="/companies" routerLinkActive="-active">Доставчици</a>
+                    </li>
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/packages" routerLinkActive="-active">Рекламни пакети</a>
+                    </li>
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/news" routerLinkActive="-active">Актуални новини</a>
+                    </li>
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/legislation" routerLinkActive="-active">Нормативни актове</a>
+                    </li>
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/terms" routerLinkActive="-active">Общи условия</a>
+                    </li>
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/privacy-policy" routerLinkActive="-active">Политика за защита на
+                            личните данни</a>
+                    </li>
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/cookies" routerLinkActive="-active">Политика за бисквитките</a>
+                    </li>
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/contacts" routerLinkActive="-active">Контакти</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </mat-toolbar>
+</nav>

@@ -1,0 +1,24 @@
+.tu-navbar {
+    position: sticky;
+    top: 0;
+    height: 65px;
+    background-color: var(--tu-white);
+    z-index: 1000;
+
+    &.-sticked {
+        box-shadow: 0px 3px 9px 0px var(--tu-black);
+    }
+
+    &__logo-wrapper {
+        @apply flex;
+    }
+}
+// mobile
+// .tu-navbar__logo-wrapper {
+//     width: 36px;
+//     overflow: hidden;
+
+//     img {
+//         max-width: none;
+//     }
+// }
