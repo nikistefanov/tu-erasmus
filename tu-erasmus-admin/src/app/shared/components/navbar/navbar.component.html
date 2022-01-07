@@ -1,0 +1,33 @@
+<nav class="tu-navbar" [ngClass]="{'-sticked': sticked}">
+    <mat-toolbar color="primary">
+        <div class="lg:container lg:mx-auto w-full px-5 md:px-7 xl:px-14 h-full flex items-center justify-between">
+            <div class="flex">
+                <img class="pr-2 max-h-9" src="assets/images/tu-logo-small.png" alt="">
+                <span data-apptest="brandName">Erasmus+ Admin</span>
+            </div>
+            <div class="flex items-center ml-auto">
+                <ul class="tu-links list-none">
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/" routerLinkActive="-active">Начало</a>
+                    </li>
+                    <ng-container *ngIf="authService.isLogged">
+                        <li class="tu-links__item">
+                            <a class="tu-links__link" routerLink="/admin/countries" routerLinkActive="-active">Държави</a>
+                        </li>
+                    </ng-container>
+                </ul>
+                <div class="ml-10" *ngIf="authService.isLogged">
+                    <button data-apptest="profileMenu" mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>account_circle</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu" xPosition="before">
+                        <button (click)="logout()" mat-menu-item>
+                            <mat-icon>logout</mat-icon>
+                            <span>Logout</span>
+                        </button>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+    </mat-toolbar>
+</nav>

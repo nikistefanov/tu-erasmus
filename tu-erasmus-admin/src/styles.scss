@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@use "sass:meta";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@include meta.load-css("styles/settings/colors");
+
+@include meta.load-css("styles/vendors/material");
+@include meta.load-css("styles/vendors/tailwind");
+@include meta.load-css("styles/layout");
+
+@include meta.load-css("styles/components");

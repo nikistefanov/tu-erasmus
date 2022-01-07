@@ -1,5 +1,5 @@
-export interface INews {
-    id: number;
+import { IDataItem } from "./DataItem";
+export interface INews extends IDataItem {
     title: string;
     body: string;
 }

@@ -1,0 +1,30 @@
+<app-card title="Вход">
+    <form #loginForm="ngForm">
+        <div class="mb-5">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Username</mat-label>
+                <input #username="ngModel" [(ngModel)]="formDataModel.username" type="text" name="username" matInput placeholder="Username" required>
+                <mat-error *ngIf="username?.errors">
+                    <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="mb-5">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input #password="ngModel" [(ngModel)]="formDataModel.password" type="password" name="password" matInput placeholder="Password" required>
+                <mat-error *ngIf="password?.errors">
+                    <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" (click)="login(loginForm.value)" type="submit" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+    <div class="flex mt-6">
+        <p>Лице за контакт: Първо Второ <a href="mailto:help@tu-sofia.bg"></a></p>
+    </div>
+</app-card>
+
+<ng-template #requiredMessage>
+    Field is <strong>required</strong>
+</ng-template>

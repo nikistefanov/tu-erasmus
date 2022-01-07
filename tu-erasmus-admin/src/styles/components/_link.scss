@@ -1,0 +1,13 @@
+.tu-links {
+    @apply flex;
+
+    color: var(--tu-black);
+
+    .tu-links__item {
+
+
+        &:not(:first-of-type) {
+            @apply ml-4;
+        }
+    }
+}

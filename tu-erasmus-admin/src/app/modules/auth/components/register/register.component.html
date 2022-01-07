@@ -1,0 +1,43 @@
+<!-- <app-card title="Register">
+    <form #registerForm="ngForm">
+        <div class="mb-5">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Username</mat-label>
+                <input #username="ngModel" [(ngModel)]="formDataModel.username" type="text" name="username" matInput placeholder="Username" required>
+                <mat-error *ngIf="username.errors">
+                    <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="mb-5">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input #email="ngModel" [(ngModel)]="formDataModel.email" [email]="true" type="email" name="email" matInput placeholder="Email address" required>
+                <mat-error *ngIf="email.errors">
+                    <span *ngIf="email.errors['email']">Enter valid email address</span>
+                    <ng-template *ngIf="email.errors['required']" [ngTemplateOutlet]="requiredMessage"></ng-template>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="mb-5">
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input #password="ngModel" [(ngModel)]="formDataModel.password" type="password" name="password" matInput placeholder="Password"
+                    required>
+                <mat-error *ngIf="password?.errors">
+                    <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <button class="mt-5" mat-raised-button color="primary" (click)="register(registerForm.value)" type="submit"
+            [disabled]="!registerForm.form.valid">Register</button>
+    </form>
+    <div class="flex mt-6">
+        <p>Already have an account?</p>
+        <a class="ml-auto text-blue-500" [routerLink]="['/login']">Login</a>
+    </div>
+</app-card>
+
+<ng-template #requiredMessage>
+    Field is <strong>required</strong>
+</ng-template> -->
