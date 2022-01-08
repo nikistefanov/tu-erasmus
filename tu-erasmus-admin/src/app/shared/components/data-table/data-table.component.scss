@@ -46,6 +46,13 @@
     }
 }
 
+.app-table {
+
+    &__title {
+        top: 65px;
+    }
+}
+
 .app-paginator {
     .mat-paginator-container {
         @apply flex-wrap;

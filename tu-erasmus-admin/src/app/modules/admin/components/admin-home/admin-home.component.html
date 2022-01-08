@@ -1,5 +1,7 @@
-<ul class="list-none">
-    <li>
-        <a routerLink="/admin/countries">Държави</a>
-    </li>
-</ul>
+<h1>Възможни опции</h1>
+<mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let link of adminLinks" (selectedChange)="onLinkClicked(link.link)">
+        <mat-icon mat-list-icon>{{link.icon}}</mat-icon>
+        {{link.name}}
+    </mat-list-option>
+</mat-selection-list>

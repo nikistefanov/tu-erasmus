@@ -8,13 +8,8 @@
             <div class="flex items-center ml-auto">
                 <ul class="tu-links list-none">
                     <li class="tu-links__item">
-                        <a class="tu-links__link" routerLink="/" routerLinkActive="-active">Начало</a>
+                        <a class="tu-links__link" routerLink="/" routerLinkActive="-active">Администратоски панел</a>
                     </li>
-                    <ng-container *ngIf="authService.isLogged">
-                        <li class="tu-links__item">
-                            <a class="tu-links__link" routerLink="/admin/countries" routerLinkActive="-active">Държави</a>
-                        </li>
-                    </ng-container>
                 </ul>
                 <div class="ml-10" *ngIf="authService.isLogged">
                     <button data-apptest="profileMenu" mat-icon-button [matMenuTriggerFor]="menu">

@@ -8,13 +8,13 @@ import { IConfirmationDialogData } from '../../../../shared/models/dialog';
 import { ErrorHandlerService } from '../../../../shared/services/error-handler/error-handler.service';
 import { RootService } from '../../../http/root.service';
 import { AdminBase } from '../base/admin-base';
-import { AdminCountryCreateEditComponent } from './admin-country-create-edit.component';
+import { AdminUniversitiesCreateEditComponent } from './admin-universities-create-edit.component';
 
 @Component({
-    selector: 'app-admin-countries',
-    templateUrl: './admin-countries.component.html',
+    selector: 'app-admin-universities',
+    templateUrl: './admin-universities.component.html',
 })
-export class AdminCountriesComponent extends AdminBase {
+export class AdminUniversitiesComponent extends AdminBase {
     headers = [
         "Име",
         "Абревиатура"
@@ -38,11 +38,11 @@ export class AdminCountriesComponent extends AdminBase {
 
     handleUpdateCountry(country: ICountry) {
         const countryData = Object.assign({}, country);
-        this.openDialog({ label: "Промяна на партньорска държава", item: countryData }, AdminCountryCreateEditComponent, this.updateContact.bind(this), countryData.id);
+        this.openDialog({ label: "Промяна на партньорска държава", item: countryData }, AdminUniversitiesCreateEditComponent, this.updateContact.bind(this), countryData.id);
     }
 
     handleCreateCountry() {
-        this.openDialog({ label: "Създай партньорска държава" }, AdminCountryCreateEditComponent, this.createCountry.bind(this))
+        this.openDialog({ label: "Създай партньорска държава" }, AdminUniversitiesCreateEditComponent, this.createCountry.bind(this))
     }
 
     handleDeleteCountry(country: ICountry) {

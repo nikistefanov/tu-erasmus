@@ -4,13 +4,15 @@ import { RoutePaths } from '../../shared/constants/route-paths';
 import { AuthGuard } from '../auth/guards/auth.guard';
 import { AdminCountriesComponent } from './components/admin-countries/admin-countries.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AdminUniversitiesComponent } from './components/admin-universities/admin-universities.component';
 
 export const adminRoutes: Routes = [
     {
         path: RoutePaths.Admin, canActivate: [AuthGuard],
         children: [
             { path: RoutePaths.Empty, component: AdminHomeComponent },
-            { path: RoutePaths.Countries, component: AdminCountriesComponent }
+            { path: RoutePaths.Countries, component: AdminCountriesComponent },
+            { path: RoutePaths.Universities, component: AdminUniversitiesComponent }
         ]
     }
 ];
