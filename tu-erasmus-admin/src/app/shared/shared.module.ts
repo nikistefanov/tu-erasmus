@@ -7,13 +7,15 @@ import { RouterModule } from '@angular/router';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ConfirmComponent } from './components/dialog/confirm/confirm.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
 
 const COMPONENTS = [
     CardComponent,
     NavbarComponent,
     LoaderComponent,
     ConfirmComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DataTableComponent
 ]
 
 @NgModule({

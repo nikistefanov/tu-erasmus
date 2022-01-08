@@ -1,1 +1,12 @@
-<h1>Countries</h1>
+<app-data-table
+    title="Партньорска държави"
+    label="партньорска държава"
+    [hasAction]="true"
+    [items]="countries"
+    [dataHeaders]="headers"
+    [dataColumns]="columns"
+    [update$]="update$"
+    [loading]="loading"
+    (onUpdateItem)="handleUpdateCountry($event)"
+    (onCreateItem)="handleCreateCountry()"
+    (onDeleteItem)="handleDeleteCountry($event)"></app-data-table>

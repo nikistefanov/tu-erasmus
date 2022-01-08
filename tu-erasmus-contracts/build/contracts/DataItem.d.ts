@@ -1,3 +1,3 @@
 export interface IDataItem {
-    id: number;
+    id?: number;
 }

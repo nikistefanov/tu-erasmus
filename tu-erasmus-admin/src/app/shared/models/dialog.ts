@@ -1,9 +1,9 @@
 import { ThemePalette } from "@angular/material/core";
-import { IContact } from "./contact";
+import { IDataItem } from "./db-models";
 
-export interface IContactCreateDialogData {
+export interface ICreateEditDialogData {
     label: string;
-    contact?: IContact;
+    item?: IDataItem;
 }
 
 export interface IConfirmationDialogData {
