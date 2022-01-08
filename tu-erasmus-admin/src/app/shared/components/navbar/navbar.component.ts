@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { first, Subscription } from 'rxjs';
 import { AuthService } from '../../../modules/auth/auth.service';
-import { STICK_POSITION } from '../../constants/contacts';
+import { STICK_POSITION } from '../../constants/constants';
 import { RoutePaths } from '../../constants/route-paths';
 import { ScrollService } from '../../services/scroll/scroll.service';
 
