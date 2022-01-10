@@ -41,7 +41,7 @@ export class AdminHomeComponent {
         this.rootService.homePage.update(this.form.value).pipe(
             first()
         ).subscribe({
-            next: data => this.alertService.showMessage("Промените са запазени."),
+            next: data => this.alertService.showMessage("Промените са запазени"),
             error: error => this.errorHandler.handleError(error)
         });
     }

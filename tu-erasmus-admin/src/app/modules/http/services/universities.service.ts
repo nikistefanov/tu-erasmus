@@ -14,11 +14,7 @@ export class UniversitiesService extends ApiService {
     }
 
     create(university: IUniversity): Observable<IUniversity> {
-        return this.postInternal<IUniversity>(UNIVERSITIES_API, {
-            name: university.name,
-            description: university.description,
-            countryName: university.countryName
-        });
+        return this.postInternal<IUniversity>(UNIVERSITIES_API, this.getBodyObject(university));
     }
 
     delete(universityId: number | undefined) {
@@ -26,10 +22,17 @@ export class UniversitiesService extends ApiService {
     }
 
     update(university: IUniversity, updateUniversityId: number): Observable<IUniversity> {
-        return this.putInternal<IUniversity>(`${UNIVERSITIES_API}/${updateUniversityId}`, {
+        return this.putInternal<IUniversity>(`${UNIVERSITIES_API}/${updateUniversityId}`, this.getBodyObject(university));
+    }
+
+    private getBodyObject(university: IUniversity) {
+        return {
             name: university.name,
+            countryName: university.countryName,
+            track: university.track,
+            mobility: university.mobility,
             description: university.description,
-            countryName: university.countryName
-        });
+            website: university.website
+        }
     }
 }

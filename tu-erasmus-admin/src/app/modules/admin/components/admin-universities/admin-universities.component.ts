@@ -6,6 +6,7 @@ import { COUNTRIES } from '../../../../shared/constants/countries';
 import { IUpdateDataTable, UpdateDataTableMehtods } from '../../../../shared/models/data-table';
 import { IUniversity } from '../../../../shared/models/db-models';
 import { IConfirmationDialogData } from '../../../../shared/models/dialog';
+import { AlertService } from '../../../../shared/services/alert/alert.service';
 import { ErrorHandlerService } from '../../../../shared/services/error-handler/error-handler.service';
 import { RootService } from '../../../http/root.service';
 import { AdminBase } from '../base/admin-base';
@@ -32,8 +33,9 @@ export class AdminUniversitiesComponent extends AdminBase {
 
     constructor(rootService: RootService,
         dialog: MatDialog,
-        errorHandler: ErrorHandlerService) {
-        super(rootService, dialog, errorHandler)
+        private errorHandler: ErrorHandlerService,
+        private alertService: AlertService) {
+        super(rootService, dialog)
         this.fetchData();
     }
 
@@ -72,6 +74,7 @@ export class AdminUniversitiesComponent extends AdminBase {
         ).subscribe({
             next: (resp: IUniversity) => {
                 this.update$.next({ item: resp, method: UpdateDataTableMehtods.Add });
+                this.alertService.showMessage("Промените са запазени");
             },
             error: error => this.errorHandler.handleError(error)
         });
@@ -83,6 +86,7 @@ export class AdminUniversitiesComponent extends AdminBase {
         ).subscribe({
             next: (resp: IUniversity) => {
                 this.update$.next({ item: resp, method: UpdateDataTableMehtods.Update });
+                this.alertService.showMessage("Промените са запазени");
             },
             error: error => this.errorHandler.handleError(error)
         });

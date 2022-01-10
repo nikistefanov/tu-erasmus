@@ -17,6 +17,9 @@ export class AdminUniversitiesCreateEditComponent {
     name: FormControl = new FormControl("", [Validators.required]);
     description: FormControl = new FormControl();
     countryName: FormControl = new FormControl("", [Validators.required]);
+    track: FormControl = new FormControl("", [Validators.required]);
+    mobility: FormControl = new FormControl("", [Validators.required]);
+    website: FormControl = new FormControl();
 
     filteredOptions: Observable<string[]>;
 
@@ -34,7 +37,10 @@ export class AdminUniversitiesCreateEditComponent {
         this.form = new FormGroup({
             name: this.name,
             description: this.description,
-            countryName: this.countryName
+            countryName: this.countryName,
+            website: this.website,
+            track: this.track,
+            mobility: this.mobility
         });
 
         this.filteredOptions = this.countryName.valueChanges.pipe(
@@ -69,6 +75,7 @@ export class AdminUniversitiesCreateEditComponent {
         this.name.setValue(uni.name);
         this.description.setValue(uni.description);
         this.countryName.setValue(uni.countryName);
+        this.website.setValue(uni.website);
     }
 }
 

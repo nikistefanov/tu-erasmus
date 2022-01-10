@@ -25,6 +25,14 @@
     },
     "website": {
       "type": "string"
+    },
+    "track": {
+      "type": "string",
+      "required": true
+    },
+    "mobility": {
+      "type": "string",
+      "required": true
     }
   }
 }
