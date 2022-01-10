@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { first, ReplaySubject } from 'rxjs';
 import { ConfirmComponent } from '../../../../shared/components/dialog/confirm/confirm.component';
+import { COUNTRIES } from '../../../../shared/constants/countries';
 import { IUpdateDataTable, UpdateDataTableMehtods } from '../../../../shared/models/data-table';
-import { ICountry } from '../../../../shared/models/db-models';
+import { IUniversity } from '../../../../shared/models/db-models';
 import { IConfirmationDialogData } from '../../../../shared/models/dialog';
 import { ErrorHandlerService } from '../../../../shared/services/error-handler/error-handler.service';
 import { RootService } from '../../../http/root.service';
@@ -17,14 +18,14 @@ import { AdminUniversitiesCreateEditComponent } from './admin-universities-creat
 export class AdminUniversitiesComponent extends AdminBase {
     headers = [
         "Име",
-        "Абревиатура"
+        "Държава"
     ]
 
     columns = [
         "name",
-        "abbreviations"
+        "countryName"
     ];
-    countries: ICountry[] = [];
+    universities: IUniversity[] = [];
     update$: ReplaySubject<IUpdateDataTable> = new ReplaySubject<IUpdateDataTable>();
     loading: boolean = true;
 
@@ -36,65 +37,65 @@ export class AdminUniversitiesComponent extends AdminBase {
         this.fetchData();
     }
 
-    handleUpdateCountry(country: ICountry) {
-        const countryData = Object.assign({}, country);
-        this.openDialog({ label: "Промяна на партньорска държава", item: countryData }, AdminUniversitiesCreateEditComponent, this.updateContact.bind(this), countryData.id);
+    handleUpdateUniversity(university: IUniversity) {
+        const universityData = Object.assign({}, university);
+        this.openDialog({ label: "Промяна на партньорски университет", item: universityData }, AdminUniversitiesCreateEditComponent, this.updateUniversity.bind(this), universityData.id);
     }
 
-    handleCreateCountry() {
-        this.openDialog({ label: "Създай партньорска държава" }, AdminUniversitiesCreateEditComponent, this.createCountry.bind(this))
+    handleCreateUniversity() {
+        this.openDialog({ label: "Създай партньорски университет" }, AdminUniversitiesCreateEditComponent, this.createUniversity.bind(this))
     }
 
-    handleDeleteCountry(country: ICountry) {
+    handleDeleteUniversity(university: IUniversity) {
         const data: IConfirmationDialogData = {
-            message: `Сигурни ли сте, че искате да изтриете <b class="whitespace-nowrap">${country.name}</b> от списъка.`,
+            message: `Сигурни ли сте, че искате да изтриете <b class="whitespace-nowrap">${university.name}</b> от списъка.`,
             buttonColor: "warn"
         }
-        this.openDialog(data, ConfirmComponent, this.deleteContact.bind(this, country));
+        this.openDialog(data, ConfirmComponent, this.deleteContact.bind(this, university));
     }
 
     private fetchData() {
-        this.rootService.countries.getAll().pipe(
+        this.rootService.universities.getAll().pipe(
             first()
         ).subscribe({
-            next: (resp: ICountry[]) => {
-                this.countries = resp;
+            next: (resp: IUniversity[]) => {
+                this.universities = resp;
                 this.loading = false;
             },
             error: error => this.errorHandler.handleError(error)
         })
     }
 
-    private createCountry(country: ICountry) {
-        this.rootService.countries.create(country).pipe(
+    private createUniversity(university: IUniversity) {
+        this.rootService.universities.create(university).pipe(
             first()
         ).subscribe({
-            next: (resp: ICountry) => {
+            next: (resp: IUniversity) => {
                 this.update$.next({ item: resp, method: UpdateDataTableMehtods.Add });
             },
             error: error => this.errorHandler.handleError(error)
         });
     }
 
-    private updateContact(country: ICountry, updateCountrytId: number) {
-        this.rootService.countries.update(country, updateCountrytId).pipe(
+    private updateUniversity(university: IUniversity, updateUniversitytId: number) {
+        this.rootService.universities.update(university, updateUniversitytId).pipe(
             first()
         ).subscribe({
-            next: (resp: ICountry) => {
+            next: (resp: IUniversity) => {
                 this.update$.next({ item: resp, method: UpdateDataTableMehtods.Update });
             },
             error: error => this.errorHandler.handleError(error)
         });
     }
 
-    private deleteContact(country: ICountry) {
-        this.rootService.countries.delete(country.id).pipe(
+    private deleteContact(University: IUniversity) {
+        this.rootService.universities.delete(University.id).pipe(
             first()
-        ).subscribe((resp: ICountry) => {
-            const removedCountry = this.countries.find(i => i.id === resp.id);
+        ).subscribe((resp: IUniversity) => {
+            const removedUniversity = this.universities.find(i => i.id === resp.id);
 
-            if (removedCountry) {
-                this.update$.next({ item: removedCountry, method: UpdateDataTableMehtods.Delete });
+            if (removedUniversity) {
+                this.update$.next({ item: removedUniversity, method: UpdateDataTableMehtods.Delete });
             }
         });
     }

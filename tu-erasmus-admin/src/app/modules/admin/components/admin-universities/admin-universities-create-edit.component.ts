@@ -1,8 +1,9 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ICountry } from '../../../../shared/models/db-models';
+import { COUNTRIES } from '../../../../shared/constants/countries';
+import { IUniversity } from '../../../../shared/models/db-models';
 import { ICreateEditDialogData } from '../../../../shared/models/dialog';
-import { getEmptyCountryValues } from '../../../../shared/utilities/helpers';
+import { getEmptyUniversityValues } from '../../../../shared/utilities/helpers';
 
 @Component({
     selector: 'app-admin-universities-create-edit',
@@ -10,21 +11,22 @@ import { getEmptyCountryValues } from '../../../../shared/utilities/helpers';
 })
 export class AdminUniversitiesCreateEditComponent {
     public dialogData: ICreateEditDialogData;
-    public formDataModel!: ICountry;
+    public formDataModel!: IUniversity;
+    public countries = COUNTRIES;
 
     constructor(
         public dialogRef: MatDialogRef<AdminUniversitiesCreateEditComponent>,
         @Inject(MAT_DIALOG_DATA) public data: ICreateEditDialogData) {
-        this.formDataModel = getEmptyCountryValues();
+        this.formDataModel = getEmptyUniversityValues();
         this.dialogData = data;
 
         if (data.item) {
-            this.formDataModel = data.item as ICountry;
+            this.formDataModel = data.item as IUniversity;
         }
     }
 
-    save(country: ICountry) {
-        this.dialogRef.close(country);
+    save(university: IUniversity) {
+        this.dialogRef.close(university);
     }
 
     onCancel() {

@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "countries",
+  "collectionName": "universities",
   "info": {
-    "name": "Countries",
+    "name": "Universities",
     "description": ""
   },
   "options": {
@@ -15,7 +15,10 @@
     "name": {
       "type": "string"
     },
-    "code": {
+    "description": {
+      "type": "string"
+    },
+    "countryName": {
       "type": "string"
     }
   }

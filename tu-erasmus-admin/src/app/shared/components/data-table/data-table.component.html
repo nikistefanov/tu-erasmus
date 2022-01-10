@@ -13,8 +13,8 @@
     </ng-container>
 </ng-container>
 
-<div [hidden]="loading">
-    <table mat-table class="w-full app-table" [class.-loading]="loading">
+<div [hidden]="loading" class="app-table" [ngClass]="{'-loading': loading, '-loaded': items.length > 0}">
+    <table mat-table class="w-full table">
         <ng-container *ngFor="let dataColumn of dataColumns; let colIndex = index">
             <ng-container matColumnDef="{{dataColumn}}">
                 <ng-container *ngIf="dataColumn !== 'actions'">

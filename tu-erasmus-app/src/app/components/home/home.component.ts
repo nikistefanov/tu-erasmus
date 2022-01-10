@@ -82,8 +82,23 @@ var data = {
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements AfterViewInit {
+    unis = [{
+        name: "Technical University - Varna",
+        country: {
+            name: "Bulgaria",
+            code: "BG"
+        }
+    }]
+
 
     ngAfterViewInit(): void {
+        let values: any = {};
+        this.unis.forEach(uni => {
+            values[uni.country.code] = {
+                partners: uni.name
+            }
+        })
+
         new svgMap({
             targetElementID: 'svgMap',
             initialPan: { x: 750, y: 150 },
@@ -94,23 +109,10 @@ export class HomeComponent implements AfterViewInit {
                         name: '',
                         format: '{0}',
                         thousandSeparator: ','
-                    },
-                    count: {
-                        name: 'Общо',
-                        format: '{0}',
-                        thousandSeparator: ',',
-                        thresholdMax: 2,
-                        thresholdMin: 0
                     }
                 },
-                applyData: 'count',
-                values: {
-                    AL: {partners: 'European University of Tirana </br> University of Vlora "Ismail Kemaly"',  count: 2},
-
-                    BE: {partners: 'Gent University',  count: 1},
-
-                    BG: {partners: 'Technical University - Varna',  count: 1, link: "23"},
-                }
+                applyData: 'partners',
+                values: values
             }
         });
     }

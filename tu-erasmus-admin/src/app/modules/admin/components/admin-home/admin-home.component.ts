@@ -10,10 +10,6 @@ import { RoutePaths } from '../../../../shared/constants/route-paths';
 })
 export class AdminHomeComponent {
     adminLinks: IAdminLink[] = [{
-        name: "Държави партньори",
-        link: RoutePaths.Countries,
-        icon: "public"
-    }, {
         name: "Университети партньори",
         link: RoutePaths.Universities,
         icon: "school"

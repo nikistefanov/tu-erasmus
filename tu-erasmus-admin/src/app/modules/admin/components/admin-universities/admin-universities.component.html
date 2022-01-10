@@ -2,11 +2,11 @@
     title="Университети партньори"
     label="университет партньор"
     [hasAction]="true"
-    [items]="countries"
+    [items]="universities"
     [dataHeaders]="headers"
     [dataColumns]="columns"
     [update$]="update$"
     [loading]="loading"
-    (onUpdateItem)="handleUpdateCountry($event)"
-    (onCreateItem)="handleCreateCountry()"
-    (onDeleteItem)="handleDeleteCountry($event)"></app-data-table>
+    (onUpdateItem)="handleUpdateUniversity($event)"
+    (onCreateItem)="handleCreateUniversity()"
+    (onDeleteItem)="handleDeleteUniversity($event)"></app-data-table>

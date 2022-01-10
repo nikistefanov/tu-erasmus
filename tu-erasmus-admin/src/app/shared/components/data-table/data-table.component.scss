@@ -1,7 +1,11 @@
-.mat-table.app-table {
-    @apply w-full;
+.app-table {
 
-    &.-loading {
+    .mat-table {
+        @apply w-full;
+    }
+
+    &.-loading,
+    &:not(.-loaded) {
         @apply hidden;
     }
 
@@ -60,7 +64,7 @@
 }
 
 @screen md-lg {
-    .mat-table.app-table {
+    .app-table .mat-table {
 
         thead {
             @apply table-header-group;

@@ -4,3 +4,4 @@ export * from "./DataItem";
 export * from "./News";
 export * from "./Partner";
 export * from "./User";
+export * from "./University";

@@ -11,10 +11,21 @@
                 </mat-error>
             </mat-form-field>
             <mat-form-field class="w-full" appearance="fill">
-                <mat-label>Абревиатура</mat-label>
-                <input #abbreviations="ngModel" [(ngModel)]="formDataModel.abbreviations" type="text" name="abbreviations" matInput
-                    placeholder="Абревиатура" required>
-                <mat-error *ngIf="abbreviations?.errors">
+                <mat-label>Кратко описание</mat-label>
+                <input #description="ngModel" [(ngModel)]="formDataModel.description" type="text" name="description"
+                    matInput placeholder="Кратко описание">
+                <mat-error *ngIf="description?.errors">
+                    <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="w-full" appearance="fill">
+                <mat-label>Държава</mat-label>
+                <mat-select #countryName="ngModel" [(ngModel)]="formDataModel.countryName" name="countryName" required>
+                    <mat-option *ngFor="let country of countries" [value]="country.name">
+                        {{country.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="countryName?.errors">
                     <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
                 </mat-error>
             </mat-form-field>
@@ -22,10 +33,11 @@
     </form>
 </div>
 <div mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="save(form.value)" [disabled]="!form.form.valid">{{dialogData.label}}</button>
+    <button mat-raised-button color="primary" (click)="save(form.value)"
+        [disabled]="!form.form.valid">{{dialogData.label}}</button>
     <button class="ml-5" mat-raised-button (click)="onCancel()">Откажи</button>
 </div>
 
 <ng-template #requiredMessage>
-   Полето е <strong>задължително</strong>
+    Полето е <strong>задължително</strong>
 </ng-template>

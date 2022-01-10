@@ -16,4 +16,5 @@ __exportStar(require("./DataItem"), exports);
 __exportStar(require("./News"), exports);
 __exportStar(require("./Partner"), exports);
 __exportStar(require("./User"), exports);
+__exportStar(require("./University"), exports);
 //# sourceMappingURL=index.js.map

@@ -47,7 +47,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
 
     ngOnInit() {
         if (this.hasAction) {
-            this.dataHeaders.push("Actions");
+            this.dataHeaders.push("Опции");
             this.dataColumns.push("actions");
         }
 
