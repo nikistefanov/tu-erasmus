@@ -16,7 +16,7 @@ export class AdminComponent {
     }];
 
     contentLinks: IAdminLink[] = [{
-        name: "Университети партньори",
+        name: "Партньори",
         link: RoutePaths.Universities,
         icon: "school"
     }];

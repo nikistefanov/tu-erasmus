@@ -41,11 +41,11 @@ export class AdminUniversitiesComponent extends AdminBase {
 
     handleUpdateUniversity(university: IUniversity) {
         const universityData = Object.assign({}, university);
-        this.openDialog({ label: "Промяна на партньорски университет", item: universityData }, AdminUniversitiesCreateEditComponent, this.updateUniversity.bind(this), universityData.id);
+        this.openDialog({ label: "Промяна на партньор", item: universityData }, AdminUniversitiesCreateEditComponent, this.updateUniversity.bind(this), universityData.id);
     }
 
     handleCreateUniversity() {
-        this.openDialog({ label: "Създай партньорски университет" }, AdminUniversitiesCreateEditComponent, this.createUniversity.bind(this))
+        this.openDialog({ label: "Създай партньор" }, AdminUniversitiesCreateEditComponent, this.createUniversity.bind(this))
     }
 
     handleDeleteUniversity(university: IUniversity) {
