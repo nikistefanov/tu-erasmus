@@ -28,11 +28,11 @@
     },
     "track": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "mobility": {
       "type": "string",
-      "required": true
+      "required": false
     }
   }
 }

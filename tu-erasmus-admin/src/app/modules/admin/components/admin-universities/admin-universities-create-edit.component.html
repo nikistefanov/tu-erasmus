@@ -26,20 +26,6 @@
                 <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
             </mat-error>
         </mat-form-field>
-        <mat-form-field class="w-full" appearance="fill">
-            <mat-label>Направление</mat-label>
-            <input formControlName="track" type="text" name="track" matInput placeholder="Направление">
-            <mat-error *ngIf="track?.errors">
-                <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field class="w-full" appearance="fill">
-            <mat-label>Мобилност</mat-label>
-            <input formControlName="mobility" type="text" name="mobility" matInput placeholder="Мобилност">
-            <mat-error *ngIf="mobility?.errors">
-                <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
-            </mat-error>
-        </mat-form-field>
     </form>
 </div>
 <div mat-dialog-actions>

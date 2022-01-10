@@ -29,8 +29,6 @@ export class UniversitiesService extends ApiService {
         return {
             name: university.name,
             countryName: university.countryName,
-            track: university.track,
-            mobility: university.mobility,
             description: university.description,
             website: university.website
         }
