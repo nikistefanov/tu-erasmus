@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModule } from '../material/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { AdminUniversitiesComponent } from './components/admin-universities/admin-universities.component';
@@ -20,8 +20,9 @@ const COMPONENTS = [
     CommonModule,
     AdminRoutingModule,
     MaterialModule,
+    SharedModule,
     FormsModule,
-    SharedModule
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }

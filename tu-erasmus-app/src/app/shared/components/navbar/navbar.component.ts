@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { STICK_POSITION } from '../../constants/contacts';
+import { STICK_POSITION } from '../../constants/constants';
 import { ScrollService } from '../../services/scroll.service';
 
 @Component({
