@@ -18,7 +18,7 @@ import { AdminModule } from './modules/admin/admin.module';
     BrowserAnimationsModule,
     SharedModule,
     AuthModule,
-    AdminModule
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

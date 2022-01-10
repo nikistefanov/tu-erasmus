@@ -3,12 +3,12 @@ import { Router } from '@angular/router';
 import { RoutePaths } from '../../../../shared/constants/route-paths';
 
 @Component({
-  selector: 'app-admin-home',
-  templateUrl: './admin-home.component.html',
-  styleUrls: ['./admin-home.component.scss'],
+  selector: 'app-admin',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AdminHomeComponent {
+export class AdminComponent {
     adminLinks: IAdminLink[] = [{
         name: "Университети партньори",
         link: RoutePaths.Universities,

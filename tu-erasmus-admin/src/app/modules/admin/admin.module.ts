@@ -4,12 +4,13 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
-import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AdminComponent } from './components/admin/admin.component';
 import { AdminUniversitiesComponent } from './components/admin-universities/admin-universities.component';
 import { AdminUniversitiesCreateEditComponent } from './components/admin-universities/admin-universities-create-edit.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 const COMPONENTS = [
-    AdminHomeComponent,
+    AdminComponent,
     AdminUniversitiesComponent,
     AdminUniversitiesCreateEditComponent
 ]
@@ -22,7 +23,9 @@ const COMPONENTS = [
     MaterialModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularEditorModule
+
   ]
 })
 export class AdminModule { }

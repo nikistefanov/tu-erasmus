@@ -8,13 +8,9 @@
                 <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
             </mat-error>
         </mat-form-field>
-        <mat-form-field class="w-full" appearance="fill">
-            <mat-label>Кратко описание</mat-label>
-            <input formControlName="description" type="text" name="description" matInput placeholder="Кратко описание">
-            <mat-error *ngIf="description?.errors">
-                <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
-            </mat-error>
-        </mat-form-field>
+        <div class="mt-5 mb-8">
+            <angular-editor formControlName="description" [config]="editorConfig" placeholder="Описание"></angular-editor>
+        </div>
         <mat-form-field class="w-full" appearance="fill">
             <mat-label>Държава</mat-label>
             <input type="text" placeholder="Държава" matInput formControlName="countryName" name="countryName"

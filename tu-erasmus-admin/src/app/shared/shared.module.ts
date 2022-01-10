@@ -8,6 +8,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ConfirmComponent } from './components/dialog/confirm/confirm.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+
 
 const COMPONENTS = [
     CardComponent,
@@ -23,7 +25,8 @@ const COMPONENTS = [
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    AngularEditorModule
   ],
   providers: [],
   exports: [...COMPONENTS]
