@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { API_BASE } from '../../shared/constants/api';
+import { API_BASE } from '../../shared/constants/constants';
 import { AuthService } from '../auth/auth.service';
 
 const API_URL = API_BASE;

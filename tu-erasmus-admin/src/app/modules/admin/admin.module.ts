@@ -8,11 +8,13 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminUniversitiesComponent } from './components/admin-universities/admin-universities.component';
 import { AdminUniversitiesCreateEditComponent } from './components/admin-universities/admin-universities-create-edit.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 
 const COMPONENTS = [
     AdminComponent,
     AdminUniversitiesComponent,
-    AdminUniversitiesCreateEditComponent
+    AdminUniversitiesCreateEditComponent,
+    AdminHomeComponent
 ]
 
 @NgModule({

@@ -1,1 +1,1 @@
-export * from "../../../../../tu-erasmus-contracts/build";
+export * from "../../../../../tu-erasmus-contracts/build/contracts";

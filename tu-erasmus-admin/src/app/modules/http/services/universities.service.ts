@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
+import { UNIVERSITIES_API } from '../../../shared/constants/constants';
 import { IUniversity } from '../../../shared/models/db-models';
 import { ApiService } from '../api.service';
-
-export const UNIVERSITIES_API =  "/universities";
 
 @Injectable({
     providedIn: 'root'
@@ -26,8 +25,8 @@ export class UniversitiesService extends ApiService {
         return this.deleteInternal<IUniversity>(`${UNIVERSITIES_API}/${universityId}`);
     }
 
-    update(university: IUniversity, updateuniversityId: number): Observable<IUniversity> {
-        return this.putInternal<IUniversity>(`${UNIVERSITIES_API}/${updateuniversityId}`, {
+    update(university: IUniversity, updateUniversityId: number): Observable<IUniversity> {
+        return this.putInternal<IUniversity>(`${UNIVERSITIES_API}/${updateUniversityId}`, {
             name: university.name,
             description: university.description,
             countryName: university.countryName

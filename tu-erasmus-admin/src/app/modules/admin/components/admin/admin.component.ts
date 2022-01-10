@@ -13,6 +13,10 @@ export class AdminComponent {
         name: "Университети партньори",
         link: RoutePaths.Universities,
         icon: "school"
+    }, {
+        name: "Начална страница",
+        link: RoutePaths.HomePage,
+        icon: "home"
     }];
 
     constructor(private router: Router) {}

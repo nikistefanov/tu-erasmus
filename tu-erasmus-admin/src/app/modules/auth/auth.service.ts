@@ -4,8 +4,8 @@ import { StorageService } from '../../shared/services/storage/storage.service';
 import { convertUnixToDate, decodeToken } from '../../shared/utilities/token-helpers';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from "rxjs";
-import { API_BASE } from '../../shared/constants/api';
 import { StorageKeys } from '../../shared/constants/storage';
+import { API_BASE } from '../../shared/constants/constants';
 
 export const AUTH_LOGIN = `${API_BASE}/auth/local`;
 export const AUTH_REGISTER = `${AUTH_LOGIN}/register`;

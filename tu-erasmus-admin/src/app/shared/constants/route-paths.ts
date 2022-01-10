@@ -2,5 +2,6 @@ export enum RoutePaths {
     Empty = "",
     Login = "login",
     Admin = "admin",
-    Universities = "universities"
+    Universities = "universities",
+    HomePage = "home-page"
 }
