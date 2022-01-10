@@ -1,9 +1,8 @@
 {
-  "kind": "singleType",
-  "collectionName": "admin_homes",
+  "kind": "collectionType",
+  "collectionName": "news_items",
   "info": {
-    "name": "HomePage",
-    "description": ""
+    "name": "NewsItem"
   },
   "options": {
     "increments": true,
@@ -12,18 +11,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "heading": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "subheading": {
-      "type": "string"
-    },
     "body": {
       "type": "richtext"
-    },
-    "hideMap": {
-      "type": "boolean"
     }
   }
 }

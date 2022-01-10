@@ -1,6 +1,16 @@
 <h1>Възможни опции</h1>
+
+<h2>Редакция на съдържание на страници</h2>
 <mat-selection-list [multiple]="false">
-    <mat-list-option *ngFor="let link of adminLinks" (selectedChange)="onLinkClicked(link.link)">
+    <mat-list-option *ngFor="let link of pageLinks" (selectedChange)="onLinkClicked(link.link)">
+        <mat-icon mat-list-icon>{{link.icon}}</mat-icon>
+        {{link.name}}
+    </mat-list-option>
+</mat-selection-list>
+
+<h2>Редакция на типове данни</h2>
+<mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let link of contentLinks" (selectedChange)="onLinkClicked(link.link)">
         <mat-icon mat-list-icon>{{link.icon}}</mat-icon>
         {{link.name}}
     </mat-list-option>

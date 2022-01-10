@@ -9,14 +9,16 @@ import { RoutePaths } from '../../../../shared/constants/route-paths';
   encapsulation: ViewEncapsulation.None
 })
 export class AdminComponent {
-    adminLinks: IAdminLink[] = [{
-        name: "Университети партньори",
-        link: RoutePaths.Universities,
-        icon: "school"
-    }, {
+    pageLinks: IAdminLink[] = [{
         name: "Начална страница",
         link: RoutePaths.HomePage,
         icon: "home"
+    }];
+
+    contentLinks: IAdminLink[] = [{
+        name: "Университети партньори",
+        link: RoutePaths.Universities,
+        icon: "school"
     }];
 
     constructor(private router: Router) {}

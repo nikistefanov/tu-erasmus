@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "universities",
   "info": {
-    "name": "Universities",
+    "name": "University",
     "description": ""
   },
   "options": {
@@ -13,12 +13,17 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
       "type": "string"
     },
     "countryName": {
+      "type": "string",
+      "required": true
+    },
+    "website": {
       "type": "string"
     }
   }

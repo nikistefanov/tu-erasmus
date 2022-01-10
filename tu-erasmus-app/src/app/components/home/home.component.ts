@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { delay, first } from 'rxjs';
 import { RootService } from '../../modules/http/root.service';
-import { COUNTRIES, ICountry, IUniversity } from '../../shared/models/db-models';
+import { COUNTRIES, ICountry, IHomePage, IUniversity } from '../../shared/models/db-models';
 
 declare var svgMap: any;
 
@@ -11,11 +11,34 @@ declare var svgMap: any;
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+    loading: boolean = true;
+    loadingMap: boolean = true;
+    pageData: IHomePage;
 
-    constructor(private rootService: RootService) {
+    constructor(private rootService: RootService, private detector: ChangeDetectorRef) {
+        this.getPageData();
+    }
+
+    private getPageData() {
+        this.rootService.homePage.get().pipe(
+            first()
+        ).subscribe({
+            next: data => {
+                this.pageData = data;
+                this.loading = false;
+
+                if (!this.pageData.hideMap) {
+                    this.detector.detectChanges();
+
+                    this.getMapData();
+                }
+            }
+        })
+    }
+
+    private getMapData() {
         this.rootService.universities.getAll().pipe(
-            first(),
-            delay(1000)
+            first()
         ).subscribe({
             next: (universities: IUniversity[]) => {
                 let values: any = {};
@@ -47,6 +70,8 @@ export class HomeComponent {
                         values: values
                     }
                 });
+
+                this.loadingMap = false;
             }
         });
     }

@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "countries",
   "info": {
-    "name": "Countries",
+    "name": "Country",
     "description": ""
   },
   "options": {

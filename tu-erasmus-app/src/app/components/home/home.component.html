@@ -1,3 +1,19 @@
-<h1 class="text-center">Технически университет - София. Еразъм+</h1>
-<h2 class="text-center">Текущи възможности</h2>
-<div id="svgMap"></div>
+<ng-container *ngIf="!loading">
+    <h1 class="text-center text-4xl">{{pageData.heading}}</h1>
+
+    <ng-container *ngIf="!pageData.hideMap">
+        <h2 class="text-center">Текущи възможности</h2>
+        <div id="svgMap"></div>
+    </ng-container>
+
+    <div>
+        <h2>{{pageData.subheading}}</h2>
+        <div [innerHTML]="pageData.body"></div>
+    </div>
+
+</ng-container>
+
+
+<ng-template #loadingTemplate>
+    Loading...
+</ng-template>
