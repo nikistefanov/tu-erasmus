@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChange, ViewChild, ViewEncapsulation } from "@angular/core";
 import { MatDialog } from "@angular/material/dialog";
 import { MatPaginator } from "@angular/material/paginator";
+import { MatSort, Sort } from "@angular/material/sort";
 import { MatTable, MatTableDataSource } from "@angular/material/table";
 import { BehaviorSubject, Observable, ReplaySubject, Subscription } from "rxjs";
 import { IUpdateDataTable, UpdateDataTableMehtods } from "../../models/data-table";
@@ -25,6 +26,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
     @Input() items$!: Observable<IDataItem[]>;
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
     @ViewChild(MatTable, { static: false }) table!: MatTable<IDataItem>;
 
     @Output() onUpdateItem: EventEmitter<any> = new EventEmitter<any>();
@@ -81,6 +83,11 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
         this.onCreateItem.emit();
     }
 
+    announceSortChange(sortState: Sort) {
+        console.log(sortState);
+
+    }
+
     private handleUpdateTable(data: IUpdateDataTable) {
         switch (data.method) {
             case UpdateDataTableMehtods.Add:
@@ -105,6 +112,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
     private setupTable() {
         this.dataSource = new MatTableDataSource<IDataItem>(this.items);
         this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
         this.table.dataSource = this.dataSource;
     }
 }

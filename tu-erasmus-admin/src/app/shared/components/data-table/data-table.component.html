@@ -14,11 +14,11 @@
 </ng-container>
 
 <div [hidden]="loading" class="app-table" [ngClass]="{'-loading': loading, '-loaded': items.length > 0}">
-    <table mat-table class="w-full table">
+    <table mat-table class="w-full table" matSort (matSortChange)="announceSortChange($event)">
         <ng-container *ngFor="let dataColumn of dataColumns; let colIndex = index">
             <ng-container matColumnDef="{{dataColumn}}">
                 <ng-container *ngIf="dataColumn !== 'actions'">
-                    <th mat-header-cell *matHeaderCellDef>{{dataHeaders[colIndex]}}</th>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>{{dataHeaders[colIndex]}}</th>
                     <td mat-cell *matCellDef="let data">
                         <b class="md-lg:hidden">{{dataHeaders[colIndex]}}</b>
                         <div>{{data[dataColumn]}}</div>
