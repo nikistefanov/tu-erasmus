@@ -1,6 +1,8 @@
 .tu-navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     height: 65px;
     background-color: var(--tu-white);
     z-index: 1000;

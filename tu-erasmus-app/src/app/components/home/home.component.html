@@ -1,18 +1,22 @@
+
 <ng-container *ngIf="!loading">
     <h1 class="text-center text-4xl">{{pageData.heading}}</h1>
 
     <ng-container *ngIf="!pageData.hideMap">
-        <h2 class="text-center">Текущи възможности</h2>
-        <div id="svgMap"></div>
+        <h2 class="text-center">Нашите партньори</h2>
+        <div class="tu-map">
+            <div id="svgMap"></div>
+            <div class="tu-map__loader" *ngIf="loadingMap">
+                <app-loader class="block h-full" type="full"></app-loader>
+            </div>
+        </div>
     </ng-container>
 
-    <div>
+    <div [class.mt-14]="!pageData.hideMap">
         <h2>{{pageData.subheading}}</h2>
         <div [innerHTML]="pageData.body"></div>
     </div>
-
 </ng-container>
-
 
 <ng-template #loadingTemplate>
     Loading...

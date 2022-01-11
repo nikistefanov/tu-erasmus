@@ -1,12 +1,10 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChange, ViewChild, ViewEncapsulation } from "@angular/core";
-import { MatDialog } from "@angular/material/dialog";
+import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChanges, ViewChild, ViewEncapsulation } from "@angular/core";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort, Sort } from "@angular/material/sort";
 import { MatTable, MatTableDataSource } from "@angular/material/table";
-import { BehaviorSubject, Observable, ReplaySubject, Subscription } from "rxjs";
+import { Observable, ReplaySubject, Subscription } from "rxjs";
 import { IUpdateDataTable, UpdateDataTableMehtods } from "../../models/data-table";
-import { IDataItem, IUserInfo } from "../../models/db-models";
-import { ErrorHandlerService } from "../../services/error-handler/error-handler.service";
+import { IDataItem } from "../../models/db-models";
 
 @Component({
     selector: "app-data-table",
@@ -33,15 +31,12 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
     @Output() onCreateItem: EventEmitter<any> = new EventEmitter<any>();
     @Output() onDeleteItem: EventEmitter<any> = new EventEmitter<any>();
 
-    public userInfo!: IUserInfo;
     public expandedItem!: IDataItem;
     public dataSource!: MatTableDataSource<IDataItem>;
 
     private refreshSub: Subscription = new Subscription();
 
-    constructor(private dialog: MatDialog, private errorHandler: ErrorHandlerService) {}
-
-    ngOnChanges(changes: any) {
+    ngOnChanges(changes: SimpleChanges) {
         if (changes["items"] && changes["items"].currentValue && changes["items"].currentValue.length > 0) {
             this.dataSource.data = changes["items"].currentValue
         }

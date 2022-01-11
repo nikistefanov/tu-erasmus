@@ -8,12 +8,16 @@ import { SharedModule } from './shared/shared.module';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PartnersListComponent } from './components/partners/list/partners-list.component';
+import { PartnersDetailsComponent } from './components/partners/details/partners-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    PartnersListComponent,
+    PartnersDetailsComponent
   ],
   imports: [
     BrowserModule,

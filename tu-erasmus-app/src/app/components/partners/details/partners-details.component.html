@@ -1,0 +1,12 @@
+<ng-container *ngIf="!loading; else loadingTmpl">
+    <ng-container *ngIf="university">
+        <h1>{{university.name}}</h1>
+        <p>{{university.countryName}}</p>
+        <p>{{university.website}}</p>
+        <div [innerHTML]="university.description"></div>
+    </ng-container>
+</ng-container>
+
+<ng-template #loadingTmpl>
+    <app-loader></app-loader>
+</ng-template>

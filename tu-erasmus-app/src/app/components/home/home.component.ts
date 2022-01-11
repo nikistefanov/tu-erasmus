@@ -38,7 +38,8 @@ export class HomeComponent {
 
     private getMapData() {
         this.rootService.universities.getAll().pipe(
-            first()
+            first(),
+            delay(1000)
         ).subscribe({
             next: (universities: IUniversity[]) => {
                 let values: any = {};
@@ -50,7 +51,7 @@ export class HomeComponent {
                     }
                     values[country.code] = {
                         partners: partners,
-                        link: `universities/${country.code}`
+                        link: `partners`
                     }
                 })
 

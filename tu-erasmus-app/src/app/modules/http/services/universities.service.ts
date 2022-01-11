@@ -13,4 +13,12 @@ export class UniversitiesService extends ApiService {
     getAll(): Observable<IUniversity[]> {
         return this.getInternal<IUniversity[]>(UNIVERSITIES_API);
     }
+
+    get(universityId: string): Observable<IUniversity> {
+        return this.getInternal<IUniversity>(`${UNIVERSITIES_API}/${universityId}`);
+    }
+
+    getByCountry(countryName: string): Observable<IUniversity[]> {
+        return this.getInternal<IUniversity[]>(UNIVERSITIES_API, { "countryName": `${countryName}`});
+    }
 }

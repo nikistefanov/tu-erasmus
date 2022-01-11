@@ -1,0 +1,56 @@
+import { AfterViewInit, Component, EventEmitter, Input, Output, SimpleChanges, ViewChild, ViewEncapsulation } from "@angular/core";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort, Sort } from "@angular/material/sort";
+import { MatTable, MatTableDataSource } from "@angular/material/table";
+import { IDataItem, IUniversity } from "../../models/db-models";
+
+@Component({
+    selector: "app-data-table",
+    templateUrl: "./data-table.component.html",
+    styleUrls: ["./data-table.component.scss"],
+    encapsulation: ViewEncapsulation.None
+})
+export class DataTableComponent implements AfterViewInit {
+    @Input() title!: string;
+    @Input() items: IDataItem[] = [];
+    @Input() dataHeaders: string[] = [];
+    @Input() dataColumns: string[] = [];
+    @Input() loading: boolean = false;
+
+    @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
+
+    @ViewChild(MatPaginator) paginator!: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
+    @ViewChild(MatTable, { static: false }) table!: MatTable<IDataItem>;
+
+    public expandedItem!: IDataItem | null;
+    public dataSource!: MatTableDataSource<IDataItem>;
+
+    ngOnChanges(changes: SimpleChanges) {
+        if (changes["items"] && changes["items"].currentValue && changes["items"].currentValue.length > 0) {
+            this.dataSource.data = changes["items"].currentValue
+        }
+    }
+
+    ngAfterViewInit() {
+        this.setupTable();
+    }
+
+    announceSortChange(sortState: any) {
+        console.log(sortState);
+
+    }
+
+    handleClick(item: IDataItem) {
+        this.expandedItem = this.expandedItem === item ? null : item;
+
+        this.onClick.emit(item);
+    }
+
+    private setupTable() {
+        this.dataSource = new MatTableDataSource<IDataItem>(this.items);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+        this.table.dataSource = this.dataSource;
+    }
+}

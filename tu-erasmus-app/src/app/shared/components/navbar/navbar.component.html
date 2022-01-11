@@ -1,13 +1,18 @@
-<nav class="tu-navbar" [ngClass]="{'-sticked': sticked}">
+<nav class="tu-navbar -sticked">
     <mat-toolbar color="primary">
         <div class="lg:container lg:mx-auto w-full px-5 md:px-7 xl:px-14 h-full flex items-center justify-between">
             <div class="tu-navbar__logo-wrapper">
-                <img class="pr-2 max-h-9" src="assets/images/tu-logo-large.png" alt="Technical University of Sofia logo">
+                <a routerLink="/">
+                    <img class="pr-2 max-h-9" src="assets/images/tu-logo-large.png" alt="Technical University of Sofia logo">
+                </a>
             </div>
             <div class="ml-auto">
                 <ul class="tu-links list-none">
                     <li class="tu-links__item">
-                        <a class="tu-links__link" routerLink="/" routerLinkActive="-active">Начало</a>
+                        <a class="tu-links__link" routerLink="/home" routerLinkActive="-active">Начало</a>
+                    </li>
+                    <li class="tu-links__item">
+                        <a class="tu-links__link" routerLink="/erasmus" routerLinkActive="-active">Еразъм+</a>
                     </li>
                     <!-- <li class="tu-links__item">
                         <a class="tu-links__link" routerLink="/about" routerLinkActive="-active">За iGrant</a>

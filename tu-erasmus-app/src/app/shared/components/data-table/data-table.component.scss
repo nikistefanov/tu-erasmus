@@ -1,0 +1,92 @@
+.app-table {
+
+    .mat-table {
+        @apply w-full;
+    }
+
+    &.-loading,
+    &:not(.-loaded) {
+        @apply hidden;
+    }
+
+    thead {
+        @apply text-left hidden border-gray-500 bg-gray-200 border-b-2;
+
+        .mat-header-cell {
+            @apply px-5 py-3;
+        }
+    }
+
+
+    tbody {
+
+        .mat-row {
+            @apply relative h-auto overflow-hidden block transition-all duration-300 cursor-pointer;
+            max-height: 46px;
+
+            &.-expanded {
+                max-height: 500px;
+
+                .mat-cell:first-of-type::before {
+                    content: "\e5ce";
+                }
+            }
+
+            &:nth-child(odd) {
+                @apply bg-gray-50 border-gray-200;
+            }
+
+            &:hover {
+                background-color: var(--tu-grey-light);
+            }
+        }
+
+        .mat-cell {
+            @apply pr-2 pl-7 py-3 flex justify-between;
+
+            &:first-of-type::before {
+                @apply absolute left-2 border-0 font-bold;
+
+                font-family: "Material Icons";
+                content: "\e5cf";
+            }
+        }
+    }
+}
+
+.app-table {
+
+    &__title {
+        top: 65px;
+    }
+}
+
+.app-paginator {
+    .mat-paginator-container {
+        @apply flex-wrap;
+    }
+}
+
+@screen md-lg {
+    .app-table .mat-table {
+
+        thead {
+            @apply table-header-group;
+        }
+
+        tbody {
+
+            .mat-row {
+                @apply table-row;
+            }
+
+            .mat-cell {
+                @apply table-cell px-5;
+
+                &:first-of-type::before {
+                    @apply hidden;
+                }
+            }
+        }
+    }
+}
