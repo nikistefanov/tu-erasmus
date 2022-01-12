@@ -16,7 +16,8 @@ export class ApiService {
     }
 
     protected getInternal<T>(relativeUrl: string, queryParams: { [key: string]: string | string[] | number | undefined } = {}): Observable<T> {
-        const modifiedParams = Object.assign(NO_LIMIT_PARAM, queryParams);
+        const noLimitParam = Object.assign({}, NO_LIMIT_PARAM);
+        const modifiedParams = Object.assign(noLimitParam, queryParams);
         const params = this.mapToHttpParams(modifiedParams);
 
         return this.http.get<T>(`${API_URL}${relativeUrl}`, {

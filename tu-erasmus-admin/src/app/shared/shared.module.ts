@@ -9,6 +9,7 @@ import { ConfirmComponent } from './components/dialog/confirm/confirm.component'
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { DataTableFormatCellPipe } from './pipes/data-table.pipe';
 
 
 const COMPONENTS = [
@@ -18,10 +19,14 @@ const COMPONENTS = [
     ConfirmComponent,
     NotFoundComponent,
     DataTableComponent
+];
+
+const COMMON = [
+    DataTableFormatCellPipe
 ]
 
 @NgModule({
-  declarations: [...COMPONENTS],
+  declarations: [...COMPONENTS, ...COMMON],
   imports: [
     CommonModule,
     RouterModule,
@@ -29,6 +34,6 @@ const COMPONENTS = [
     AngularEditorModule
   ],
   providers: [],
-  exports: [...COMPONENTS]
+  exports: [...COMPONENTS, ...COMMON]
 })
 export class SharedModule { }

@@ -26,7 +26,8 @@ export class AdminNewsItemsCreateEditComponent {
         @Inject(MAT_DIALOG_DATA) public data: ICreateEditDialogData) {
         this.form = new FormGroup({
             title: this.title,
-            body: this.body
+            body: this.body,
+            hide: this.hide
         });
 
         if (data.item) {
@@ -49,6 +50,7 @@ export class AdminNewsItemsCreateEditComponent {
     private setData(newsItem: INewsItem) {
         this.title.setValue(newsItem.title);
         this.body.setValue(newsItem.body);
+        this.hide.setValue(newsItem.hide);
     }
 }
 

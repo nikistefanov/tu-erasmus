@@ -1,4 +1,3 @@
-import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { first, ReplaySubject } from 'rxjs';
@@ -19,12 +18,14 @@ import { AdminNewsItemsCreateEditComponent } from './admin-news-items-create-edi
 export class AdminNewsItemsComponent extends AdminBase {
     headers = [
         "Заглавие",
-        "Създадена на"
+        "Създадена на",
+        "Скрита"
     ]
 
     columns = [
         "title",
-        "created_at"
+        "created_at",
+        "hide"
     ];
     newsItems: INewsItem[] = [];
     update$: ReplaySubject<IUpdateDataTable> = new ReplaySubject<IUpdateDataTable>();
@@ -61,10 +62,6 @@ export class AdminNewsItemsComponent extends AdminBase {
             first()
         ).subscribe({
             next: (resp: INewsItem[]) => {
-                resp.forEach(el => {
-                    el.created_at = this.formatDate(el);
-                });
-
                 this.newsItems = resp;
                 this.loading = false;
             },
@@ -106,12 +103,7 @@ export class AdminNewsItemsComponent extends AdminBase {
         });
     }
 
-    private formatDate(data: INewsItem) {
-        return formatDate(data.created_at as Date, "dd.MM.yyyy", "bg-BG");
-    }
-
     private updateTable(data: INewsItem, method: UpdateDataTableMehtods) {
-        data.created_at = this.formatDate(data);
         this.update$.next({ item: data, method });
         this.alertService.showMessage("Промените са запазени");
     }

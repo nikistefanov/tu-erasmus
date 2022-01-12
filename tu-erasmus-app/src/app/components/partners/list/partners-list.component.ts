@@ -33,7 +33,7 @@ export class PartnersListComponent implements OnInit {
                 this.universities = data;
                 this.loading = false;
             }
-        })
+        });
     }
 
     handleClick(uni: IUniversity) {

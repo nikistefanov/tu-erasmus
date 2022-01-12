@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +10,11 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PartnersListComponent } from './components/partners/list/partners-list.component';
 import { PartnersDetailsComponent } from './components/partners/details/partners-details.component';
+import { NewsListComponent } from './components/news/news-lists.component';
+
+import { registerLocaleData } from '@angular/common';
+import localBg from '@angular/common/locales/bg';
+registerLocaleData(localBg);
 
 @NgModule({
   declarations: [
@@ -17,7 +22,8 @@ import { PartnersDetailsComponent } from './components/partners/details/partners
     NotFoundComponent,
     HomeComponent,
     PartnersListComponent,
-    PartnersDetailsComponent
+    PartnersDetailsComponent,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,9 @@ import { PartnersDetailsComponent } from './components/partners/details/partners
     SharedModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: "bg-BG"},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

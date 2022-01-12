@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { delay, first } from 'rxjs';
 import { RootService } from '../../modules/http/root.service';
 import { COUNTRIES, ICountry, IHomePage, IUniversity } from '../../shared/models/db-models';
@@ -10,16 +10,15 @@ declare var svgMap: any;
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
     loading: boolean = true;
     loadingMap: boolean = true;
     pageData: IHomePage;
 
     constructor(private rootService: RootService, private detector: ChangeDetectorRef) {
-        this.getPageData();
     }
 
-    private getPageData() {
+    ngOnInit(): void {
         this.rootService.homePage.get().pipe(
             first()
         ).subscribe({
