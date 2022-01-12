@@ -5,7 +5,6 @@ import { first } from 'rxjs';
 import { IHomePage } from '../../../../shared/models/db-models';
 import { ErrorHandlerService } from '../../../../shared/services/error-handler/error-handler.service';
 import { RootService } from '../../../http/root.service';
-import { AdminBase } from '../base/admin-base';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { AlertService } from '../../../../shared/services/alert/alert.service';
 

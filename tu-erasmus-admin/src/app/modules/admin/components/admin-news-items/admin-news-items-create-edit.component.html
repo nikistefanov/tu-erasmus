@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{data.label}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="form">
+        <mat-slide-toggle formControlName="hide">Скрий новината</mat-slide-toggle>
+        <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Залгавие</mat-label>
+            <input formControlName="title" type="text" name="title" matInput placeholder="Залгавие">
+            <mat-error *ngIf="title?.errors">
+                <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+            </mat-error>
+        </mat-form-field>
+        <div class="mt-5 mb-8">
+            <angular-editor formControlName="body" [config]="editorConfig" placeholder="Текст"></angular-editor>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="save(form.value)"
+        [disabled]="!form.valid">{{data.label}}</button>
+    <button class="ml-5" mat-raised-button (click)="onCancel()">Откажи</button>
+</div>
+
+<ng-template #requiredMessage>
+    Полето е <strong>задължително</strong>
+</ng-template>

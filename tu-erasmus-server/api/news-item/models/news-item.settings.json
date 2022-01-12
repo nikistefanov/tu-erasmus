@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "news_items",
   "info": {
-    "name": "NewsItem"
+    "name": "NewsItem",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -17,6 +18,10 @@
     },
     "body": {
       "type": "richtext"
+    },
+    "hide": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

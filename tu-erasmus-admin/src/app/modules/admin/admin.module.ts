@@ -9,12 +9,16 @@ import { AdminUniversitiesComponent } from './components/admin-universities/admi
 import { AdminUniversitiesCreateEditComponent } from './components/admin-universities/admin-universities-create-edit.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AdminNewsItemsComponent } from './components/admin-news-items/admin-news-items.component';
+import { AdminNewsItemsCreateEditComponent } from './components/admin-news-items/admin-news-items-create-edit.component';
 
 const COMPONENTS = [
     AdminComponent,
     AdminUniversitiesComponent,
     AdminUniversitiesCreateEditComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    AdminNewsItemsComponent,
+    AdminNewsItemsCreateEditComponent
 ]
 
 @NgModule({

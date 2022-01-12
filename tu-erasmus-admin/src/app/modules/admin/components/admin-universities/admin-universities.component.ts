@@ -92,8 +92,8 @@ export class AdminUniversitiesComponent extends AdminBase {
         });
     }
 
-    private deleteContact(University: IUniversity) {
-        this.rootService.universities.delete(University.id).pipe(
+    private deleteContact(university: IUniversity) {
+        this.rootService.universities.delete(university.id).pipe(
             first()
         ).subscribe((resp: IUniversity) => {
             const removedUniversity = this.universities.find(i => i.id === resp.id);

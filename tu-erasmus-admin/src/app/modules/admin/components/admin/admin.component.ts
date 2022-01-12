@@ -19,6 +19,10 @@ export class AdminComponent {
         name: "Партньори",
         link: RoutePaths.Universities,
         icon: "school"
+    }, {
+        name: "Новини",
+        link: RoutePaths.NewsItems,
+        icon: "newspaper"
     }];
 
     constructor(private router: Router) {}
