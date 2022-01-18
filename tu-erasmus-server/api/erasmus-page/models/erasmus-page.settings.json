@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "erasmus_pages",
+  "info": {
+    "name": "ErasmusPage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

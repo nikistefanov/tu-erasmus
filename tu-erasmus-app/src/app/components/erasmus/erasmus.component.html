@@ -1,0 +1,11 @@
+
+<ng-container *ngIf="!loading; else loadingTemplate">
+    <h1 class="text-4xl">{{pageData.heading}}</h1>
+    <div class="mt-14">
+        <div [innerHTML]="pageData.body"></div>
+    </div>
+</ng-container>
+
+<ng-template #loadingTemplate>
+    <app-loader type="default"></app-loader>
+</ng-template>

@@ -6,6 +6,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminUniversitiesComponent } from './components/admin-universities/admin-universities.component';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { AdminNewsItemsComponent } from './components/admin-news-items/admin-news-items.component';
+import { ErasmusPageComponent } from './components/erasmus-page/erasmus-page.component';
 
 export const adminRoutes: Routes = [
     {
@@ -13,6 +14,7 @@ export const adminRoutes: Routes = [
         children: [
             { path: RoutePaths.Empty, component: AdminComponent },
             { path: RoutePaths.HomePage, component: AdminHomeComponent },
+            { path: RoutePaths.ErasmusPage, component: ErasmusPageComponent },
             { path: RoutePaths.Universities, component: AdminUniversitiesComponent },
             { path: RoutePaths.NewsItems, component: AdminNewsItemsComponent }
         ]

@@ -8,10 +8,10 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { AlertService } from '../../../../shared/services/alert/alert.service';
 
 @Component({
-    selector: 'app-admin-home',
-    templateUrl: './admin-home.component.html',
+    selector: 'app-erasmus-page',
+    templateUrl: './erasmus-page.component.html',
 })
-export class AdminHomeComponent {
+export class ErasmusPageComponent {
     loading: boolean = true;
     editorConfig: AngularEditorConfig = {
         editable: true,
@@ -20,9 +20,7 @@ export class AdminHomeComponent {
 
     form: FormGroup;
     heading: FormControl = new FormControl("", [Validators.required]);
-    subheading: FormControl = new FormControl("", [Validators.required]);
     body: FormControl = new FormControl("", [Validators.required]);
-    hideMap: FormControl = new FormControl();
 
     constructor(private rootService: RootService,
         private errorHandler: ErrorHandlerService,
@@ -35,7 +33,7 @@ export class AdminHomeComponent {
             return;
         }
 
-        this.rootService.homePage.update(this.form.value).pipe(
+        this.rootService.erasmusPage.update(this.form.value).pipe(
             first()
         ).subscribe({
             next: data => this.alertService.showMessage("Промените са запазени"),
@@ -44,7 +42,7 @@ export class AdminHomeComponent {
     }
 
     private fetchData() {
-        this.rootService.homePage.get().pipe(
+        this.rootService.erasmusPage.get().pipe(
             first()
         ).subscribe({
             next: (data: IHomePage) => {
@@ -62,9 +60,7 @@ export class AdminHomeComponent {
 
     private setData(data: IHomePage) {
         this.heading.setValue(data.heading);
-        this.subheading.setValue(data.subheading);
         this.body.setValue(data.body);
-        this.hideMap.setValue(!!data.hideMap);
 
         this.createForm();
     }
@@ -72,9 +68,7 @@ export class AdminHomeComponent {
     private createForm() {
         this.form = new FormGroup({
             heading: this.heading,
-            subheading: this.subheading,
             body: this.body,
-            hideMap: this.hideMap,
         });
 
         this.loading = false;

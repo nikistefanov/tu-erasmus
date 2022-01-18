@@ -92,7 +92,7 @@ export class AdminNewsItemsComponent extends AdminBase {
     }
 
     private deleteContact(newsItem: INewsItem) {
-        this.rootService.universities.delete(newsItem.id).pipe(
+        this.rootService.newsItems.delete(newsItem.id).pipe(
             first()
         ).subscribe(resp => {
             const removeNnewsItem = this.newsItems.find(i => i.id === resp.id);

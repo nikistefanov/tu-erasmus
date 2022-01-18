@@ -11,6 +11,7 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AdminHomeComponent } from './components/admin-home/admin-home.component';
 import { AdminNewsItemsComponent } from './components/admin-news-items/admin-news-items.component';
 import { AdminNewsItemsCreateEditComponent } from './components/admin-news-items/admin-news-items-create-edit.component';
+import { ErasmusPageComponent } from './components/erasmus-page/erasmus-page.component';
 
 const COMPONENTS = [
     AdminComponent,
@@ -18,7 +19,8 @@ const COMPONENTS = [
     AdminUniversitiesCreateEditComponent,
     AdminHomeComponent,
     AdminNewsItemsComponent,
-    AdminNewsItemsCreateEditComponent
+    AdminNewsItemsCreateEditComponent,
+    ErasmusPageComponent
 ]
 
 @NgModule({

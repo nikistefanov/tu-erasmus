@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/erasmus-page",
+      "handler": "erasmus-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/erasmus-page",
+      "handler": "erasmus-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/erasmus-page",
+      "handler": "erasmus-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

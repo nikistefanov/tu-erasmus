@@ -14,7 +14,7 @@ export class AdminNewsItemsCreateEditComponent {
     form: FormGroup;
     title: FormControl = new FormControl("", [Validators.required]);
     body: FormControl = new FormControl();
-    hide: FormControl = new FormControl();
+    hide: FormControl = new FormControl(false);
 
     editorConfig: AngularEditorConfig = {
         editable: true,

@@ -13,6 +13,10 @@ export class AdminComponent {
         name: "Начална страница",
         link: RoutePaths.HomePage,
         icon: "home"
+    }, {
+        name: "Еразъм+ страница",
+        link: RoutePaths.ErasmusPage,
+        icon: "post_add"
     }];
 
     contentLinks: IAdminLink[] = [{

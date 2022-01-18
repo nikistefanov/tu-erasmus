@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErasmusComponent } from './components/erasmus/erasmus.component';
 import { HomeComponent } from './components/home/home.component';
 import { NewsListComponent } from './components/news/news-lists.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -10,6 +11,7 @@ import { RoutePaths } from './shared/constants/route-paths';
 export const appRoutes: Routes = [
     { path: "", redirectTo: RoutePaths.Home, pathMatch: "full" },
     { path: "home", component: HomeComponent },
+    { path: "erasmus", component: ErasmusComponent },
     { path: "partners", component: PartnersListComponent },
     { path: "partners/:id", component: PartnersDetailsComponent },
     { path: "news-items", component: NewsListComponent },
