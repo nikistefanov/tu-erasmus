@@ -12,6 +12,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { DataTableFormatCellPipe } from './pipes/data-table.pipe';
 import { EditorComponent } from './components/editor/editor.component';
 import { FormsModule } from '@angular/forms';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { DocumentsDialogComponent } from './components/dialog/documents-dialog/documents-dialog.component';
 
 
 const COMPONENTS = [
@@ -19,9 +21,11 @@ const COMPONENTS = [
     NavbarComponent,
     LoaderComponent,
     ConfirmComponent,
+    DocumentsDialogComponent,
     NotFoundComponent,
     DataTableComponent,
-    EditorComponent
+    EditorComponent,
+    FileUploadComponent
 ];
 
 const COMMON = [

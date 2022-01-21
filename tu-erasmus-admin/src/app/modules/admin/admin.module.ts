@@ -12,6 +12,8 @@ import { AdminHomeComponent } from './components/admin-home/admin-home.component
 import { AdminNewsItemsComponent } from './components/admin-news-items/admin-news-items.component';
 import { AdminNewsItemsCreateEditComponent } from './components/admin-news-items/admin-news-items-create-edit.component';
 import { ErasmusPageComponent } from './components/erasmus-page/erasmus-page.component';
+import { AdminDocumentsComponent } from './components/admin-documents/admin-documents.component';
+import { AdminDocumentsCreateEditComponent } from './components/admin-documents/admin-documents-create-edit.component';
 
 const COMPONENTS = [
     AdminComponent,
@@ -20,7 +22,9 @@ const COMPONENTS = [
     AdminHomeComponent,
     AdminNewsItemsComponent,
     AdminNewsItemsCreateEditComponent,
-    ErasmusPageComponent
+    ErasmusPageComponent,
+    AdminDocumentsComponent,
+    AdminDocumentsCreateEditComponent
 ]
 
 @NgModule({

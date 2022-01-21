@@ -68,7 +68,7 @@ export class AdminHomeComponent {
             heading: this.heading,
             subheading: this.subheading,
             body: this.body,
-            hideMap: this.hideMap,
+            hideMap: this.hideMap
         });
 
         this.loading = false;

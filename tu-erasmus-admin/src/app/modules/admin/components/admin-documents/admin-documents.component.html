@@ -1,0 +1,12 @@
+<app-data-table
+    title="Документи"
+    label="Качи документ"
+    [hasAction]="true"
+    [noEdit]="true"
+    [items]="documents"
+    [dataHeaders]="headers"
+    [dataColumns]="columns"
+    [update$]="update$"
+    [loading]="loading"
+    (onCreateItem)="handleCreateDocument()"
+    (onDeleteItem)="handleDeleteDocument($event)"></app-data-table>

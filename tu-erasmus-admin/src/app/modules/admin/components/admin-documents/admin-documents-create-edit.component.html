@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{data.label}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="form">
+        <div class="mt-5 mb-8">
+            <app-file-upload formControlName="file" acceptedTypes="application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint,
+            text/plain, application/pdf" label="Избери документ"></app-file-upload>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="save(form.value)"
+        [disabled]="!form.valid">{{data.label}}</button>
+    <button class="ml-5" mat-raised-button (click)="onCancel()">Откажи</button>
+</div>
+
+<ng-template #requiredMessage>
+    Полето е <strong>задължително</strong>
+</ng-template>

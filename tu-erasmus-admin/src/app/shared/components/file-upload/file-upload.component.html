@@ -1,0 +1,8 @@
+<div class="flex items-center">
+    <label class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center cursor-pointer">
+        <input class="hidden" type="file" [attr.accept]="acceptedTypes" (change)="handleChange($event)" />
+        <mat-icon>file_upload</mat-icon>
+        <span>{{label}}</span>
+    </label>
+    <span class="ml-2">{{fileName}}</span>
+</div>

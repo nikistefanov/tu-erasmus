@@ -27,6 +27,10 @@ export class AdminComponent {
         name: "Новини",
         link: RoutePaths.NewsItems,
         icon: "newspaper"
+    }, {
+        name: "Документи",
+        link: RoutePaths.Documents,
+        icon: "description"
     }];
 
     constructor(private router: Router) {}

@@ -19,6 +19,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
     @Input() dataHeaders: string[] = [];
     @Input() dataColumns: string[] = [];
     @Input() hasAction: boolean = false;
+    @Input() noEdit: boolean = false;
     @Input() loading: boolean = false;
     @Input() update$: ReplaySubject<IUpdateDataTable> = new ReplaySubject<IUpdateDataTable>();
     @Input() items$!: Observable<IDataItem[]>;
@@ -48,7 +49,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
             this.dataColumns.push("actions");
         }
 
-        this.label = `Създай ${this.label}`;
         this.refreshSub = this.update$.subscribe((data) => {
             this.handleUpdateTable(data);
         });

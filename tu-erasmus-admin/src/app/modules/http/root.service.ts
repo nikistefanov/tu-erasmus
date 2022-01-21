@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { ApiService } from './api.service';
+import { DocumentsService } from './services/documents.service';
 import { ErasmusPageService } from './services/erasmus-page.service';
 import { HomePageService } from './services/home-page.service';
 import { NewsItemsService } from './services/newsitems.service';
@@ -15,6 +16,7 @@ export class RootService extends ApiService {
     newsItems: NewsItemsService;
     homePage: HomePageService;
     erasmusPage: ErasmusPageService;
+    documents: DocumentsService;
 
     constructor(http: HttpClient, auth: AuthService) {
         super(http, auth);
@@ -23,5 +25,6 @@ export class RootService extends ApiService {
         this.newsItems = new NewsItemsService(http, auth);
         this.homePage = new HomePageService(http, auth);
         this.erasmusPage = new ErasmusPageService(http, auth);
+        this.documents = new DocumentsService(http, auth);
     }
 }

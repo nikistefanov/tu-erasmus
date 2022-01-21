@@ -5,5 +5,6 @@ export enum RoutePaths {
     HomePage = "home-page",
     Universities = "universities",
     NewsItems = "news-items",
+    Documents = "documents",
     ErasmusPage = "erasmus-page"
 }
