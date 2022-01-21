@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
 
                 new svgMap({
                     targetElementID: 'svgMap',
-                    initialPan: { x: 750, y: 150 },
+                    initialPan: { x: 850, y: 175 },
                     initialZoom: 5,
                     data: {
                         data: {
