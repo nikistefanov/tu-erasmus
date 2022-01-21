@@ -3,11 +3,53 @@
 
     color: var(--tu-black);
 
-    .tu-links__item {
-
+    &__item {
 
         &:not(:first-of-type) {
             @apply ml-4;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        overflow: hidden;
+        cursor: pointer;
+        color: var(--tu-black);
+        transition: color .2s ease;
+
+        &.-active,
+        &:hover {
+            color: var(--tu-grey);
+        }
+
+        &::after {
+            background: var(--tu-primary);
+            content: "";
+            display: block;
+            height: 4px;
+            margin-top: 5px;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            transition: transform .3s;
+            transition: transform .3s,-webkit-transform .3s;
+            width: 100%;
+            will-change: transform;
+            -webkit-transform: translateX(-105%);
+            transform: translateX(-105%);
+        }
+
+        &:hover,
+        &:active,
+        &:focus,
+        &.-active {
+            color: inherit;
+            text-decoration: none;
+            background: none;
+
+            &::after {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
         }
     }
 }
