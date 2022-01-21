@@ -1,6 +1,8 @@
-import { AfterViewInit, Component, ElementRef, forwardRef, Input, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, forwardRef, Input, ViewChild } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { MatDialog } from "@angular/material/dialog";
 import { AngularEditorComponent, AngularEditorConfig } from "@kolkov/angular-editor";
+import { DocumentsDialogComponent } from "../dialog/documents-dialog/documents-dialog.component";
 
 export const EDITOR_CONTROL_VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
@@ -22,6 +24,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
     @ViewChild("editor") editor: AngularEditorComponent;
 
     private _value: string;
+    private self: any;
 
     get htmlContent(): string {
         return this._value;
@@ -37,12 +40,7 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
     onChange: any = () => {}
     onTouch: any = () => {}
 
-    // constructor(
-    //     public dialogRef: MatDialogRef<ConfirmComponent>,
-    //     @Inject(MAT_DIALOG_DATA) public data: IConfirmationDialogData
-    // ) {
-    //     this.dialogData = data;
-    // }
+    constructor(private dialog: MatDialog) {}
 
     writeValue(value: string): void {
         this.htmlContent = value;
@@ -73,10 +71,12 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
 
         const button = toolbarSet.firstElementChild;
         const documentToolbar = toolbarSet.cloneNode(true) as HTMLElement;
+        documentToolbar.innerHTML = "";
         const documentButton = button?.cloneNode(true) as HTMLElement;
+        documentButton.classList.add("text-blue-700");
         const icon = documentButton.querySelector(".fa");
         const text = document.createElement("span");
-        text.innerText = "Вземете линк към документ";
+        text.innerText = " Вземете линк към документ";
 
         if (!icon) {
             return;
@@ -86,13 +86,15 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
         icon.after(text);
         documentButton.id = "insertDocumnet-";
         documentButton.title = "Insert document";
-        documentButton.addEventListener("click", this.openDocumentsDialog)
+        documentButton.addEventListener("click", this.openDocumentsDialog.bind(this))
 
         documentToolbar.append(documentButton);
-        toolbarSet.before(documentToolbar);
+        toolbarSet.parentElement?.prepend(documentToolbar);
     }
 
-    private openDocumentsDialog() {
-
+    private openDocumentsDialog(that: any) {
+        this.dialog.open(DocumentsDialogComponent, {
+            panelClass: ["w-full", "md-lg:w-7/12"]
+        });
     }
 }

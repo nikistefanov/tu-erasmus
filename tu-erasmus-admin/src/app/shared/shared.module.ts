@@ -14,7 +14,7 @@ import { EditorComponent } from './components/editor/editor.component';
 import { FormsModule } from '@angular/forms';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { DocumentsDialogComponent } from './components/dialog/documents-dialog/documents-dialog.component';
-
+import { ClipboardModule } from 'ngx-clipboard';
 
 const COMPONENTS = [
     CardComponent,
@@ -39,7 +39,8 @@ const COMMON = [
     FormsModule,
     RouterModule,
     MaterialModule,
-    AngularEditorModule
+    AngularEditorModule,
+    ClipboardModule
   ],
   providers: [],
   exports: [...COMPONENTS, ...COMMON]

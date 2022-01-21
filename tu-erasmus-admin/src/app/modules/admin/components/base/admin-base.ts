@@ -1,6 +1,5 @@
 import { ComponentType } from "@angular/cdk/overlay";
 import { MatDialog } from "@angular/material/dialog";
-import { IDataItem } from "../../../../shared/models/db-models";
 import { IConfirmationDialogData, ICreateEditDialogData } from "../../../../shared/models/dialog";
 import { RootService } from "../../../http/root.service";
 

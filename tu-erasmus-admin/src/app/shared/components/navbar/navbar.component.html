@@ -2,8 +2,10 @@
     <mat-toolbar color="primary">
         <div class="lg:container lg:mx-auto w-full px-5 md:px-7 xl:px-14 h-full flex items-center justify-between">
             <div class="flex">
-                <img class="pr-2 max-h-9" src="assets/images/tu-logo-small.png" alt="">
-                <span data-apptest="brandName">Erasmus+ Admin</span>
+                <a routerLink="/" class="flex items-center">
+                    <img class="pr-2 max-h-9" src="assets/images/tu-logo-small.png" alt="">
+                    <span data-apptest="brandName" class="text-black">Erasmus+ Admin</span>
+                </a>
             </div>
             <div *ngIf="authService.isLogged" class="flex items-center ml-auto">
                 <ul class="tu-links list-none">

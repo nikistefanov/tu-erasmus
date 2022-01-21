@@ -1,9 +1,22 @@
-<div class="mb-7 mt-7" mat-dialog-content>
-
-</div>
-<div mat-dialog-actions>
-    <button class="ml-5" mat-raised-button (click)="onCancel()">Cancel</button>
-</div>
+<ng-container *ngIf="!loading; else loadingTemplate">
+    <h1 mat-dialog-title>Кликнете върху документа за да копирате връзката автоматично</h1>
+    <div class="mb-7 mt-7" mat-dialog-content>
+        <mat-selection-list #documentsTemplate [multiple]="false">
+            <mat-list-option *ngFor="let doc of documents" [value]="doc.url" (click)="onCopy(doc)">
+                <div class="flex justify-between">
+                    <div>
+                        <b>{{doc.name}}</b>
+                        <div class="text-gray-400 text-sm">{{serverAddress}}{{doc.url}}</div>
+                    </div>
+                    <mat-icon>content_copy</mat-icon>
+                </div>
+            </mat-list-option>
+        </mat-selection-list>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="onCancel()">Готово</button>
+    </div>
+</ng-container>
 
 <ng-template #loadingTemplate>
     <app-loader type="default"></app-loader>
