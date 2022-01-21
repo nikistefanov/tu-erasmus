@@ -15,6 +15,7 @@ __exportStar(require("./DataItem"), exports);
 __exportStar(require("./NewsItem"), exports);
 __exportStar(require("./User"), exports);
 __exportStar(require("./University"), exports);
+__exportStar(require("./Document"), exports);
 __exportStar(require("./HomePage"), exports);
 __exportStar(require("./ErasmusPage"), exports);
 //# sourceMappingURL=index.js.map

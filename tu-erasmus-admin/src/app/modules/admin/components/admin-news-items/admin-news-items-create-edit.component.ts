@@ -2,7 +2,6 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { INewsItem } from '../../../../shared/models/db-models';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { ICreateEditDialogData } from '../../../../shared/models/dialog';
 
 
@@ -15,11 +14,6 @@ export class AdminNewsItemsCreateEditComponent {
     title: FormControl = new FormControl("", [Validators.required]);
     body: FormControl = new FormControl();
     hide: FormControl = new FormControl(false);
-
-    editorConfig: AngularEditorConfig = {
-        editable: true,
-        minHeight: "300px"
-    };
 
     constructor(
         public dialogRef: MatDialogRef<AdminNewsItemsCreateEditComponent>,

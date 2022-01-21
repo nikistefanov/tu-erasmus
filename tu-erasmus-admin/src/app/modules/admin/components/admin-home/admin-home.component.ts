@@ -4,7 +4,6 @@ import { first } from 'rxjs';
 import { IHomePage } from '../../../../shared/models/db-models';
 import { ErrorHandlerService } from '../../../../shared/services/error-handler/error-handler.service';
 import { RootService } from '../../../http/root.service';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { AlertService } from '../../../../shared/services/alert/alert.service';
 
 @Component({
@@ -13,11 +12,6 @@ import { AlertService } from '../../../../shared/services/alert/alert.service';
 })
 export class AdminHomeComponent {
     loading: boolean = true;
-    editorConfig: AngularEditorConfig = {
-        editable: true,
-        minHeight: "300px"
-    };
-
     form: FormGroup;
     heading: FormControl = new FormControl("", [Validators.required]);
     subheading: FormControl = new FormControl("", [Validators.required]);

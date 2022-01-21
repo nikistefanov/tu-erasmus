@@ -10,7 +10,7 @@
             </mat-error>
         </mat-form-field>
         <div class="mt-5 mb-8">
-            <angular-editor formControlName="body" [config]="editorConfig" placeholder="Съдържание"></angular-editor>
+            <app-editor formControlName="body" placeholder="Съдържание"></app-editor>
         </div>
         <div class="mt-8">
             <button mat-raised-button color="primary" (click)="save()" [disabled]="!form.valid">Запази</button>

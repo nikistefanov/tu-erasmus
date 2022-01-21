@@ -10,6 +10,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { DataTableFormatCellPipe } from './pipes/data-table.pipe';
+import { EditorComponent } from './components/editor/editor.component';
+import { FormsModule } from '@angular/forms';
 
 
 const COMPONENTS = [
@@ -18,7 +20,8 @@ const COMPONENTS = [
     LoaderComponent,
     ConfirmComponent,
     NotFoundComponent,
-    DataTableComponent
+    DataTableComponent,
+    EditorComponent
 ];
 
 const COMMON = [
@@ -29,6 +32,7 @@ const COMMON = [
   declarations: [...COMPONENTS, ...COMMON],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule,
     MaterialModule,
     AngularEditorModule

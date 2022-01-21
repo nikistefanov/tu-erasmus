@@ -4,7 +4,6 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { map, Observable, startWith } from 'rxjs';
 import { COUNTRIES_NAMES } from '../../../../shared/constants/countries';
 import { IUniversity } from '../../../../shared/models/db-models';
-import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { ICreateEditDialogData } from '../../../../shared/models/dialog';
 
 
@@ -20,12 +19,6 @@ export class AdminUniversitiesCreateEditComponent {
     website: FormControl = new FormControl();
 
     filteredOptions: Observable<string[]>;
-
-
-    editorConfig: AngularEditorConfig = {
-        editable: true,
-        minHeight: "300px"
-    };
 
     private countries = COUNTRIES_NAMES;
 
