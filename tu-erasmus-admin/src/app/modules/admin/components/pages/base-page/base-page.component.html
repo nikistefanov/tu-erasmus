@@ -1,4 +1,4 @@
-<h1>Редактиране на съдържанието на Еразъм+ страница</h1>
+<h1>{{headingLabel}}</h1>
 
 <ng-container *ngIf="!loading; else loadingTmpl">
     <form [formGroup]="form">
@@ -12,6 +12,7 @@
         <div class="mt-5 mb-8">
             <app-editor formControlName="body" placeholder="Съдържание"></app-editor>
         </div>
+        <mat-slide-toggle *ngIf="toggleLabel" formControlName="toggle">{{toggleLabel}}</mat-slide-toggle>
         <div class="mt-8">
             <button mat-raised-button color="primary" (click)="save()" [disabled]="!form.valid">Запази</button>
         </div>

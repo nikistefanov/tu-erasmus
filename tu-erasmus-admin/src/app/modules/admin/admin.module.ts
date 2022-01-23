@@ -8,13 +8,17 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdminUniversitiesComponent } from './components/admin-universities/admin-universities.component';
 import { AdminUniversitiesCreateEditComponent } from './components/admin-universities/admin-universities-create-edit.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
-import { AdminHomeComponent } from './components/admin-home/admin-home.component';
+import { AdminHomeComponent } from './components/pages/admin-home/admin-home.component';
 import { AdminNewsItemsComponent } from './components/admin-news-items/admin-news-items.component';
 import { AdminNewsItemsCreateEditComponent } from './components/admin-news-items/admin-news-items-create-edit.component';
-import { ErasmusPageComponent } from './components/erasmus-page/erasmus-page.component';
+import { ErasmusPageComponent } from './components/pages/erasmus-page/erasmus-page.component';
 import { AdminDocumentsComponent } from './components/admin-documents/admin-documents.component';
 import { AdminDocumentsCreateEditComponent } from './components/admin-documents/admin-documents-create-edit.component';
-import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
+import { ProjectsPageComponent } from './components/pages/projects-page/projects-page.component';
+import { HOME_PAGE_EXTENDER } from './components/pages/page-extender/home-page-extender';
+import { CompositePageExtender } from './components/pages/page-extender/composite-page-extender';
+import { ERASMUS_PAGE_EXTENDER } from './components/pages/page-extender/erasmus-page-extender';
+import { PROJECTS_PAGE_EXTENDER } from './components/pages/page-extender/projects-page-extender';
 
 const COMPONENTS = [
     AdminComponent,
@@ -30,16 +34,21 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  declarations: [...COMPONENTS],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    MaterialModule,
-    SharedModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AngularEditorModule
-
-  ]
+    declarations: [...COMPONENTS],
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        MaterialModule,
+        SharedModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AngularEditorModule
+    ],
+    providers: [
+        CompositePageExtender,
+        HOME_PAGE_EXTENDER,
+        ERASMUS_PAGE_EXTENDER,
+        PROJECTS_PAGE_EXTENDER
+    ]
 })
 export class AdminModule { }

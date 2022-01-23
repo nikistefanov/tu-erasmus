@@ -12,10 +12,7 @@
         </div>
     </ng-container>
 
-    <div class="mt-14">
-        <h2>{{pageData.subheading}}</h2>
-        <div [innerHTML]="pageData.body"></div>
-    </div>
+    <div class="mt-14" [innerHTML]="pageData.body"></div>
 </ng-container>
 
 <ng-template #loadingTemplate>

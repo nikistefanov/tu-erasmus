@@ -1,6 +1,3 @@
-import { IDataItem } from ".";
+import { IPage } from ".";
 
-export interface IProjectsPage extends IDataItem {
-    heading: string;
-    body: string;
-}
+export interface IProjectsPage extends IPage {}

@@ -16,9 +16,8 @@ export class HomePageService extends ApiService {
     update(adminHome: IHomePage): Observable<IHomePage> {
         return this.putInternal<IHomePage>(`${ADMIN_HOME_API}`, {
             heading: adminHome.heading,
-            subheading: adminHome.subheading,
             body: adminHome.body,
-            hideMap: adminHome.hideMap
+            hideMap: adminHome.toggle
         });
     }
 }

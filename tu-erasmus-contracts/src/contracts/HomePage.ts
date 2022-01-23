@@ -1,8 +1,5 @@
-import { IDataItem } from ".";
+import { IPage } from ".";
 
-export interface IHomePage extends IDataItem {
-    heading?: string;
-    subheading?: string;
-    body: string;
-    hideMap?: boolean;
+export interface IHomePage extends IPage {
+    hideMap: boolean;
 }
