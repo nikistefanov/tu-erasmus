@@ -34,6 +34,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
 
     public expandedItem!: IDataItem;
     public dataSource!: MatTableDataSource<IDataItem>;
+    public searchValue: string;
 
     private refreshSub: Subscription = new Subscription();
 
@@ -60,6 +61,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
 
     ngAfterViewInit() {
         this.setupTable();
+    }
+
+    onSearch(val: any) {
     }
 
     deleteItem(event: Event, item: IDataItem) {

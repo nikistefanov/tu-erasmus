@@ -15,6 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { DocumentsDialogComponent } from './components/dialog/documents-dialog/documents-dialog.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { SearchComponent } from './components/search/search.component';
 
 const COMPONENTS = [
     CardComponent,
@@ -25,7 +27,8 @@ const COMPONENTS = [
     NotFoundComponent,
     DataTableComponent,
     EditorComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    SearchComponent
 ];
 
 const COMMON = [
@@ -40,7 +43,8 @@ const COMMON = [
     RouterModule,
     MaterialModule,
     AngularEditorModule,
-    ClipboardModule
+    ClipboardModule,
+    NgxDropzoneModule
   ],
   providers: [],
   exports: [...COMPONENTS, ...COMMON]

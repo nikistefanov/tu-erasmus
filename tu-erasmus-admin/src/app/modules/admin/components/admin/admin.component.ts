@@ -17,6 +17,10 @@ export class AdminComponent {
         name: "Еразъм+ страница",
         link: RoutePaths.ErasmusPage,
         icon: "post_add"
+    }, {
+        name: "Проекти страница",
+        link: RoutePaths.ProjectsPage,
+        icon: "request_quote"
     }];
 
     contentLinks: IAdminLink[] = [{

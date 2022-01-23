@@ -1,0 +1,27 @@
+<h1>Редактиране на съдържанието на Еразъм+ страница</h1>
+
+<ng-container *ngIf="!loading; else loadingTmpl">
+    <form [formGroup]="form">
+        <mat-form-field class="block" appearance="fill">
+            <mat-label>Главно заглавие</mat-label>
+            <input formControlName="heading" type="text" name="heading" matInput placeholder="Главно заглавие">
+            <mat-error *ngIf="heading?.errors">
+                <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+            </mat-error>
+        </mat-form-field>
+        <div class="mt-5 mb-8">
+            <app-editor formControlName="body" placeholder="Съдържание"></app-editor>
+        </div>
+        <div class="mt-8">
+            <button mat-raised-button color="primary" (click)="save()" [disabled]="!form.valid">Запази</button>
+        </div>
+    </form>
+</ng-container>
+
+<ng-template #loadingTmpl>
+    Loading...
+</ng-template>
+
+<ng-template #requiredMessage>
+    Полето е <strong>задължително</strong>
+</ng-template>

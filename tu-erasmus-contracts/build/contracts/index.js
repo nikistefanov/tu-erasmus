@@ -19,4 +19,5 @@ __exportStar(require("./Document"), exports);
 __exportStar(require("./Image"), exports);
 __exportStar(require("./HomePage"), exports);
 __exportStar(require("./ErasmusPage"), exports);
+__exportStar(require("./ProjectsPage"), exports);
 //# sourceMappingURL=index.js.map

@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, Output } from "@angular/core";
+import { Component, forwardRef, Input } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 export const FILE_UPLOAD_CONTROL_VALUE_ACCESSOR: any = {
@@ -46,10 +46,11 @@ export class FileUploadComponent implements ControlValueAccessor {
     }
 
     handleChange(event: any) {
-        if (event.target.files.length > 0) {
-            const selectedFile = event.target.files[0];
-            this.fileName = selectedFile.name;
-            this.file = selectedFile;
+        const files = event.addedFiles || event.target.files;
+
+        if (files && files.length > 0) {
+            this.fileName = files[0].name;
+            this.file = files[0];
         }
     }
 

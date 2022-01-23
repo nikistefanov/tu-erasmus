@@ -14,6 +14,7 @@ import { AdminNewsItemsCreateEditComponent } from './components/admin-news-items
 import { ErasmusPageComponent } from './components/erasmus-page/erasmus-page.component';
 import { AdminDocumentsComponent } from './components/admin-documents/admin-documents.component';
 import { AdminDocumentsCreateEditComponent } from './components/admin-documents/admin-documents-create-edit.component';
+import { ProjectsPageComponent } from './components/projects-page/projects-page.component';
 
 const COMPONENTS = [
     AdminComponent,
@@ -24,7 +25,8 @@ const COMPONENTS = [
     AdminNewsItemsCreateEditComponent,
     ErasmusPageComponent,
     AdminDocumentsComponent,
-    AdminDocumentsCreateEditComponent
+    AdminDocumentsCreateEditComponent,
+    ProjectsPageComponent
 ]
 
 @NgModule({

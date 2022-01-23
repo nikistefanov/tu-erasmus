@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs';
-import { IErasmusPage } from '../../../../shared/models/db-models';
+import { IProjectsPage } from '../../../../shared/models/db-models';
 import { ErrorHandlerService } from '../../../../shared/services/error-handler/error-handler.service';
 import { RootService } from '../../../http/root.service';
 import { AlertService } from '../../../../shared/services/alert/alert.service';
 
 @Component({
-    selector: 'app-erasmus-page',
-    templateUrl: './erasmus-page.component.html',
+    selector: 'app-projects-page',
+    templateUrl: './projects-page.component.html',
 })
-export class ErasmusPageComponent {
+export class ProjectsPageComponent {
     loading: boolean = true;
 
     form: FormGroup;
@@ -28,7 +28,7 @@ export class ErasmusPageComponent {
             return;
         }
 
-        this.rootService.erasmusPage.update(this.form.value).pipe(
+        this.rootService.projectsPage.update(this.form.value).pipe(
             first()
         ).subscribe({
             next: data => this.alertService.showMessage("Промените са запазени"),
@@ -37,10 +37,10 @@ export class ErasmusPageComponent {
     }
 
     private fetchData() {
-        this.rootService.erasmusPage.get().pipe(
+        this.rootService.projectsPage.get().pipe(
             first()
         ).subscribe({
-            next: (data: IErasmusPage) => {
+            next: (data: IProjectsPage) => {
                 this.setData(data);
             },
             error: error => {
@@ -53,7 +53,7 @@ export class ErasmusPageComponent {
         })
     }
 
-    private setData(data: IErasmusPage) {
+    private setData(data: IProjectsPage) {
         this.heading.setValue(data.heading);
         this.body.setValue(data.body);
 
