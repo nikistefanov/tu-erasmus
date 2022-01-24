@@ -1,4 +1,4 @@
-import { Component, forwardRef } from "@angular/core";
+import { Component, EventEmitter, forwardRef, Output } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 export const SEARCH_CONTROL_VALUE_ACCESSOR: any = {
@@ -13,13 +13,16 @@ export const SEARCH_CONTROL_VALUE_ACCESSOR: any = {
     providers: [SEARCH_CONTROL_VALUE_ACCESSOR]
 })
 export class SearchComponent implements ControlValueAccessor {
-    private _value: File;
+    @Output() onSearch: EventEmitter<string> = new EventEmitter();
+    @Output() onClear: EventEmitter<any> = new EventEmitter();
 
-    get value(): File {
+    private _value: string = "";
+
+    get value(): string {
         return this._value;
     }
 
-    set value(val: File) {
+    set value(val: string) {
         this._value = val;
 
         this.onChange(val);
@@ -29,7 +32,7 @@ export class SearchComponent implements ControlValueAccessor {
     onChange: any = () => { }
     onTouch: any = () => { }
 
-    writeValue(value: File): void {
+    writeValue(value: string): void {
         this.value = value;
     }
 
@@ -39,5 +42,15 @@ export class SearchComponent implements ControlValueAccessor {
 
     registerOnTouched(fn: any) {
         this.onTouch = fn;
+    }
+
+    handleSearch() {
+        this.onSearch.emit(this.value);
+    }
+
+    handleClear() {
+        this.value = "";
+
+        this.onClear.emit();
     }
 }

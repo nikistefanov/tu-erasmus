@@ -14,6 +14,7 @@ import { AdminDocumentsCreateEditComponent } from '../../../../modules/admin/com
 })
 export class DocumentsDialogComponent {
     loading: boolean = true;
+    initialDocuments: IDocument[] = [];
     documents: IDocument[] = [];
     newDocument: IDocument;
     serverAddress: string = API_BASE;
@@ -27,11 +28,11 @@ export class DocumentsDialogComponent {
         private errorHandler: ErrorHandler
     ) {
         this.rootService.documents.getAll().pipe(
-            first(),
-            delay(LOADING_TIME)
+            first()
         ).subscribe({
             next: data => {
-                this.documents = data;
+                this.initialDocuments = data;
+                this.documents = this.initialDocuments;
                 this.loading = false;
             },
             error: error => this.onCancel()
@@ -59,12 +60,22 @@ export class DocumentsDialogComponent {
                     first()
                 ).subscribe({
                     next: (resp: IDocument[]) => {
-                        this.documents.push(resp[0]);
+                        this.initialDocuments.push(resp[0]);
+                        this.onSearch();
                     },
                     error: error => this.errorHandler.handleError(error)
                 });
             }
         });
+    }
+
+    onSearch(value?: string) {
+        if (!value || value === "") {
+            this.documents = this.initialDocuments;
+            return;
+        }
+
+        this.documents = this.initialDocuments.filter(x => x.name.toLowerCase().indexOf(value) > -1);
     }
 
 }

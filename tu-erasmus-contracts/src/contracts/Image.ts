@@ -1,7 +1,6 @@
-import { IDataItem } from "./DataItem";
+import { INamedItem } from ".";
 
-export interface IImage extends IDataItem {
-    name: string;
+export interface IImage extends INamedItem {
     url: string;
     size: number;
     ext: string;

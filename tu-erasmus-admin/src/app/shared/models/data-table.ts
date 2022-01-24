@@ -1,7 +1,7 @@
-import { IDataItem } from "./db-models";
+import { INamedItem } from "./db-models";
 
 export interface IUpdateDataTable {
-    item: IDataItem;
+    item: INamedItem;
     method: UpdateDataTableMehtods;
 }
 

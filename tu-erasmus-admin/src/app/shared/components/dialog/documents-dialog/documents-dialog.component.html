@@ -1,8 +1,9 @@
 <ng-container *ngIf="!loading; else loadingTemplate">
-    <h1 mat-dialog-title>Кликнете върху документа за да копирате връзката автоматично</h1>
-    <div mat-dialog-actions>
-        <button mat-raised-button color="primary" (click)="onNewDocumentCreate()">Качете нов документ</button>
-    </div>
+        <h1 mat-dialog-title>Кликнете върху документа за да копирате връзката автоматично</h1>
+        <div class="flex justify-between items-start">
+            <app-search (onClear)="onSearch()" (onSearch)="onSearch($event)"></app-search>
+            <button class="mt-1.5" mat-raised-button color="primary" (click)="onNewDocumentCreate()">Качете нов документ</button>
+        </div>
     <div class="mb-7 mt-7" mat-dialog-content>
         <mat-selection-list #documentsTemplate [multiple]="false">
             <mat-list-option *ngFor="let doc of documents" [value]="doc.url" (click)="onCopy(doc)">

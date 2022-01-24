@@ -1,6 +1,5 @@
-import { IDataItem } from "./DataItem";
+import { INamedItem } from ".";
 
-export interface ICountry extends IDataItem {
-    name: string;
+export interface ICountry extends INamedItem {
     code: string;
 }

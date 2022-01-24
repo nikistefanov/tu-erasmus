@@ -1,5 +1,11 @@
-<mat-form-field appearance="fill">
-    <mat-label>Търсене</mat-label>
-    <mat-icon matPrefix>search</mat-icon>
-    <input [(ngModel)]="value" type="search" matInput>
-</mat-form-field>
+<div class="flex">
+    <mat-form-field appearance="fill">
+        <mat-label>Търсене</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input [(ngModel)]="value" type="search" matInput (keypress.enter)="handleSearch()">
+        <mat-icon class="cursor-pointer" (click)="handleClear()" matSuffix>clear</mat-icon>
+    </mat-form-field>
+    <button mat-mini-fab color="basic" class="ml-3 mt-1.5" (click)="handleSearch()">
+        <mat-icon>search</mat-icon>
+    </button>
+</div>

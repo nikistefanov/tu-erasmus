@@ -98,13 +98,13 @@ export class AdminNewsItemsComponent extends AdminBase {
             const removeNnewsItem = this.newsItems.find(i => i.id === resp.id);
 
             if (removeNnewsItem) {
-                this.update$.next({ item: removeNnewsItem, method: UpdateDataTableMehtods.Delete });
+                // this.update$.next({ item: removeNnewsItem, method: UpdateDataTableMehtods.Delete });
             }
         });
     }
 
     private updateTable(data: INewsItem, method: UpdateDataTableMehtods) {
-        this.update$.next({ item: data, method });
+        // this.update$.next({ item: data, method });
         this.alertService.showMessage("Промените са запазени");
     }
 }

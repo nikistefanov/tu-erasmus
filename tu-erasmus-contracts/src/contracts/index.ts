@@ -1,5 +1,6 @@
-export * from "./Country";
 export * from "./DataItem";
+export * from "./NamedItem";
+export * from "./Country";
 export * from "./NewsItem";
 export * from "./User";
 export * from "./University";

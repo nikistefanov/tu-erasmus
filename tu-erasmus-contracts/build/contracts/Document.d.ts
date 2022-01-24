@@ -1,6 +1,5 @@
-import { IDataItem } from "./DataItem";
-export interface IDocument extends IDataItem {
-    name: string;
+import { INamedItem } from ".";
+export interface IDocument extends INamedItem {
     url: string;
     size: number;
     ext: string;
