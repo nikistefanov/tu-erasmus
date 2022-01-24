@@ -2,7 +2,7 @@ import { AfterViewInit, Component, EventEmitter, Input, Output, SimpleChanges, V
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort, Sort } from "@angular/material/sort";
 import { MatTable, MatTableDataSource } from "@angular/material/table";
-import { IDataItem, IUniversity } from "../../models/db-models";
+import { INamedItem, IUniversity } from "../../models/db-models";
 
 @Component({
     selector: "app-data-table",
@@ -12,7 +12,7 @@ import { IDataItem, IUniversity } from "../../models/db-models";
 })
 export class DataTableComponent implements AfterViewInit {
     @Input() title!: string;
-    @Input() items: IDataItem[] = [];
+    @Input() items: INamedItem[] = [];
     @Input() dataHeaders: string[] = [];
     @Input() dataColumns: string[] = [];
     @Input() loading: boolean = false;
@@ -21,10 +21,12 @@ export class DataTableComponent implements AfterViewInit {
 
     @ViewChild(MatPaginator) paginator!: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
-    @ViewChild(MatTable, { static: false }) table!: MatTable<IDataItem>;
+    @ViewChild(MatTable, { static: false }) table!: MatTable<INamedItem>;
 
-    public expandedItem!: IDataItem | null;
-    public dataSource!: MatTableDataSource<IDataItem>;
+    public expandedItem!: INamedItem | null;
+    public dataSource!: MatTableDataSource<INamedItem>;
+
+    private searchedItems: INamedItem[] = [];
 
     ngOnChanges(changes: SimpleChanges) {
         if (changes["items"] && changes["items"].currentValue && changes["items"].currentValue.length > 0) {
@@ -41,14 +43,25 @@ export class DataTableComponent implements AfterViewInit {
 
     }
 
-    handleClick(item: IDataItem) {
+    onSearch(val: any) {
+        if (val === "") {
+            this.dataSource.data = this.items;
+
+            return;
+        }
+
+        this.searchedItems = this.items.filter(x => x.name.toLowerCase().indexOf(val) > -1);
+        this.dataSource.data = this.searchedItems;
+    }
+
+    handleClick(item: INamedItem) {
         this.expandedItem = this.expandedItem === item ? null : item;
 
         this.onClick.emit(item);
     }
 
     private setupTable() {
-        this.dataSource = new MatTableDataSource<IDataItem>(this.items);
+        this.dataSource = new MatTableDataSource<INamedItem>(this.items);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         this.table.dataSource = this.dataSource;

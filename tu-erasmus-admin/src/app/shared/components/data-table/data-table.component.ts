@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChanges, ViewChild, ViewEncapsulation } from "@angular/core";
 import { MatPaginator } from "@angular/material/paginator";
-import { MatSort, Sort } from "@angular/material/sort";
+import { MatSort } from "@angular/material/sort";
 import { MatTable, MatTableDataSource } from "@angular/material/table";
 import { Observable, ReplaySubject, Subscription } from "rxjs";
 import { IUpdateDataTable, UpdateDataTableMehtods } from "../../models/data-table";
@@ -21,6 +21,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
     @Input() hasAction: boolean = false;
     @Input() noEdit: boolean = false;
     @Input() loading: boolean = false;
+    @Input() clickable: boolean = false;
     @Input() update$: ReplaySubject<IUpdateDataTable> = new ReplaySubject<IUpdateDataTable>();
     @Input() items$!: Observable<INamedItem[]>;
 
@@ -31,8 +32,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
     @Output() onUpdateItem: EventEmitter<any> = new EventEmitter<any>();
     @Output() onCreateItem: EventEmitter<any> = new EventEmitter<any>();
     @Output() onDeleteItem: EventEmitter<any> = new EventEmitter<any>();
+    @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
 
-    public expandedItem!: INamedItem;
+    public expandedItem!: INamedItem | null;
     public dataSource!: MatTableDataSource<INamedItem>;
     public searchedValue: string;
 
@@ -75,6 +77,14 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
         this.dataSource.data = this.searchedItems;
     }
 
+    handleClick(item: INamedItem) {
+        this.expandedItem = this.expandedItem === item ? null : item;
+
+        if (this.clickable) {
+            this.onClick.emit(item);
+        }
+    }
+
     deleteItem(event: Event, item: INamedItem) {
         event.stopImmediatePropagation();
 
@@ -89,11 +99,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterViewInit {
 
     createItem() {
         this.onCreateItem.emit();
-    }
-
-    announceSortChange(sortState: Sort) {
-        console.log(sortState);
-
     }
 
     private handleUpdateTable(data: IUpdateDataTable) {

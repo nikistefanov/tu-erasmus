@@ -17,8 +17,8 @@
     </ng-container>
 </ng-container>
 
-<div [hidden]="loading" class="app-table" [ngClass]="{'-loading': loading, '-loaded': items.length > 0}">
-    <table mat-table class="w-full table" matSort (matSortChange)="announceSortChange($event)">
+<div [hidden]="loading" class="app-table" [ngClass]="{'-loading': loading, '-loaded': items.length > 0, '-clickable': clickable}">
+    <table mat-table class="w-full table" matSort>
         <ng-container *ngFor="let dataColumn of dataColumns; let colIndex = index">
             <ng-container matColumnDef="{{dataColumn}}">
                 <ng-container *ngIf="dataColumn !== 'actions'">
@@ -45,7 +45,7 @@
         <tr mat-header-row *matHeaderRowDef="dataColumns"></tr>
         <tr mat-row *matRowDef="let item; columns: dataColumns"
             [class.-expanded]="expandedItem === item"
-            (click)="expandedItem = expandedItem === item ? null : item">
+            (click)="handleClick(item)">
         </tr>
     </table>
 
