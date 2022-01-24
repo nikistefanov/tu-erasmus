@@ -23,7 +23,7 @@ export class AdminNewsItemsComponent extends AdminBase {
     ]
 
     columns = [
-        "title",
+        "name",
         "created_at",
         "hide"
     ];
@@ -51,7 +51,7 @@ export class AdminNewsItemsComponent extends AdminBase {
 
     handleDeleteNewsItem(newsItem: INewsItem) {
         const data: IConfirmationDialogData = {
-            message: `Сигурни ли сте, че искате да изтриете <b class="whitespace-nowrap">${newsItem.title}</b> от списъка.`,
+            message: `Сигурни ли сте, че искате да изтриете <b class="whitespace-nowrap">${newsItem.name}</b> от списъка.`,
             buttonColor: "warn"
         }
         this.openDialog(data, ConfirmComponent, this.deleteContact.bind(this, newsItem));
@@ -98,13 +98,13 @@ export class AdminNewsItemsComponent extends AdminBase {
             const removeNnewsItem = this.newsItems.find(i => i.id === resp.id);
 
             if (removeNnewsItem) {
-                // this.update$.next({ item: removeNnewsItem, method: UpdateDataTableMehtods.Delete });
+                this.update$.next({ item: removeNnewsItem, method: UpdateDataTableMehtods.Delete });
             }
         });
     }
 
     private updateTable(data: INewsItem, method: UpdateDataTableMehtods) {
-        // this.update$.next({ item: data, method });
+        this.update$.next({ item: data, method });
         this.alertService.showMessage("Промените са запазени");
     }
 }

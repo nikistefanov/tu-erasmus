@@ -6,6 +6,10 @@ import { Pipe, PipeTransform } from "@angular/core";
 })
 export class DataTableFormatCellPipe implements PipeTransform {
     transform(value: string) {
+        if (value === null || value === undefined) {
+            return value;
+        }
+
         const date = new Date(value);
 
         if (typeof(value) === "boolean") {

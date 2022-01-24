@@ -27,7 +27,7 @@ export class NewsItemsService extends ApiService {
 
     private getBodyObject(newsItem: INewsItem) {
         return {
-            title: newsItem.title,
+            name: newsItem.name,
             body: newsItem.body,
             hide: newsItem.hide
         }

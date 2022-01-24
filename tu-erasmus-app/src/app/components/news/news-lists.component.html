@@ -1,7 +1,20 @@
-<app-data-table
-    [loading]="loading"
-    title="Новини"
-    [items]="newsItems"
-    [dataHeaders]="headers"
-    [dataColumns]="columns"
-    (onClick)="handleClick($event)"></app-data-table>
+<h1 class="tu-main-title">
+    Новини
+</h1>
+<div class="container" *ngIf="!loading; else loadingTemplate">
+    <div class="flex flex-wrap -mx-4 justify-center">
+        <div *ngFor="let news of newsItems" (click)="handleClick(news)" class="w-1/4 px-4 my-7">
+            <div class="h-full cursor-pointer p-6 rounded-2xl bg-white shadow-md hover:shadow-lg">
+                <div class="h-1/5 bg-blue-400 mb-3 flex items-center justify-center rounded-2xl">
+                    <mat-icon class="text-white">newspaper</mat-icon>
+                </div>
+                <h4 class="font-semibold text-xl text-dark mb-3">{{news.name}}</h4>
+                <p class="text-gray-400">{{news.created_at | date}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loadingTemplate>
+    <app-loader type="default"></app-loader>
+</ng-template>

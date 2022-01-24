@@ -4,8 +4,8 @@
         <mat-slide-toggle formControlName="hide" class="mb-3">Скрий новината</mat-slide-toggle>
         <mat-form-field class="w-full" appearance="fill">
             <mat-label>Залгавие</mat-label>
-            <input formControlName="title" type="text" name="title" matInput placeholder="Залгавие">
-            <mat-error *ngIf="title?.errors">
+            <input formControlName="name" type="text" name="name" matInput placeholder="Залгавие">
+            <mat-error *ngIf="name?.errors">
                 <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
             </mat-error>
         </mat-form-field>

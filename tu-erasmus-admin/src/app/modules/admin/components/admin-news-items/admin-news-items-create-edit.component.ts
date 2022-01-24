@@ -11,7 +11,7 @@ import { ICreateEditDialogData } from '../../../../shared/models/dialog';
 })
 export class AdminNewsItemsCreateEditComponent {
     form: FormGroup;
-    title: FormControl = new FormControl("", [Validators.required]);
+    name: FormControl = new FormControl("", [Validators.required]);
     body: FormControl = new FormControl();
     hide: FormControl = new FormControl(false);
 
@@ -19,7 +19,7 @@ export class AdminNewsItemsCreateEditComponent {
         public dialogRef: MatDialogRef<AdminNewsItemsCreateEditComponent>,
         @Inject(MAT_DIALOG_DATA) public data: ICreateEditDialogData) {
         this.form = new FormGroup({
-            title: this.title,
+            name: this.name,
             body: this.body,
             hide: this.hide
         });
@@ -42,7 +42,7 @@ export class AdminNewsItemsCreateEditComponent {
     }
 
     private setData(newsItem: INewsItem) {
-        this.title.setValue(newsItem.title);
+        this.name.setValue(newsItem.name);
         this.body.setValue(newsItem.body);
         this.hide.setValue(newsItem.hide);
     }

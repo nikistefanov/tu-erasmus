@@ -16,7 +16,7 @@ export class NewsListComponent implements OnInit {
     ]
 
     columns = [
-        "title",
+        "name",
         "created_at"
     ];
     newsItems: INewsItem[] = [];

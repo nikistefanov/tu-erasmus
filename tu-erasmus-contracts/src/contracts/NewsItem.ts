@@ -1,7 +1,6 @@
-import { IDataItem } from "./DataItem";
+import { INamedItem } from ".";
 
-export interface INewsItem extends IDataItem {
-    title: string;
+export interface INewsItem extends INamedItem {
     body: string;
     hide: boolean;
     created_at?: Date | string;
