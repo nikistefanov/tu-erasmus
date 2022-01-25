@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { map, Observable, startWith } from 'rxjs';
-import { COUNTRIES_NAMES } from '../../../../shared/constants/countries';
+import { COUNTRIES_NAMES } from '../../../../shared/constants/constants';
 import { IUniversity } from '../../../../shared/models/db-models';
 import { ICreateEditDialogData } from '../../../../shared/models/dialog';
 

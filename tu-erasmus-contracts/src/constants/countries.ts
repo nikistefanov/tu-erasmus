@@ -1,4 +1,4 @@
-import { ICountry } from "../contracts"
+import { ICountry } from "../contracts/Country"
 
 export const COUNTRIES_NAMES = [
     "Австралия",
@@ -104,6 +104,7 @@ export const COUNTRIES_NAMES = [
     "Коледен остров",
     "Колумбия",
     "Коморски острови",
+    "Косово",
     "Коста Рика",
     "Кот д'Ивоар",
     "Куба",
@@ -501,7 +502,8 @@ export const COUNTRIES_CODES = [
     "GS",
     "KR",
     "JM",
-    "JP"
+    "JP",
+    "XK"
 ]
 
 export const COUNTRIES: ICountry[] = [
@@ -916,6 +918,10 @@ export const COUNTRIES: ICountry[] = [
     {
         name: "Коморски острови",
         code: "KM"
+    },
+    {
+        name: "Косово",
+        code: "XK"
     },
     {
         name: "Коста Рика",

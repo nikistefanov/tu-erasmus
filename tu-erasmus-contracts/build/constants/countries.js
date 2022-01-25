@@ -105,6 +105,7 @@ exports.COUNTRIES_NAMES = [
     "Коледен остров",
     "Колумбия",
     "Коморски острови",
+    "Косово",
     "Коста Рика",
     "Кот д'Ивоар",
     "Куба",
@@ -501,7 +502,8 @@ exports.COUNTRIES_CODES = [
     "GS",
     "KR",
     "JM",
-    "JP"
+    "JP",
+    "XK"
 ];
 exports.COUNTRIES = [
     {
@@ -915,6 +917,10 @@ exports.COUNTRIES = [
     {
         name: "Коморски острови",
         code: "KM"
+    },
+    {
+        name: "Косово",
+        code: "XK"
     },
     {
         name: "Коста Рика",
