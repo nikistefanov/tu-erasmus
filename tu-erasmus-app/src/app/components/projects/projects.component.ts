@@ -2,21 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import { delay, first } from 'rxjs';
 import { RootService } from '../../modules/http/root.service';
 import { LOADING_TIME } from '../../shared/constants/constants';
-import { IErasmusPage } from '../../shared/models/db-models';
+import { IProjectsPage } from '../../shared/models/db-models';
+
 
 @Component({
-    selector: 'tu-erasmus',
-    templateUrl: './erasmus.component.html'
+    selector: 'tu-projects',
+    templateUrl: './projects.component.html'
 })
-export class ErasmusComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
     loading: boolean = true;
-    pageData: IErasmusPage;
+    pageData: IProjectsPage;
 
     constructor(private rootService: RootService) {
     }
 
     ngOnInit(): void {
-        this.rootService.erasmusPage.get().pipe(
+        this.rootService.projectsPage.get().pipe(
             first(),
             delay(LOADING_TIME)
         ).subscribe({

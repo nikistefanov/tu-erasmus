@@ -1,7 +1,5 @@
-<h1 class="tu-main-title">
-    Новини
-</h1>
 <div class="container" *ngIf="!loading; else loadingTemplate">
+    <h1 class="tu-main-title">Новини</h1>
     <div class="flex flex-wrap -mx-4 justify-center">
         <div *ngFor="let news of newsItems" (click)="handleClick(news)" class="w-1/4 px-4 my-7">
             <div class="h-full cursor-pointer p-6 rounded-2xl bg-white shadow-md hover:shadow-lg">

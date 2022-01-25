@@ -15,6 +15,7 @@ import { NewsListComponent } from './components/news/news-lists.component';
 import { registerLocaleData } from '@angular/common';
 import localBg from '@angular/common/locales/bg';
 import { ErasmusComponent } from './components/erasmus/erasmus.component';
+import { ProjectsComponent } from './components/projects/projects.component';
 registerLocaleData(localBg);
 
 @NgModule({
@@ -25,7 +26,8 @@ registerLocaleData(localBg);
     PartnersListComponent,
     PartnersDetailsComponent,
     NewsListComponent,
-    ErasmusComponent
+    ErasmusComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

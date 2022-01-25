@@ -4,6 +4,7 @@ import { ApiService } from './api.service';
 import { ErasmusPageService } from './services/erasmus-page.service';
 import { HomePageService } from './services/home-page.service';
 import { NewsItemsService } from './services/news-items.service';
+import { ProjectsPageService } from './services/projects-page.service';
 import { UniversitiesService } from './services/universities.service';
 
 @Injectable({
@@ -14,6 +15,7 @@ export class RootService extends ApiService {
     newsItems: NewsItemsService;
     homePage: HomePageService;
     erasmusPage: ErasmusPageService;
+    projectsPage: ProjectsPageService;
 
     constructor(http: HttpClient) {
         super(http);
@@ -22,5 +24,6 @@ export class RootService extends ApiService {
         this.newsItems = new NewsItemsService(http);
         this.homePage = new HomePageService(http);
         this.erasmusPage = new ErasmusPageService(http);
+        this.projectsPage = new ProjectsPageService(http);
     }
 }

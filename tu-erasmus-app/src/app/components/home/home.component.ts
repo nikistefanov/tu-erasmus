@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { delay, first } from 'rxjs';
 import { RootService } from '../../modules/http/root.service';
+import { LOADING_TIME } from '../../shared/constants/constants';
 import { COUNTRIES, ICountry, IHomePage, IUniversity } from '../../shared/models/db-models';
 
 declare var svgMap: any;
@@ -20,7 +21,8 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
         this.rootService.homePage.get().pipe(
-            first()
+            first(),
+            delay(LOADING_TIME / 2)
         ).subscribe({
             next: data => {
                 this.pageData = data;

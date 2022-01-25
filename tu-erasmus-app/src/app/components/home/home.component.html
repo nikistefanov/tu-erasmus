@@ -1,5 +1,5 @@
 
-<ng-container *ngIf="!loading">
+<ng-container *ngIf="!loading; else loadingTemplate">
     <h1 class="tu-main-title">{{pageData.heading}}</h1>
 
     <ng-container *ngIf="!pageData.hideMap">
@@ -16,5 +16,5 @@
 </ng-container>
 
 <ng-template #loadingTemplate>
-    Loading...
+    <app-loader type="default"></app-loader>
 </ng-template>
