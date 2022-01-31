@@ -1,0 +1,12 @@
+<app-data-table
+    title="Администратори"
+    label="Създай администратор"
+    [hasAction]="true"
+    [noEdit]="true"
+    [items]="users"
+    [dataHeaders]="headers"
+    [dataColumns]="columns"
+    [update$]="update$"
+    [loading]="loading"
+    (onCreateItem)="handleCreateUser()"
+    (onDeleteItem)="handleDeleteUser($event)"></app-data-table>

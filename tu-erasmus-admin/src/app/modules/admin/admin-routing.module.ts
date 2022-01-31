@@ -11,6 +11,7 @@ import { AdminDocumentsComponent } from './components/admin-documents/admin-docu
 import { ProjectsPageComponent } from './components/pages/projects-page/projects-page.component';
 import { MobilityStudentsStudyPageComponent } from './components/pages/mobility-students/study-page/study-page.component';
 import { MobilityStudentsPracticePageComponent } from './components/pages/mobility-students/practice-page/practice-page.component';
+import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 
 export const adminRoutes: Routes = [
     {
@@ -23,6 +24,7 @@ export const adminRoutes: Routes = [
             { path: RoutePaths.MobilityStudentsStudyPage, component: MobilityStudentsStudyPageComponent, data: { route: RoutePaths.MobilityStudentsStudyPage } },
             { path: RoutePaths.MobilityStudentsPracticePage, component: MobilityStudentsPracticePageComponent, data: { route: RoutePaths.MobilityStudentsPracticePage } },
             { path: RoutePaths.Universities, component: AdminUniversitiesComponent },
+            { path: RoutePaths.Users, component: AdminUsersComponent },
             { path: RoutePaths.NewsItems, component: AdminNewsItemsComponent },
             { path: RoutePaths.Documents, component: AdminDocumentsComponent }
         ]

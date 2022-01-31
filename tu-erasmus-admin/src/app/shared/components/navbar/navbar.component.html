@@ -18,6 +18,10 @@
                         <mat-icon>account_circle</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu" xPosition="before">
+                        <a routerLink="/change-password" mat-menu-item>
+                            <mat-icon>settings</mat-icon>
+                            <span>Смяна на парола</span>
+                        </a>
                         <button (click)="logout()" mat-menu-item>
                             <mat-icon>logout</mat-icon>
                             <span>Изход</span>

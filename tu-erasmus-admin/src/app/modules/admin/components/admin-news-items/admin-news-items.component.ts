@@ -32,11 +32,11 @@ export class AdminNewsItemsComponent extends AdminBase {
     loading: boolean = true;
 
 
-    constructor(rootService: RootService,
+    constructor(private rootService: RootService,
         dialog: MatDialog,
         private errorHandler: ErrorHandlerService,
         private alertService: AlertService) {
-        super(rootService, dialog)
+        super(dialog)
         this.fetchData();
     }
 

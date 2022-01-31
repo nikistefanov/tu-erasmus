@@ -1,7 +1,7 @@
-import { INamedItem } from "./db-models";
+import { INamedItem, IUser } from "./db-models";
 
 export interface IUpdateDataTable {
-    item: INamedItem;
+    item: INamedItem | IUser;
     method: UpdateDataTableMehtods;
 }
 

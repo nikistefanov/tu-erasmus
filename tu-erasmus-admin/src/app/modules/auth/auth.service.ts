@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { IUser, IUserInfo } from '../../shared/models/db-models';
 import { StorageService } from '../../shared/services/storage/storage.service';
 import { convertUnixToDate, decodeToken } from '../../shared/utilities/token-helpers';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from "rxjs";
 import { StorageKeys } from '../../shared/constants/storage';
-import { API_BASE } from '../../shared/constants/constants';
+import { API_BASE, USERS_API } from '../../shared/constants/constants';
 
 export const AUTH_LOGIN = `${API_BASE}/auth/local`;
 export const AUTH_REGISTER = `${AUTH_LOGIN}/register`;
+export const USERS_PATH = `${API_BASE}${USERS_API}`;
 
 @Injectable({
     providedIn: 'root'
@@ -21,6 +22,12 @@ export class AuthService {
     }
 
     constructor(private storageService: StorageService, private http: HttpClient) { }
+
+    getAll(): Observable<IUser[]> {
+        return this.http.get<IUser[]>(USERS_PATH, {
+            headers: this.getHeaders()
+        });
+    }
 
     register(user: IUser): Observable<IUserInfo> {
         return this.http.post<IUserInfo>(AUTH_REGISTER, {
@@ -43,6 +50,23 @@ export class AuthService {
         return of(true);
     }
 
+    delete(userId: number | undefined) {
+        return this.http.delete<IUserInfo>(`${USERS_PATH}/${userId}`, {
+            headers: this.getHeaders()
+        });
+    }
+
+    update(username: string, password: string, newPassword: string) {
+        return this.http.post<IUserInfo>(`${API_BASE}/password`, {
+            identifier: username,
+            password: password,
+            newPassword: newPassword,
+            confirmPassword: newPassword
+        }, {
+            headers: this.getHeaders()
+        });
+    }
+
     getUserInfo(): IUserInfo {
         return this.storageService.getItem<IUserInfo>(StorageKeys.User);
     }
@@ -57,5 +81,13 @@ export class AuthService {
         const currentDate = new Date();
 
         return expirationDate >= currentDate;
+    }
+
+    private getHeaders(): HttpHeaders {
+        const user = this.getUserInfo();
+        const token = user ? user.jwt : null;
+        const headers = new HttpHeaders(token ? {"Authorization": `Bearer ${token}`} : {});
+
+        return headers;
     }
 }

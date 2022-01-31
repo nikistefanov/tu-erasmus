@@ -23,6 +23,8 @@ import { MOBILITY_STUDENTS_STUDY_PAGE_EXTENDER } from './components/pages/page-e
 import { MOBILITY_STUDENTS_PRACTICE_PAGE_EXTENDER } from './components/pages/page-extender/mobility-students-practice-page-extender';
 import { MobilityStudentsStudyPageComponent } from './components/pages/mobility-students/study-page/study-page.component';
 import { MobilityStudentsPracticePageComponent } from './components/pages/mobility-students/practice-page/practice-page.component';
+import { AdminUsersComponent } from './components/admin-users/admin-users.component';
+import { AdminUsersCreateComponent } from './components/admin-users/admin-users-create.component';
 
 const COMPONENTS = [
     AdminComponent,
@@ -36,7 +38,9 @@ const COMPONENTS = [
     AdminDocumentsCreateEditComponent,
     ProjectsPageComponent,
     MobilityStudentsStudyPageComponent,
-    MobilityStudentsPracticePageComponent
+    MobilityStudentsPracticePageComponent,
+    AdminUsersComponent,
+    AdminUsersCreateComponent
 ]
 
 @NgModule({

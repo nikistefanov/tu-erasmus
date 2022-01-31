@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>{{data.label}}</h1>
+<div mat-dialog-content>
+    <form [formGroup]="form">
+        <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Потребителско име</mat-label>
+            <input formControlName="username" type="text" name="username" matInput placeholder="Име">
+            <mat-error *ngIf="username?.errors">
+                <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Електронна поща</mat-label>
+            <input formControlName="email" type="email" name="email" matInput placeholder="Електронна поща">
+            <mat-error *ngIf="username?.errors">
+                <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Парола</mat-label>
+            <input formControlName="password" type="text" name="password" matInput  placeholder="Парола">
+            <mat-error *ngIf="password?.errors">
+                <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
+            </mat-error>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="save(form.value)"
+        [disabled]="!form.valid">{{data.label}}</button>
+    <button class="ml-5" mat-raised-button (click)="onCancel()">Откажи</button>
+</div>
+
+<ng-template #requiredMessage>
+    Полето е <strong>задължително</strong>
+</ng-template>

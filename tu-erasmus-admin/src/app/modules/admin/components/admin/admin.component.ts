@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoutePaths } from '../../../../shared/constants/route-paths';
+import { AuthService } from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-admin',
@@ -45,7 +46,17 @@ export class AdminComponent {
         icon: "description"
     }];
 
-    constructor(private router: Router) {}
+    constructor(private router: Router, private authService: AuthService) {
+        if (this.authService.getUserInfo().user.role?.id === 1) {
+            const adminsPage = {
+                name: "Администратори",
+                link: RoutePaths.Users,
+                icon: "school"
+            };
+
+            this.contentLinks.unshift(adminsPage);
+        }
+    }
 
     onLinkClicked(link: string) {
         this.router.navigateByUrl(`admin/${link}`);

@@ -5,6 +5,7 @@ export function getDefaultUserValues(): IUser {
         id: 0,
         username: "",
         email: "",
-        password: ""
+        password: "",
+        name: ""
     }
 }
