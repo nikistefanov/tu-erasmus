@@ -25,7 +25,7 @@ export class ChangePasswordComponent {
 
     handleClick(data: IChangePassword) {
         const userInfo = this.authService.getUserInfo();
-        this.authService.update(userInfo.user.username, data.currentPassword, data.newPassword).pipe(
+        this.authService.changePassword(userInfo.user.username, data.currentPassword, data.newPassword).pipe(
             first()
         ).subscribe({
             next: data => this.alertService.showMessage("Паролата е сменена"),

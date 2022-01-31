@@ -5,11 +5,12 @@ import { convertUnixToDate, decodeToken } from '../../shared/utilities/token-hel
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from "rxjs";
 import { StorageKeys } from '../../shared/constants/storage';
-import { API_BASE, USERS_API } from '../../shared/constants/constants';
+import { API_BASE } from '../../shared/constants/constants';
 
 export const AUTH_LOGIN = `${API_BASE}/auth/local`;
 export const AUTH_REGISTER = `${AUTH_LOGIN}/register`;
-export const USERS_PATH = `${API_BASE}${USERS_API}`;
+export const USERS = `${API_BASE}/users`;
+export const PASSWORD = `${API_BASE}/password`;
 
 @Injectable({
     providedIn: 'root'
@@ -24,7 +25,7 @@ export class AuthService {
     constructor(private storageService: StorageService, private http: HttpClient) { }
 
     getAll(): Observable<IUser[]> {
-        return this.http.get<IUser[]>(USERS_PATH, {
+        return this.http.get<IUser[]>(USERS, {
             headers: this.getHeaders()
         });
     }
@@ -51,13 +52,13 @@ export class AuthService {
     }
 
     delete(userId: number | undefined) {
-        return this.http.delete<IUserInfo>(`${USERS_PATH}/${userId}`, {
+        return this.http.delete<IUserInfo>(`${USERS}/${userId}`, {
             headers: this.getHeaders()
         });
     }
 
-    update(username: string, password: string, newPassword: string) {
-        return this.http.post<IUserInfo>(`${API_BASE}/password`, {
+    changePassword(username: string, password: string, newPassword: string) {
+        return this.http.post<IUserInfo>(`${PASSWORD}`, {
             identifier: username,
             password: password,
             newPassword: newPassword,
