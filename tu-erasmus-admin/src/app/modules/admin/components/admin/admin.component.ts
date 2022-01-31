@@ -10,17 +10,25 @@ import { RoutePaths } from '../../../../shared/constants/route-paths';
 })
 export class AdminComponent {
     pageLinks: IAdminLink[] = [{
-        name: "Начална страница",
+        name: "Начална",
         link: RoutePaths.HomePage,
         icon: "home"
     }, {
-        name: "Еразъм+ страница",
+        name: "Еразъм+",
         link: RoutePaths.ErasmusPage,
         icon: "post_add"
     }, {
-        name: "Проекти страница",
+        name: "Проекти",
         link: RoutePaths.ProjectsPage,
         icon: "request_quote"
+    }, {
+        name: "Студентска мобилност с цел обучение",
+        link: RoutePaths.MobilityStudentsStudyPage,
+        icon: "school"
+    }, {
+        name: "Студентска мобилност с цел практика",
+        link: RoutePaths.MobilityStudentsPracticePage,
+        icon: "school"
     }];
 
     contentLinks: IAdminLink[] = [{

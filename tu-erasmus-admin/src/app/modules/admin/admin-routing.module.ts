@@ -9,6 +9,8 @@ import { AdminNewsItemsComponent } from './components/admin-news-items/admin-new
 import { ErasmusPageComponent } from './components/pages/erasmus-page/erasmus-page.component';
 import { AdminDocumentsComponent } from './components/admin-documents/admin-documents.component';
 import { ProjectsPageComponent } from './components/pages/projects-page/projects-page.component';
+import { MobilityStudentsStudyPageComponent } from './components/pages/mobility-students/study-page/study-page.component';
+import { MobilityStudentsPracticePageComponent } from './components/pages/mobility-students/practice-page/practice-page.component';
 
 export const adminRoutes: Routes = [
     {
@@ -18,6 +20,8 @@ export const adminRoutes: Routes = [
             { path: RoutePaths.HomePage, component: AdminHomeComponent, data: { route: RoutePaths.HomePage } },
             { path: RoutePaths.ErasmusPage, component: ErasmusPageComponent, data: { route: RoutePaths.ErasmusPage } },
             { path: RoutePaths.ProjectsPage, component: ProjectsPageComponent, data: { route: RoutePaths.ProjectsPage } },
+            { path: RoutePaths.MobilityStudentsStudyPage, component: MobilityStudentsStudyPageComponent, data: { route: RoutePaths.MobilityStudentsStudyPage } },
+            { path: RoutePaths.MobilityStudentsPracticePage, component: MobilityStudentsPracticePageComponent, data: { route: RoutePaths.MobilityStudentsPracticePage } },
             { path: RoutePaths.Universities, component: AdminUniversitiesComponent },
             { path: RoutePaths.NewsItems, component: AdminNewsItemsComponent },
             { path: RoutePaths.Documents, component: AdminDocumentsComponent }

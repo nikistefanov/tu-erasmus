@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mobility-students-practice-page",
+      "handler": "mobility-students-practice-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/mobility-students-practice-page",
+      "handler": "mobility-students-practice-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/mobility-students-practice-page",
+      "handler": "mobility-students-practice-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -6,3 +6,5 @@ export declare const UNIVERSITIES_API = "/universities";
 export declare const NEWS_ITEMS_API = "/news-items";
 export declare const UPLOAD_FILES_API = "/upload/files";
 export declare const UPLOAD_API = "/upload";
+export declare const MOBILITY_STUDENTS_STUDY_PAGE_API = "/mobility-students-study-page";
+export declare const MOBILITY_STUDENTS_PRACTICE_PAGE_API = "/mobility-students-practice-page";

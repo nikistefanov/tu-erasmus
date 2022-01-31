@@ -22,4 +22,6 @@ __exportStar(require("./Page"), exports);
 __exportStar(require("./HomePage"), exports);
 __exportStar(require("./ErasmusPage"), exports);
 __exportStar(require("./ProjectsPage"), exports);
+__exportStar(require("./MobilityStudentsPracticePage"), exports);
+__exportStar(require("./MobilityStudentsStudyPage"), exports);
 //# sourceMappingURL=index.js.map

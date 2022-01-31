@@ -23,6 +23,16 @@
                     <li class="tu-links__item">
                         <a class="tu-links__link" routerLink="/projects" routerLinkActive="-active">Проекти</a>
                     </li>
+                    <li class="tu-links__item" routerLinkActive="-active" [routerLinkActiveOptions]="{exact: true}">
+                        <div class="flex">
+                            <span class="tu-links__link" [matMenuTriggerFor]="mobilityStudents">Мобилност - студенти</span>
+                            <mat-icon class="mt-1">arrow_drop_down</mat-icon>
+                        </div>
+                        <mat-menu #mobilityStudents="matMenu">
+                            <a class="tu-links__link" mat-menu-item routerLink="/mobility-students/study-page" routerLinkActive="-active">Мобилност с цел обучение</a>
+                            <a class="tu-links__link" mat-menu-item routerLink="/mobility-students/practice-page" routerLinkActive="-active">Мобилност с цел практика</a>
+                        </mat-menu>
+                    </li>
                 </ul>
             </div>
         </div>

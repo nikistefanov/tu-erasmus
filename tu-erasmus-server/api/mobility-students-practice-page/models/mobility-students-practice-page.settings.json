@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "mobility_students_practice_pages",
+  "info": {
+    "name": "MobilityStudentsPracticePage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

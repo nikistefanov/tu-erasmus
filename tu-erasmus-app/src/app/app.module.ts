@@ -16,6 +16,8 @@ import { registerLocaleData } from '@angular/common';
 import localBg from '@angular/common/locales/bg';
 import { ErasmusComponent } from './components/erasmus/erasmus.component';
 import { ProjectsComponent } from './components/projects/projects.component';
+import { MobilityStudentsPracticePageComponent } from './components/mobility-students/practice-page/practice-page.component';
+import { MobilityStudentsStudyPageComponent } from './components/mobility-students/study-page/study-page.component';
 registerLocaleData(localBg);
 
 @NgModule({
@@ -27,7 +29,9 @@ registerLocaleData(localBg);
     PartnersDetailsComponent,
     NewsListComponent,
     ErasmusComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    MobilityStudentsPracticePageComponent,
+    MobilityStudentsStudyPageComponent
   ],
   imports: [
     BrowserModule,

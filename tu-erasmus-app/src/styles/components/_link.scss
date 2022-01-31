@@ -8,6 +8,14 @@
         &:not(:first-of-type) {
             @apply ml-4;
         }
+
+        &.-active {
+
+            .tu-links__link::after {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
     }
 
     &__link {
@@ -16,11 +24,6 @@
         cursor: pointer;
         color: var(--tu-black);
         transition: color .2s ease;
-
-        &.-active,
-        &:hover {
-            color: var(--tu-grey);
-        }
 
         &::after {
             background: var(--tu-primary);
@@ -42,9 +45,6 @@
         &:active,
         &:focus,
         &.-active {
-            color: inherit;
-            text-decoration: none;
-            background: none;
 
             &::after {
                 -webkit-transform: translateX(0);

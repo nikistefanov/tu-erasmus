@@ -10,3 +10,5 @@ export * from "./Page";
 export * from "./HomePage";
 export * from "./ErasmusPage";
 export * from "./ProjectsPage";
+export * from "./MobilityStudentsPracticePage";
+export * from "./MobilityStudentsStudyPage";

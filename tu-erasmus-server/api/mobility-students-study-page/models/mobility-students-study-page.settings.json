@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "mobility_students_study_pages",
+  "info": {
+    "name": "MobilityStudentsStudyPage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "body": {
+      "type": "richtext"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

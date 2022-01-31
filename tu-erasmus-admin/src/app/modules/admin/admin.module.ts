@@ -19,6 +19,10 @@ import { HOME_PAGE_EXTENDER } from './components/pages/page-extender/home-page-e
 import { CompositePageExtender } from './components/pages/page-extender/composite-page-extender';
 import { ERASMUS_PAGE_EXTENDER } from './components/pages/page-extender/erasmus-page-extender';
 import { PROJECTS_PAGE_EXTENDER } from './components/pages/page-extender/projects-page-extender';
+import { MOBILITY_STUDENTS_STUDY_PAGE_EXTENDER } from './components/pages/page-extender/mobility-students-study-page-extender';
+import { MOBILITY_STUDENTS_PRACTICE_PAGE_EXTENDER } from './components/pages/page-extender/mobility-students-practice-page-extender';
+import { MobilityStudentsStudyPageComponent } from './components/pages/mobility-students/study-page/study-page.component';
+import { MobilityStudentsPracticePageComponent } from './components/pages/mobility-students/practice-page/practice-page.component';
 
 const COMPONENTS = [
     AdminComponent,
@@ -30,7 +34,9 @@ const COMPONENTS = [
     ErasmusPageComponent,
     AdminDocumentsComponent,
     AdminDocumentsCreateEditComponent,
-    ProjectsPageComponent
+    ProjectsPageComponent,
+    MobilityStudentsStudyPageComponent,
+    MobilityStudentsPracticePageComponent
 ]
 
 @NgModule({
@@ -48,7 +54,9 @@ const COMPONENTS = [
         CompositePageExtender,
         HOME_PAGE_EXTENDER,
         ERASMUS_PAGE_EXTENDER,
-        PROJECTS_PAGE_EXTENDER
+        PROJECTS_PAGE_EXTENDER,
+        MOBILITY_STUDENTS_STUDY_PAGE_EXTENDER,
+        MOBILITY_STUDENTS_PRACTICE_PAGE_EXTENDER
     ]
 })
 export class AdminModule { }
