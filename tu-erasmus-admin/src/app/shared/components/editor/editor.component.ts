@@ -24,7 +24,6 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
     @ViewChild("editor") editor: AngularEditorComponent;
 
     private _value: string;
-    private self: any;
 
     get htmlContent(): string {
         return this._value;

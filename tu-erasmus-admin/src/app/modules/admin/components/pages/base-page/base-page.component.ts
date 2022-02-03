@@ -1,6 +1,7 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { first } from 'rxjs';
+import { delay, first } from 'rxjs';
+import { LOADING_TIME } from '../../../../../shared/constants/constants';
 import { IPageExtenderSettings } from '../../../../../shared/constants/page-extender';
 import { RoutePaths } from '../../../../../shared/constants/route-paths';
 import { IPage } from '../../../../../shared/models/db-models';
@@ -46,7 +47,8 @@ export class PageBaseComponent {
 
     private fetchData() {
         this.extender.fetchData(this.activeRoute)?.pipe(
-            first()
+            first(),
+            delay(LOADING_TIME / 2)
         ).subscribe({
             next: (data: IPage) => {
                 this.setData(data);
