@@ -3,7 +3,7 @@
     <form [formGroup]="form">
         <mat-form-field class="w-full" appearance="fill">
             <mat-label>Потребителско име</mat-label>
-            <input formControlName="username" type="text" name="username" matInput placeholder="Име">
+            <input formControlName="username" type="text" name="username" (keydown.space)="$event.preventDefault();" matInput placeholder="Име">
             <mat-error *ngIf="username?.errors">
                 <ng-template [ngTemplateOutlet]="requiredMessage"></ng-template>
             </mat-error>

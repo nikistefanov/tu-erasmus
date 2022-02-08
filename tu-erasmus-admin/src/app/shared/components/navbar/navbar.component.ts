@@ -4,6 +4,7 @@ import { first, Subscription } from 'rxjs';
 import { AuthService } from '../../../modules/auth/auth.service';
 import { STICK_POSITION } from '../../constants/constants';
 import { RoutePaths } from '../../constants/route-paths';
+import { IUserInfo } from '../../models/db-models';
 import { ScrollService } from '../../services/scroll/scroll.service';
 
 @Component({
@@ -13,10 +14,13 @@ import { ScrollService } from '../../services/scroll/scroll.service';
 export class NavbarComponent implements OnInit, OnDestroy {
     sticked: boolean = false;
     isLoading: boolean = false;
+    userInfo: IUserInfo;
 
     private scrollSubscription: Subscription;
 
-    constructor(private scrollService: ScrollService, public authService: AuthService, private router: Router) {}
+    constructor(private scrollService: ScrollService, public authService: AuthService, private router: Router) {
+        this.userInfo = this.authService.getUserInfo();
+    }
 
     ngOnInit(): void {
         this.scrollSubscription = this.scrollService.registerScrollHandler(offset => {

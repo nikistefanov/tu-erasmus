@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ClipboardService } from 'ngx-clipboard';
 import { first, ReplaySubject } from 'rxjs';
 import { ConfirmComponent } from '../../../../shared/components/dialog/confirm/confirm.component';
+import { API_BASE } from '../../../../shared/constants/constants';
 import { IUpdateDataTable, UpdateDataTableMehtods } from '../../../../shared/models/data-table';
 import { IDocument } from '../../../../shared/models/db-models';
 import { IConfirmationDialogData } from '../../../../shared/models/dialog';
@@ -35,7 +37,8 @@ export class AdminDocumentsComponent extends AdminBase {
     constructor(private rootService: RootService,
         dialog: MatDialog,
         private errorHandler: ErrorHandlerService,
-        private alertService: AlertService) {
+        private alertService: AlertService,
+        private clipboardApi: ClipboardService) {
         super(dialog)
         this.fetchData();
     }
@@ -50,6 +53,11 @@ export class AdminDocumentsComponent extends AdminBase {
             buttonColor: "warn"
         }
         this.openDialog(data, ConfirmComponent, this.deleteContact.bind(this, document));
+    }
+
+    handleClickDocument(document: IDocument) {
+        this.clipboardApi.copyFromContent(`${API_BASE}${document.url}`);
+        this.alertService.showMessage("Успешно копиран адрес");
     }
 
     private fetchData() {

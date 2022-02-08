@@ -1,6 +1,7 @@
 <app-data-table
     title="Документи"
     label="Качи документ"
+    [clickable]="true"
     [hasAction]="true"
     [noEdit]="true"
     [items]="documents"
@@ -9,4 +10,5 @@
     [update$]="update$"
     [loading]="loading"
     (onCreateItem)="handleCreateDocument()"
-    (onDeleteItem)="handleDeleteDocument($event)"></app-data-table>
+    (onDeleteItem)="handleDeleteDocument($event)"
+    (onClick)="handleClickDocument($event)"></app-data-table>

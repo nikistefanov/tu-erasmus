@@ -45,7 +45,7 @@ export class AdminUsersComponent extends AdminBase {
 
     handleDeleteUser(user: IUser) {
         const data: IConfirmationDialogData = {
-            message: `Сигурни ли сте, че искате да изтриете <b class="whitespace-nowrap">${user.name}</b> от списъка.`,
+            message: `Сигурни ли сте, че искате да изтриете <b class="whitespace-nowrap">${user.username}</b> от списъка.`,
             buttonColor: "warn"
         }
         this.openDialog(data, ConfirmComponent, this.deleteContact.bind(this, user));
@@ -79,10 +79,11 @@ export class AdminUsersComponent extends AdminBase {
     }
 
     private deleteContact(user: IUser) {
+        const userId = user.id;
         this.authService.delete(user.id).pipe(
             first()
         ).subscribe((resp) => {
-            const removedUser = this.users.find(i => i.id === resp.user.id);
+            const removedUser = this.users.find(i => i.id === userId);
 
             if (removedUser) {
                 this.update$.next({ item: removedUser, method: UpdateDataTableMehtods.Delete });
