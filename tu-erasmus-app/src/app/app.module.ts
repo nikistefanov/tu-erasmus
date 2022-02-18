@@ -10,7 +10,6 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PartnersListComponent } from './components/partners/list/partners-list.component';
 import { PartnersDetailsComponent } from './components/partners/details/partners-details.component';
-import { NewsListComponent } from './components/news/news-lists.component';
 
 import { registerLocaleData } from '@angular/common';
 import localBg from '@angular/common/locales/bg';
@@ -18,6 +17,8 @@ import { ErasmusComponent } from './components/erasmus/erasmus.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { MobilityStudentsPracticePageComponent } from './components/mobility-students/practice-page/practice-page.component';
 import { MobilityStudentsStudyPageComponent } from './components/mobility-students/study-page/study-page.component';
+import { NewsDetailsComponent } from './components/news/details/news-details.component';
+import { NewsListComponent } from './components/news/list/news-lists.component';
 registerLocaleData(localBg);
 
 @NgModule({
@@ -28,6 +29,7 @@ registerLocaleData(localBg);
     PartnersListComponent,
     PartnersDetailsComponent,
     NewsListComponent,
+    NewsDetailsComponent,
     ErasmusComponent,
     ProjectsComponent,
     MobilityStudentsPracticePageComponent,

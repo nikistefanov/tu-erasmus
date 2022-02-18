@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { delay, first } from 'rxjs';
-import { RootService } from '../../modules/http/root.service';
-import { LOADING_TIME } from '../../shared/constants/constants';
-import { INewsItem } from '../../shared/models/db-models';
+import { RootService } from '../../../modules/http/root.service';
+import { LOADING_TIME } from '../../../shared/constants/constants';
+import { INewsItem } from '../../../shared/models/db-models';
 
 @Component({
     selector: 'tu-news-lists',

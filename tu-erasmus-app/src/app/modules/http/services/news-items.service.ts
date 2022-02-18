@@ -12,8 +12,8 @@ export class NewsItemsService extends ApiService {
         return this.getInternal<INewsItem[]>(NEWS_ITEMS_API);
     }
 
-    get(universityId: string): Observable<INewsItem> {
-        return this.getInternal<INewsItem>(`${NEWS_ITEMS_API}/${universityId}`);
+    get(newsItemId: string): Observable<INewsItem> {
+        return this.getInternal<INewsItem>(`${NEWS_ITEMS_API}/${newsItemId}`);
     }
 
     getAllActive(): Observable<INewsItem[]> {

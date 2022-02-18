@@ -4,7 +4,8 @@ import { ErasmusComponent } from './components/erasmus/erasmus.component';
 import { HomeComponent } from './components/home/home.component';
 import { MobilityStudentsPracticePageComponent } from './components/mobility-students/practice-page/practice-page.component';
 import { MobilityStudentsStudyPageComponent } from './components/mobility-students/study-page/study-page.component';
-import { NewsListComponent } from './components/news/news-lists.component';
+import { NewsDetailsComponent } from './components/news/details/news-details.component';
+import { NewsListComponent } from './components/news/list/news-lists.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PartnersDetailsComponent } from './components/partners/details/partners-details.component';
 import { PartnersListComponent } from './components/partners/list/partners-list.component';
@@ -19,7 +20,7 @@ export const appRoutes: Routes = [
     { path: "partners", component: PartnersListComponent },
     { path: "partners/:id", component: PartnersDetailsComponent },
     { path: "news-items", component: NewsListComponent },
-    { path: "news-items/:id", component: PartnersDetailsComponent },
+    { path: "news-items/:id", component: NewsDetailsComponent },
     { path: "mobility-students/study-page", component: MobilityStudentsStudyPageComponent },
     { path: "mobility-students/practice-page", component: MobilityStudentsPracticePageComponent },
     { path: '**', component: NotFoundComponent }
