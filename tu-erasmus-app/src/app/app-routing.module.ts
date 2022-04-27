@@ -23,6 +23,12 @@ export const appRoutes: Routes = [
     { path: "mobility-students/practice-page", component: BasePageComponent, data: { api: API.MOBILITY_STUDENTS_PRACTICE_PAGE } },
     { path: "mobility-administration/study-page", component: BasePageComponent, data: { api: API.MOBILITY_ADMINISTRATION_STUDY_PAGE } },
     { path: "mobility-administration/practice-page", component: BasePageComponent, data: { api: API.MOBILITY_ADMINISTRATION_PRACTICE_PAGE } },
+    { path: "credit-mobility/info-page", component: BasePageComponent, data: { api: API.CREDIT_MOBILITY_INFO_PAGE } },
+    { path: "credit-mobility/application-page", component: BasePageComponent, data: { api: API.CREDIT_MOBILITY_APPLICATION_PAGE } },
+    { path: "credit-mobility/partners-page", component: BasePageComponent, data: { api: API.CREDIT_MOBILITY_PARTNERS_PAGE } },
+    { path: "credit-mobility/staff-training-page", component: BasePageComponent, data: { api: API.CREDIT_MOBILITY_STAFF_TRAINING_PAGE } },
+    { path: "credit-mobility/student-mobility-page", component: BasePageComponent, data: { api: API.CREDIT_MOBILITY_STUDENT_MOBILITY_PAGE } },
+    { path: "credit-mobility/staff-teaching-page", component: BasePageComponent, data: { api: API.CREDIT_MOBILITY_STAFF_TEACHING_MOBILITY_PAGE } },
     { path: '**', component: NotFoundComponent }
 ];
 

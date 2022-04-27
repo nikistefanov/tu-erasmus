@@ -57,6 +57,26 @@ export class AdminComponent {
             name: "Обща информация",
             link: RoutePaths.CreditMobilityInfo,
             icon: "school"
+        }, {
+            name: "Кандидатстване",
+            link: RoutePaths.CreditMobilityApplication,
+            icon: "school"
+        }, {
+            name: "Партньори",
+            link: RoutePaths.CreditMobilityPartners,
+            icon: "school"
+        }, {
+            name: "Мобилност на персонала с цел обучение",
+            link: RoutePaths.CreditMobilityStaffTraining,
+            icon: "school"
+        }, {
+            name: "Студентска мобилност",
+            link: RoutePaths.CreditMobilityStudentMobility,
+            icon: "school"
+        }, {
+            name: "Преподавателска мобилност",
+            link: RoutePaths.CreditMobilityTeachingMobility,
+            icon: "school"
         }]
     }];
 
