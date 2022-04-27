@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { IUniversity, UNIVERSITIES_API } from '../../../shared/models/db-models';
+import { IUniversity, API } from '../../../shared/models/db-models';
 import { ApiService } from '../api.service';
 
 @Injectable({
@@ -9,14 +9,14 @@ import { ApiService } from '../api.service';
 export class UniversitiesService extends ApiService {
 
     getAll(): Observable<IUniversity[]> {
-        return this.getInternal<IUniversity[]>(UNIVERSITIES_API);
+        return this.getInternal<IUniversity[]>(API.UNIVERSITIES);
     }
 
     get(universityId: string): Observable<IUniversity> {
-        return this.getInternal<IUniversity>(`${UNIVERSITIES_API}/${universityId}`);
+        return this.getInternal<IUniversity>(`${API.UNIVERSITIES}/${universityId}`);
     }
 
     getByCountry(countryName: string): Observable<IUniversity[]> {
-        return this.getInternal<IUniversity[]>(UNIVERSITIES_API, { "countryName": `${countryName}`});
+        return this.getInternal<IUniversity[]>(API.UNIVERSITIES, { "countryName": `${countryName}`});
     }
 }

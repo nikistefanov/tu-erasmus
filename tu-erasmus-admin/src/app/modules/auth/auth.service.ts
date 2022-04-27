@@ -5,12 +5,12 @@ import { convertUnixToDate, decodeToken } from '../../shared/utilities/token-hel
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from "rxjs";
 import { StorageKeys } from '../../shared/constants/storage';
-import { API_BASE } from '../../shared/constants/constants';
+import { API } from '../../shared/constants/constants';
 
-export const AUTH_LOGIN = `${API_BASE}/auth/local`;
+export const AUTH_LOGIN = `${API.BASE}/auth/local`;
 export const AUTH_REGISTER = `${AUTH_LOGIN}/register`;
-export const USERS = `${API_BASE}/users`;
-export const PASSWORD = `${API_BASE}/password`;
+export const USERS = `${API.BASE}/users`;
+export const PASSWORD = `${API.BASE}/password`;
 
 @Injectable({
     providedIn: 'root'

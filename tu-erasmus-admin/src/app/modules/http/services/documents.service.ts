@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { UPLOAD_API, UPLOAD_FILES_API } from '../../../shared/constants/constants';
+import { API } from '../../../shared/constants/constants';
 import { IDocument } from '../../../shared/models/db-models';
 import { ApiService } from '../api.service';
 
@@ -10,14 +10,14 @@ import { ApiService } from '../api.service';
 export class DocumentsService extends ApiService {
 
     getAll(): Observable<IDocument[]> {
-        return this.getInternal<IDocument[]>(UPLOAD_FILES_API);
+        return this.getInternal<IDocument[]>(API.UPLOAD_FILES);
     }
 
     create(document: IDocument): Observable<IDocument[]> {
-        return this.postInternal<IDocument[]>(UPLOAD_API, document);
+        return this.postInternal<IDocument[]>(API.UPLOAD, document);
     }
 
     delete(documentId: number | undefined) {
-        return this.deleteInternal<IDocument>(`${UPLOAD_FILES_API}/${documentId}`);
+        return this.deleteInternal<IDocument>(`${API.UPLOAD_FILES}/${documentId}`);
     }
 }

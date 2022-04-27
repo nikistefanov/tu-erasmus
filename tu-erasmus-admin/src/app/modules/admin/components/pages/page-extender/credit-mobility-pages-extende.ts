@@ -1,6 +1,6 @@
 import { ClassProvider, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { CREDIT_MOBILITY_INFO_PAGE_API } from "../../../../../shared/constants/constants";
+import { API } from "../../../../../shared/constants/constants";
 import { IPageExtenderSettings } from "../../../../../shared/constants/page-extender";
 import { RoutePaths } from "../../../../../shared/constants/route-paths";
 import { IPage } from "../../../../../shared/models/db-models";
@@ -38,7 +38,7 @@ export class CreditMobilityPagesExtender extends BasePageExtender {
     private setApi(pageUrl: string) {
         switch(pageUrl) {
             case RoutePaths.CreditMobilityInfo:
-                this.api = CREDIT_MOBILITY_INFO_PAGE_API;
+                this.api = API.CREDIT_MOBILITY_INFO_PAGE;
                 this.title = `${PAGE_TITLE} Кредитна мобилност - Обща информация`;
                 break;
         }

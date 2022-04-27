@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { ADMIN_HOME_API } from '../../../shared/constants/constants';
+import { API } from '../../../shared/constants/constants';
 import { IHomePage } from '../../../shared/models/db-models';
 import { ApiService } from '../api.service';
 
@@ -10,11 +10,11 @@ import { ApiService } from '../api.service';
 export class HomePageService extends ApiService {
 
     get(): Observable<IHomePage> {
-        return this.getInternal<IHomePage>(ADMIN_HOME_API);
+        return this.getInternal<IHomePage>(API.ADMIN_HOME);
     }
 
     update(adminHome: IHomePage): Observable<IHomePage> {
-        return this.putInternal<IHomePage>(`${ADMIN_HOME_API}`, {
+        return this.putInternal<IHomePage>(`${API.ADMIN_HOME}`, {
             heading: adminHome.heading,
             body: adminHome.body,
             hideMap: adminHome.toggle

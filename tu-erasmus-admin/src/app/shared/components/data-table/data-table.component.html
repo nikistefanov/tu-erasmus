@@ -1,6 +1,7 @@
 <ng-container *ngIf="!loading; else loadingTmpl">
     <ng-container *ngIf="items.length > 0; else noResults">
         <div class="app-table__title py-3 sticky bg-white z-30 border-gray-500 border-b-2">
+            <tu-back-button></tu-back-button>
             <h1>{{title}}</h1>
             <div class=" flex justify-between items-center">
                 <app-search (onClear)="onSearch('')" (onSearch)="onSearch($event)"></app-search>

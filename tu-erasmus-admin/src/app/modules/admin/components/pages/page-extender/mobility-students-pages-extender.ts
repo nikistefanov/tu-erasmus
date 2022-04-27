@@ -1,6 +1,6 @@
 import { ClassProvider, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { MOBILITY_STUDENTS_PRACTICE_PAGE_API, MOBILITY_STUDENTS_STUDY_PAGE_API } from "../../../../../shared/constants/constants";
+import { API } from "../../../../../shared/constants/constants";
 import { IPageExtenderSettings } from "../../../../../shared/constants/page-extender";
 import { RoutePaths } from "../../../../../shared/constants/route-paths";
 import { IPage } from "../../../../../shared/models/db-models";
@@ -38,11 +38,11 @@ export class MobilityStudentsPagesExtender extends BasePageExtender {
     private setApi(pageUrl: string) {
         switch(pageUrl) {
             case RoutePaths.MobilityStudentsStudyPage:
-                this.api = MOBILITY_STUDENTS_STUDY_PAGE_API;
+                this.api = API.MOBILITY_STUDENTS_STUDY_PAGE;
                 this.title = `${PAGE_TITLE} Студентска мобилност с цел обучение`;
                 break;
                 case RoutePaths.MobilityStudentsPracticePage:
-                    this.api = MOBILITY_STUDENTS_PRACTICE_PAGE_API;
+                    this.api = API.MOBILITY_STUDENTS_PRACTICE_PAGE;
                     this.title = `${PAGE_TITLE} Студентска мобилност с цел практика`;
                 break;
         }

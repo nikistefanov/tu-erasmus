@@ -1,8 +1,8 @@
 import { Component, ErrorHandler } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { delay, first } from 'rxjs';
+import { first } from 'rxjs';
 import { RootService } from '../../../../modules/http/root.service';
-import { API_BASE, LOADING_TIME } from '../../../constants/constants';
+import { API } from '../../../constants/constants';
 import { IDocument } from '../../../models/db-models';
 import { AlertService } from '../../../services/alert/alert.service';
 import { ClipboardService } from 'ngx-clipboard';
@@ -17,7 +17,7 @@ export class DocumentsDialogComponent {
     initialDocuments: IDocument[] = [];
     documents: IDocument[] = [];
     newDocument: IDocument;
-    serverAddress: string = API_BASE;
+    serverAddress: string = API.BASE;
 
     constructor(
         public dialogRef: MatDialogRef<DocumentsDialogComponent>,
@@ -40,7 +40,7 @@ export class DocumentsDialogComponent {
     }
 
     onCopy(document: IDocument) {
-        this.clipboardApi.copyFromContent(`${API_BASE}${document.url}`);
+        this.clipboardApi.copyFromContent(`${API.BASE}${document.url}`);
         this.alertService.showMessage("Успешно копиран адрес");
     }
 

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ClipboardService } from 'ngx-clipboard';
 import { first, ReplaySubject } from 'rxjs';
 import { ConfirmComponent } from '../../../../shared/components/dialog/confirm/confirm.component';
-import { API_BASE } from '../../../../shared/constants/constants';
+import { API } from '../../../../shared/constants/constants';
 import { IUpdateDataTable, UpdateDataTableMehtods } from '../../../../shared/models/data-table';
 import { IDocument } from '../../../../shared/models/db-models';
 import { IConfirmationDialogData } from '../../../../shared/models/dialog';
@@ -56,7 +56,7 @@ export class AdminDocumentsComponent extends AdminBase {
     }
 
     handleClickDocument(document: IDocument) {
-        this.clipboardApi.copyFromContent(`${API_BASE}${document.url}`);
+        this.clipboardApi.copyFromContent(`${API.BASE}${document.url}`);
         this.alertService.showMessage("Успешно копиран адрес");
     }
 

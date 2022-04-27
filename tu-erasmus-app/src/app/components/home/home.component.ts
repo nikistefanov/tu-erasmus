@@ -2,7 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { delay, first } from 'rxjs';
 import { RootService } from '../../modules/http/root.service';
 import { LOADING_TIME } from '../../shared/constants/constants';
-import { ADMIN_HOME_API, COUNTRIES, ICountry, IHomePage, IUniversity } from '../../shared/models/db-models';
+import { API, COUNTRIES, ICountry, IHomePage, IUniversity } from '../../shared/models/db-models';
 
 declare var svgMap: any;
 
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.rootService.pageService.get<IHomePage>(ADMIN_HOME_API).pipe(
+        this.rootService.pageService.get<IHomePage>(API.ADMIN_HOME).pipe(
             first(),
             delay(LOADING_TIME / 2)
         ).subscribe({

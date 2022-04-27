@@ -1,5 +1,7 @@
-<tu-back-button></tu-back-button>
-<h1>{{headingLabel}}</h1>
+<div class="bg-white border-0 border-b-2 border-gray-500 border-solid pt-3 sticky top-16 z-30">
+    <tu-back-button></tu-back-button>
+    <h1>{{headingLabel}}</h1>
+</div>
 
 <ng-container *ngIf="!loading; else loadingTmpl">
     <form [formGroup]="form">

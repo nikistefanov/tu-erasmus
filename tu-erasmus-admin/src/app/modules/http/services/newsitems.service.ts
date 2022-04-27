@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { NEWS_ITEMS_API } from '../../../shared/constants/constants';
+import { API } from '../../../shared/constants/constants';
 import { INewsItem } from '../../../shared/models/db-models';
 import { ApiService } from '../api.service';
 
@@ -10,19 +10,19 @@ import { ApiService } from '../api.service';
 export class NewsItemsService extends ApiService {
 
     getAll(): Observable<INewsItem[]> {
-        return this.getInternal<INewsItem[]>(NEWS_ITEMS_API);
+        return this.getInternal<INewsItem[]>(API.NEWS_ITEMS);
     }
 
     create(newsItem: INewsItem): Observable<INewsItem> {
-        return this.postInternal<INewsItem>(NEWS_ITEMS_API, this.getBodyObject(newsItem));
+        return this.postInternal<INewsItem>(API.NEWS_ITEMS, this.getBodyObject(newsItem));
     }
 
     delete(newsItemId: number | undefined) {
-        return this.deleteInternal<INewsItem>(`${NEWS_ITEMS_API}/${newsItemId}`);
+        return this.deleteInternal<INewsItem>(`${API.NEWS_ITEMS}/${newsItemId}`);
     }
 
     update(newsItem: INewsItem, updatenewsItemId: number): Observable<INewsItem> {
-        return this.putInternal<INewsItem>(`${NEWS_ITEMS_API}/${updatenewsItemId}`, this.getBodyObject(newsItem));
+        return this.putInternal<INewsItem>(`${API.NEWS_ITEMS}/${updatenewsItemId}`, this.getBodyObject(newsItem));
     }
 
     private getBodyObject(newsItem: INewsItem) {

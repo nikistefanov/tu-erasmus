@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { INewsItem, NEWS_ITEMS_API } from '../../../shared/models/db-models';
+import { INewsItem, API } from '../../../shared/models/db-models';
 import { ApiService } from '../api.service';
 
 @Injectable({
@@ -9,14 +9,14 @@ import { ApiService } from '../api.service';
 export class NewsItemsService extends ApiService {
 
     getAll(): Observable<INewsItem[]> {
-        return this.getInternal<INewsItem[]>(NEWS_ITEMS_API);
+        return this.getInternal<INewsItem[]>(API.NEWS_ITEMS);
     }
 
     get(newsItemId: string): Observable<INewsItem> {
-        return this.getInternal<INewsItem>(`${NEWS_ITEMS_API}/${newsItemId}`);
+        return this.getInternal<INewsItem>(`${API.NEWS_ITEMS}/${newsItemId}`);
     }
 
     getAllActive(): Observable<INewsItem[]> {
-        return this.getInternal<INewsItem[]>(NEWS_ITEMS_API, { "hide": "false"});
+        return this.getInternal<INewsItem[]>(API.NEWS_ITEMS, { "hide": "false"});
     }
 }

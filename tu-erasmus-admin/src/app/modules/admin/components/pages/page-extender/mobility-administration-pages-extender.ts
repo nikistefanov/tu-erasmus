@@ -1,6 +1,6 @@
 import { ClassProvider, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { MOBILITY_ADMINISTRATION_PRACTICE_PAGE_API, MOBILITY_ADMINISTRATION_STUDY_PAGE_API } from "../../../../../shared/constants/constants";
+import { API } from "../../../../../shared/constants/constants";
 import { IPageExtenderSettings } from "../../../../../shared/constants/page-extender";
 import { RoutePaths } from "../../../../../shared/constants/route-paths";
 import { IPage } from "../../../../../shared/models/db-models";
@@ -38,11 +38,11 @@ export class MobilityAdministrationPagesExtender extends BasePageExtender {
     private setApi(pageUrl: string) {
         switch(pageUrl) {
             case RoutePaths.MobilityAdministrationPracticePage:
-                this.api = MOBILITY_ADMINISTRATION_PRACTICE_PAGE_API;
+                this.api = API.MOBILITY_ADMINISTRATION_PRACTICE_PAGE;
                 this.title = `${PAGE_TITLE} Преподавателска мобилност с цел преподаване`;
                 break;
             case RoutePaths.MobilityAdministrationStudyPage:
-                this.api = MOBILITY_ADMINISTRATION_STUDY_PAGE_API;
+                this.api = API.MOBILITY_ADMINISTRATION_STUDY_PAGE;
                 this.title = `${PAGE_TITLE} Преподавателски и непреподавателски състав с цел обучение`;
                 break;
         }
