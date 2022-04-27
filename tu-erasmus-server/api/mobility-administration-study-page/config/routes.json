@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mobility-administration-study-page",
+      "handler": "mobility-administration-study-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/mobility-administration-study-page",
+      "handler": "mobility-administration-study-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/mobility-administration-study-page",
+      "handler": "mobility-administration-study-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

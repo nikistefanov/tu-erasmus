@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "mobility_administration_study_pages",
+  "info": {
+    "name": "MobilityAdministrationStudyPage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

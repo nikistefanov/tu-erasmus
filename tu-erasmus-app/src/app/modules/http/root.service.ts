@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { ErasmusPageService } from './services/erasmus-page.service';
 import { HomePageService } from './services/home-page.service';
+import { MobilityAdministrationPracticePageService } from './services/mobility-administration-practice-page.service';
+import { MobilityAdministrationStudyPageService } from './services/mobility-administration-study-page.service';
 import { MobilityStudentsPracticePageService } from './services/mobility-students-practice-page.service';
 import { MobilityStudentsStudyPageService } from './services/mobility-students-study-page.service';
 import { NewsItemsService } from './services/news-items.service';
@@ -20,6 +22,8 @@ export class RootService extends ApiService {
     projectsPage: ProjectsPageService;
     mobilityStudentStudyPage: MobilityStudentsStudyPageService;
     mobilityStudentPracticePage: MobilityStudentsPracticePageService;
+    mobilityAdministrationStudyPage: MobilityAdministrationStudyPageService;
+    mobilityAdministrationPracticePage: MobilityAdministrationPracticePageService;
 
     constructor(http: HttpClient) {
         super(http);
@@ -31,5 +35,7 @@ export class RootService extends ApiService {
         this.projectsPage = new ProjectsPageService(http);
         this.mobilityStudentStudyPage = new MobilityStudentsStudyPageService(http);
         this.mobilityStudentPracticePage = new MobilityStudentsPracticePageService(http);
+        this.mobilityAdministrationStudyPage = new MobilityAdministrationStudyPageService(http);
+        this.mobilityAdministrationPracticePage = new MobilityAdministrationPracticePageService(http);
     }
 }

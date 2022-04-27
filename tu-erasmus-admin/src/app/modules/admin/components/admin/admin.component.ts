@@ -30,6 +30,14 @@ export class AdminComponent {
         name: "Студентска мобилност с цел практика",
         link: RoutePaths.MobilityStudentsPracticePage,
         icon: "school"
+    }, {
+        name: "Преподавателска мобилност с цел преподаване",
+        link: RoutePaths.MobilityAdministrationPracticePage,
+        icon: "school"
+    }, {
+        name: "Преподавателски и непреподавателски състав с цел обучение",
+        link: RoutePaths.MobilityAdministrationStudyPage,
+        icon: "school"
     }];
 
     contentLinks: IAdminLink[] = [{

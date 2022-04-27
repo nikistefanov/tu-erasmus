@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/mobility-administration-practice-page",
+      "handler": "mobility-administration-practice-page.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/mobility-administration-practice-page",
+      "handler": "mobility-administration-practice-page.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/mobility-administration-practice-page",
+      "handler": "mobility-administration-practice-page.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

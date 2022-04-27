@@ -25,6 +25,10 @@ import { MobilityStudentsStudyPageComponent } from './components/pages/mobility-
 import { MobilityStudentsPracticePageComponent } from './components/pages/mobility-students/practice-page/practice-page.component';
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 import { AdminUsersCreateComponent } from './components/admin-users/admin-users-create.component';
+import { MobilityAdministrationPracticePageComponent } from './components/pages/mobility-administration/practice-page/practice-page.component';
+import { MobilityAdministrationStudyPageComponent } from './components/pages/mobility-administration/study-page/study-page.component';
+import { MOBILITY_ADMINISTRATION_PRACTICE_PAGE_EXTENDER } from './components/pages/page-extender/mobility-administration-practice-page-extender';
+import { MOBILITY_ADMINISTRATION_STUDY_PAGE_EXTENDER } from './components/pages/page-extender/mobility-administration-study-page-extender';
 
 const COMPONENTS = [
     AdminComponent,
@@ -39,6 +43,8 @@ const COMPONENTS = [
     ProjectsPageComponent,
     MobilityStudentsStudyPageComponent,
     MobilityStudentsPracticePageComponent,
+    MobilityAdministrationPracticePageComponent,
+    MobilityAdministrationStudyPageComponent,
     AdminUsersComponent,
     AdminUsersCreateComponent
 ]
@@ -60,7 +66,9 @@ const COMPONENTS = [
         ERASMUS_PAGE_EXTENDER,
         PROJECTS_PAGE_EXTENDER,
         MOBILITY_STUDENTS_STUDY_PAGE_EXTENDER,
-        MOBILITY_STUDENTS_PRACTICE_PAGE_EXTENDER
+        MOBILITY_STUDENTS_PRACTICE_PAGE_EXTENDER,
+        MOBILITY_ADMINISTRATION_PRACTICE_PAGE_EXTENDER,
+        MOBILITY_ADMINISTRATION_STUDY_PAGE_EXTENDER
     ]
 })
 export class AdminModule { }

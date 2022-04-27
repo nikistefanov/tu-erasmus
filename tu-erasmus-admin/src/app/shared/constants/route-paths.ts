@@ -11,5 +11,7 @@ export enum RoutePaths {
     ErasmusPage = "erasmus-page",
     MobilityStudentsStudyPage = "mobility-students/study-page",
     MobilityStudentsPracticePage = "mobility-students/practice-page",
+    MobilityAdministrationStudyPage = "mobility-administration/study-page",
+    MobilityAdministrationPracticePage = "mobility-administration/practice-page",
     ProjectsPage = "projects-page"
 }

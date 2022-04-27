@@ -5,6 +5,8 @@ import { ApiService } from './api.service';
 import { DocumentsService } from './services/documents.service';
 import { ErasmusPageService } from './services/erasmus-page.service';
 import { HomePageService } from './services/home-page.service';
+import { MobilityAdministrationPracticePageService } from './services/mobility-administration-practice-page.service';
+import { MobilityAdministrationStudyPageService } from './services/mobility-administration-study-page.service';
 import { MobilityStudentsPracticePageService } from './services/mobility-students-practice-page.service';
 import { MobilityStudentsStudyPageService } from './services/mobility-students-study-page.service';
 import { NewsItemsService } from './services/newsitems.service';
@@ -23,6 +25,8 @@ export class RootService extends ApiService {
     documents: DocumentsService;
     mobilityStudentStudyPage: MobilityStudentsStudyPageService;
     mobilityStudentPracticePage: MobilityStudentsPracticePageService;
+    mobilityAdministrationPracticePage: MobilityAdministrationPracticePageService;
+    mobilityAdministrationStudyPage: MobilityAdministrationStudyPageService;
 
     constructor(http: HttpClient, auth: AuthService) {
         super(http, auth);
@@ -35,5 +39,7 @@ export class RootService extends ApiService {
         this.documents = new DocumentsService(http, auth);
         this.mobilityStudentStudyPage = new MobilityStudentsStudyPageService(http, auth);
         this.mobilityStudentPracticePage = new MobilityStudentsPracticePageService(http, auth);
+        this.mobilityAdministrationPracticePage = new MobilityAdministrationPracticePageService(http, auth);
+        this.mobilityAdministrationStudyPage = new MobilityAdministrationStudyPageService(http, auth);
     }
 }

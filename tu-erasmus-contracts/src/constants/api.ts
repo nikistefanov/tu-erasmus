@@ -8,5 +8,7 @@ export const UPLOAD_FILES_API =  "/upload/files";
 export const UPLOAD_API =  "/upload";
 export const MOBILITY_STUDENTS_STUDY_PAGE_API =  "/mobility-students-study-page";
 export const MOBILITY_STUDENTS_PRACTICE_PAGE_API =  "/mobility-students-practice-page";
+export const MOBILITY_ADMINISTRATION_PRACTICE_PAGE_API =  "/mobility-administration-practice-page";
+export const MOBILITY_ADMINISTRATION_STUDY_PAGE_API =  "/mobility-administration-study-page";
 
 

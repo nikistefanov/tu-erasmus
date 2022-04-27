@@ -19,6 +19,8 @@ import { MobilityStudentsPracticePageComponent } from './components/mobility-stu
 import { MobilityStudentsStudyPageComponent } from './components/mobility-students/study-page/study-page.component';
 import { NewsDetailsComponent } from './components/news/details/news-details.component';
 import { NewsListComponent } from './components/news/list/news-lists.component';
+import { MobilityAdministrationPracticePageComponent } from './components/mobility-administration/practice-page/practice-page.component';
+import { MobilityAdministrationStudyPageComponent } from './components/mobility-administration/study-page/study-page.component';
 registerLocaleData(localBg);
 
 @NgModule({
@@ -33,7 +35,9 @@ registerLocaleData(localBg);
     ErasmusComponent,
     ProjectsComponent,
     MobilityStudentsPracticePageComponent,
-    MobilityStudentsStudyPageComponent
+    MobilityStudentsStudyPageComponent,
+    MobilityAdministrationPracticePageComponent,
+    MobilityAdministrationStudyPageComponent
   ],
   imports: [
     BrowserModule,

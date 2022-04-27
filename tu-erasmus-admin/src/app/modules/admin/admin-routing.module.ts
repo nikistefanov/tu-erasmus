@@ -12,6 +12,8 @@ import { ProjectsPageComponent } from './components/pages/projects-page/projects
 import { MobilityStudentsStudyPageComponent } from './components/pages/mobility-students/study-page/study-page.component';
 import { MobilityStudentsPracticePageComponent } from './components/pages/mobility-students/practice-page/practice-page.component';
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
+import { MobilityAdministrationStudyPageComponent } from './components/pages/mobility-administration/study-page/study-page.component';
+import { MobilityAdministrationPracticePageComponent } from './components/pages/mobility-administration/practice-page/practice-page.component';
 
 export const adminRoutes: Routes = [
     {
@@ -23,6 +25,8 @@ export const adminRoutes: Routes = [
             { path: RoutePaths.ProjectsPage, component: ProjectsPageComponent, data: { route: RoutePaths.ProjectsPage } },
             { path: RoutePaths.MobilityStudentsStudyPage, component: MobilityStudentsStudyPageComponent, data: { route: RoutePaths.MobilityStudentsStudyPage } },
             { path: RoutePaths.MobilityStudentsPracticePage, component: MobilityStudentsPracticePageComponent, data: { route: RoutePaths.MobilityStudentsPracticePage } },
+            { path: RoutePaths.MobilityAdministrationStudyPage, component: MobilityAdministrationStudyPageComponent, data: { route: RoutePaths.MobilityAdministrationStudyPage } },
+            { path: RoutePaths.MobilityAdministrationPracticePage, component: MobilityAdministrationPracticePageComponent, data: { route: RoutePaths.MobilityAdministrationPracticePage } },
             { path: RoutePaths.Universities, component: AdminUniversitiesComponent },
             { path: RoutePaths.Users, component: AdminUsersComponent },
             { path: RoutePaths.NewsItems, component: AdminNewsItemsComponent },

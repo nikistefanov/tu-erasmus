@@ -8,3 +8,5 @@ export declare const UPLOAD_FILES_API = "/upload/files";
 export declare const UPLOAD_API = "/upload";
 export declare const MOBILITY_STUDENTS_STUDY_PAGE_API = "/mobility-students-study-page";
 export declare const MOBILITY_STUDENTS_PRACTICE_PAGE_API = "/mobility-students-practice-page";
+export declare const MOBILITY_ADMINISTRATION_PRACTICE_PAGE_API = "/mobility-administration-practice-page";
+export declare const MOBILITY_ADMINISTRATION_STUDY_PAGE_API = "/mobility-administration-study-page";
