@@ -8,12 +8,12 @@ import { ApiService } from '../api.service';
 })
 export class PageBaseService extends ApiService {
 
-    get<T>(pageAPI: string): Observable<T> {
-        return this.getInternal<T>(pageAPI);
+    get<T>(api: string): Observable<T> {
+        return this.getInternal<T>(api);
     }
 
-    update<T>(page: IPage, pageAPI: string): Observable<T> {
-        return this.putInternal<T>(`${pageAPI}`, {
+    update<T>(page: IPage, api: string): Observable<T> {
+        return this.putInternal<T>(`${api}`, {
             heading: page.heading,
             body: page.body
         });

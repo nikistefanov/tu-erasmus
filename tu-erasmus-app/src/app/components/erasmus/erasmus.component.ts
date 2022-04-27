@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { delay, first } from 'rxjs';
 import { RootService } from '../../modules/http/root.service';
 import { LOADING_TIME } from '../../shared/constants/constants';
-import { IErasmusPage } from '../../shared/models/db-models';
+import { ERASMUS_API, IErasmusPage, IPage } from '../../shared/models/db-models';
 
 @Component({
     selector: 'tu-erasmus',
@@ -16,7 +16,7 @@ export class ErasmusComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.rootService.erasmusPage.get().pipe(
+        this.rootService.pageService.get<IPage>(ERASMUS_API).pipe(
             first(),
             delay(LOADING_TIME)
         ).subscribe({

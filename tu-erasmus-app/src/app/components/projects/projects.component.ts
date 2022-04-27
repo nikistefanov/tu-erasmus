@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { delay, first } from 'rxjs';
 import { RootService } from '../../modules/http/root.service';
 import { LOADING_TIME } from '../../shared/constants/constants';
-import { IProjectsPage } from '../../shared/models/db-models';
+import { IPage, IProjectsPage, PROJECTS_PAGE_API } from '../../shared/models/db-models';
 
 
 @Component({
@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.rootService.projectsPage.get().pipe(
+        this.rootService.pageService.get<IPage>(PROJECTS_PAGE_API).pipe(
             first(),
             delay(LOADING_TIME)
         ).subscribe({
