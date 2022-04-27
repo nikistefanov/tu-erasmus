@@ -1,0 +1,35 @@
+.tu-back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tu-primary);
+
+    .mat-icon {
+        transition: all .3s ease;
+        z-index: 2;
+        color: var(--tu-primary);
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.-sticked {
+        position: fixed;
+        top: 0;
+        left: 20px;
+        padding-right: 10px;
+        height: 47px;
+        z-index: 1001;
+        border-right: 1px solid var(--tu-grey);
+
+        .mat-icon {
+            color: var(--tu-black);
+        }
+
+        .ig-back-button__text {
+
+            color: var(--tu-black);
+        }
+    }
+}

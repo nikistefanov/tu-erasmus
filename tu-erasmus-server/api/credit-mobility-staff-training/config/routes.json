@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/credit-mobility-staff-training",
+      "handler": "credit-mobility-staff-training.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/credit-mobility-staff-training",
+      "handler": "credit-mobility-staff-training.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-mobility-staff-training",
+      "handler": "credit-mobility-staff-training.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

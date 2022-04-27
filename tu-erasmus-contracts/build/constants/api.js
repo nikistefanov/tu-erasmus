@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MOBILITY_ADMINISTRATION_STUDY_PAGE_API = exports.MOBILITY_ADMINISTRATION_PRACTICE_PAGE_API = exports.MOBILITY_STUDENTS_PRACTICE_PAGE_API = exports.MOBILITY_STUDENTS_STUDY_PAGE_API = exports.UPLOAD_API = exports.UPLOAD_FILES_API = exports.NEWS_ITEMS_API = exports.UNIVERSITIES_API = exports.PROJECTS_PAGE_API = exports.ERASMUS_API = exports.ADMIN_HOME_API = exports.API_BASE = void 0;
+exports.CREDIT_MOBILITY_STAFF_TEACHING_MOBILITY_PAGE_API = exports.CREDIT_MOBILITY_STUDENT_MOBILITY_PAGE_API = exports.CREDIT_MOBILITY_STAFF_TRAINING_PAGE_API = exports.CREDIT_MOBILITY_PARTNERS_PAGE_API = exports.CREDIT_MOBILITY_INFO_PAGE_API = exports.CREDIT_MOBILITY_APPLICATION_PAGE_API = exports.MOBILITY_ADMINISTRATION_STUDY_PAGE_API = exports.MOBILITY_ADMINISTRATION_PRACTICE_PAGE_API = exports.MOBILITY_STUDENTS_PRACTICE_PAGE_API = exports.MOBILITY_STUDENTS_STUDY_PAGE_API = exports.UPLOAD_API = exports.UPLOAD_FILES_API = exports.NEWS_ITEMS_API = exports.UNIVERSITIES_API = exports.PROJECTS_PAGE_API = exports.ERASMUS_API = exports.ADMIN_HOME_API = exports.API_BASE = void 0;
 exports.API_BASE = "http://localhost:1337";
 exports.ADMIN_HOME_API = "/home-page";
 exports.ERASMUS_API = "/erasmus-page";
@@ -13,4 +13,10 @@ exports.MOBILITY_STUDENTS_STUDY_PAGE_API = "/mobility-students-study-page";
 exports.MOBILITY_STUDENTS_PRACTICE_PAGE_API = "/mobility-students-practice-page";
 exports.MOBILITY_ADMINISTRATION_PRACTICE_PAGE_API = "/mobility-administration-practice-page";
 exports.MOBILITY_ADMINISTRATION_STUDY_PAGE_API = "/mobility-administration-study-page";
+exports.CREDIT_MOBILITY_APPLICATION_PAGE_API = "/credit-mobility-application";
+exports.CREDIT_MOBILITY_INFO_PAGE_API = "/credit-mobility-info";
+exports.CREDIT_MOBILITY_PARTNERS_PAGE_API = "/credit-mobility-partners";
+exports.CREDIT_MOBILITY_STAFF_TRAINING_PAGE_API = "/credit-mobility-staff-training";
+exports.CREDIT_MOBILITY_STUDENT_MOBILITY_PAGE_API = "/credit-mobility-student-mobility";
+exports.CREDIT_MOBILITY_STAFF_TEACHING_MOBILITY_PAGE_API = "/credit-mobility-teaching-mobility";
 //# sourceMappingURL=api.js.map

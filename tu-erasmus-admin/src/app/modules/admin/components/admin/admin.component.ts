@@ -4,12 +4,13 @@ import { RoutePaths } from '../../../../shared/constants/route-paths';
 import { AuthService } from '../../../auth/auth.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'app-admin',
+    templateUrl: './admin.component.html',
+    styleUrls: ['./admin.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class AdminComponent {
+    panelOpenState = false;
     pageLinks: IAdminLink[] = [{
         name: "Начална",
         link: RoutePaths.HomePage,
@@ -23,21 +24,40 @@ export class AdminComponent {
         link: RoutePaths.ProjectsPage,
         icon: "request_quote"
     }, {
-        name: "Студентска мобилност с цел обучение",
-        link: RoutePaths.MobilityStudentsStudyPage,
-        icon: "school"
+        name: "Студентска мобилност",
+        link: "",
+        icon: "chevron_right",
+        pages: [{
+            name: "Студентска мобилност с цел обучение",
+            link: RoutePaths.MobilityStudentsStudyPage,
+            icon: "school"
+        }, {
+            name: "Студентска мобилност с цел практика",
+            link: RoutePaths.MobilityStudentsPracticePage,
+            icon: "school"
+        }]
     }, {
-        name: "Студентска мобилност с цел практика",
-        link: RoutePaths.MobilityStudentsPracticePage,
-        icon: "school"
+        name: "Мобилност персонал",
+        link: "",
+        icon: "chevron_right",
+        pages: [{
+            name: "Преподавателска мобилност с цел преподаване",
+            link: RoutePaths.MobilityAdministrationPracticePage,
+            icon: "school"
+        }, {
+            name: "Преподавателски и непреподавателски състав с цел обучение",
+            link: RoutePaths.MobilityAdministrationStudyPage,
+            icon: "school"
+        }]
     }, {
-        name: "Преподавателска мобилност с цел преподаване",
-        link: RoutePaths.MobilityAdministrationPracticePage,
-        icon: "school"
-    }, {
-        name: "Преподавателски и непреподавателски състав с цел обучение",
-        link: RoutePaths.MobilityAdministrationStudyPage,
-        icon: "school"
+        name: "Кредитна мобилност",
+        link: "",
+        icon: "chevron_right",
+        pages: [{
+            name: "Обща информация",
+            link: RoutePaths.CreditMobilityInfo,
+            icon: "school"
+        }]
     }];
 
     contentLinks: IAdminLink[] = [{
@@ -75,4 +95,5 @@ interface IAdminLink {
     name: string;
     link: string;
     icon: string;
+    pages?: IAdminLink[];
 }

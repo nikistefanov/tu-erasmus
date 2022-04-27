@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/credit-mobility-application",
+      "handler": "credit-mobility-application.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/credit-mobility-application",
+      "handler": "credit-mobility-application.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-mobility-application",
+      "handler": "credit-mobility-application.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

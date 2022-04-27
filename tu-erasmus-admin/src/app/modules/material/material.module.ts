@@ -17,6 +17,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSelectModule } from "@angular/material/select";
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSortModule } from '@angular/material/sort';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 const MATERIAL_MODULES = [
     MatButtonModule,
@@ -36,7 +37,8 @@ const MATERIAL_MODULES = [
     MatSnackBarModule,
     MatSelectModule,
     MatAutocompleteModule,
-    MatSortModule
+    MatSortModule,
+    MatExpansionModule
 ];
 
 @NgModule({

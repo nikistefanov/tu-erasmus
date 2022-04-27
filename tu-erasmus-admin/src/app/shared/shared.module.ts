@@ -17,6 +17,7 @@ import { DocumentsDialogComponent } from './components/dialog/documents-dialog/d
 import { ClipboardModule } from 'ngx-clipboard';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { SearchComponent } from './components/search/search.component';
+import { BackButtonComponent } from './components/back-button/back-button.component';
 
 const COMPONENTS = [
     CardComponent,
@@ -28,7 +29,8 @@ const COMPONENTS = [
     DataTableComponent,
     EditorComponent,
     FileUploadComponent,
-    SearchComponent
+    SearchComponent,
+    BackButtonComponent
 ];
 
 const COMMON = [

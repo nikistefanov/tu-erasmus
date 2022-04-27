@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "credit_mobility_infos",
+  "info": {
+    "name": "CreditMobilityInfo"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

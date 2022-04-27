@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "credit_mobility_applications",
+  "info": {
+    "name": "CreditMobilityApplication"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

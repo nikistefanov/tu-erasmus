@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/credit-mobility-teaching-mobility",
+      "handler": "credit-mobility-teaching-mobility.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/credit-mobility-teaching-mobility",
+      "handler": "credit-mobility-teaching-mobility.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-mobility-teaching-mobility",
+      "handler": "credit-mobility-teaching-mobility.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

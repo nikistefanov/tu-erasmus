@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/credit-mobility-info",
+      "handler": "credit-mobility-info.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/credit-mobility-info",
+      "handler": "credit-mobility-info.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/credit-mobility-info",
+      "handler": "credit-mobility-info.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

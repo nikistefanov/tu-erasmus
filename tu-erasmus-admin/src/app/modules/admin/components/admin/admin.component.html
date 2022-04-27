@@ -2,10 +2,28 @@
 
 <h2 class="mt-5 mb-0">Редакция на съдържание на страници</h2>
 <mat-selection-list [multiple]="false">
-    <mat-list-option *ngFor="let link of pageLinks" (selectedChange)="onLinkClicked(link.link)">
-        <mat-icon mat-list-icon>{{link.icon}}</mat-icon>
-        {{link.name}}
-    </mat-list-option>
+    <ng-container *ngFor="let link of pageLinks">
+        <mat-accordion *ngIf="link.pages">
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header class="pl-5">
+                    <mat-panel-title>
+                        <mat-icon mat-list-icon class="mr-5">{{link.icon}}</mat-icon>
+                        {{link.name}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ng-container *ngFor="let innerLink of link.pages">
+                    <mat-list-option (selectedChange)="onLinkClicked(innerLink.link)">
+                        <mat-icon mat-list-icon>{{innerLink.icon}}</mat-icon>
+                        {{innerLink.name}}
+                    </mat-list-option>
+                </ng-container>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <mat-list-option *ngIf="!link.pages" (selectedChange)="onLinkClicked(link.link)">
+            <mat-icon mat-list-icon>{{link.icon}}</mat-icon>
+            {{link.name}}
+        </mat-list-option>
+    </ng-container>
 </mat-selection-list>
 
 <h2 class="mt-10 mb-0">Редакция на типове данни</h2>
