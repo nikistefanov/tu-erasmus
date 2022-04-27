@@ -1,5 +1,6 @@
 import { ClassProvider, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { PROJECTS_PAGE_API } from "../../../../../shared/constants/constants";
 import { IPageExtenderSettings } from "../../../../../shared/constants/page-extender";
 import { RoutePaths } from "../../../../../shared/constants/route-paths";
 import { IProjectsPage } from "../../../../../shared/models/db-models";
@@ -16,11 +17,11 @@ export class ProjectsPageExtender extends BasePageExtender {
     }
 
     save(homeData: IProjectsPage): Observable<IProjectsPage> {
-        return this.rootService.projectsPage.update(homeData);
+        return this.rootService.pagesService.update(homeData, PROJECTS_PAGE_API);
     }
 
     fetchData(): Observable<IProjectsPage> {
-        return this.rootService.projectsPage.get();
+        return this.rootService.pagesService.get(PROJECTS_PAGE_API);
     }
 
     getPageSettings(): IPageExtenderSettings {

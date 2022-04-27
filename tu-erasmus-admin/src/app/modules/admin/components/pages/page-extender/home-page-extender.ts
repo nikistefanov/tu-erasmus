@@ -16,11 +16,11 @@ export class HomePageExtender extends BasePageExtender {
     }
 
     save(homeData: IHomePage): Observable<IHomePage> {
-        return this.rootService.homePage.update(homeData);
+        return this.rootService.homePageService.update(homeData);
     }
 
     fetchData(): Observable<IHomePage> {
-        return this.rootService.homePage.get();
+        return this.rootService.homePageService.get();
     }
 
     getPageSettings(): IPageExtenderSettings {

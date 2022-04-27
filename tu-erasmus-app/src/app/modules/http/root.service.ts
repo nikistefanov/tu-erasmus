@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
+import { CreditMobilityPagesService } from './services/credit-mobility.service';
 import { ErasmusPageService } from './services/erasmus-page.service';
 import { HomePageService } from './services/home-page.service';
 import { MobilityAdministrationPracticePageService } from './services/mobility-administration-practice-page.service';
@@ -24,6 +25,7 @@ export class RootService extends ApiService {
     mobilityStudentPracticePage: MobilityStudentsPracticePageService;
     mobilityAdministrationStudyPage: MobilityAdministrationStudyPageService;
     mobilityAdministrationPracticePage: MobilityAdministrationPracticePageService;
+    creditMobilityPages: CreditMobilityPagesService;
 
     constructor(http: HttpClient) {
         super(http);
@@ -37,5 +39,6 @@ export class RootService extends ApiService {
         this.mobilityStudentPracticePage = new MobilityStudentsPracticePageService(http);
         this.mobilityAdministrationStudyPage = new MobilityAdministrationStudyPageService(http);
         this.mobilityAdministrationPracticePage = new MobilityAdministrationPracticePageService(http);
+        this.creditMobilityPages = new CreditMobilityPagesService(http);
     }
 }

@@ -1,5 +1,6 @@
 import { ClassProvider, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { ERASMUS_API } from "../../../../../shared/constants/constants";
 import { IPageExtenderSettings } from "../../../../../shared/constants/page-extender";
 import { RoutePaths } from "../../../../../shared/constants/route-paths";
 import { IErasmusPage } from "../../../../../shared/models/db-models";
@@ -16,11 +17,11 @@ export class ErasmusPageExtender extends BasePageExtender {
     }
 
     save(homeData: IErasmusPage): Observable<IErasmusPage> {
-        return this.rootService.erasmusPage.update(homeData);
+        return this.rootService.pagesService.update(homeData, ERASMUS_API);
     }
 
     fetchData(): Observable<IErasmusPage> {
-        return this.rootService.erasmusPage.get();
+        return this.rootService.pagesService.get(ERASMUS_API);
     }
 
     getPageSettings(): IPageExtenderSettings {

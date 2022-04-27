@@ -1,15 +1,19 @@
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { delay, first } from 'rxjs';
 import { LOADING_TIME } from '../../../../../shared/constants/constants';
 import { IPageExtenderSettings } from '../../../../../shared/constants/page-extender';
-import { RoutePaths } from '../../../../../shared/constants/route-paths';
 import { IPage } from '../../../../../shared/models/db-models';
 import { AlertService } from '../../../../../shared/services/alert/alert.service';
 import { ErrorHandlerService } from '../../../../../shared/services/error-handler/error-handler.service';
 import { RootService } from '../../../../http/root.service';
 import { CompositePageExtender } from '../page-extender/composite-page-extender';
 
+@Component({
+    selector: 'app-base-page',
+    templateUrl: "./base-page.component.html",
+})
 export class PageBaseComponent {
     headingLabel: string;
     toggleLabel: string | undefined;

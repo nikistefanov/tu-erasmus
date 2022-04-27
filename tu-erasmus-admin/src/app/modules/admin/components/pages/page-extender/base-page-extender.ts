@@ -4,6 +4,7 @@ import { IPageExtenderSettings } from "../../../../../shared/constants/page-exte
 import { IPage } from "../../../../../shared/models/db-models";
 
 export const PAGE_EXTENDER_TOKEN = new InjectionToken("page_extender_token");
+export const PAGE_TITLE = "Редактиране на съдържанието на страница:";
 
 export abstract class BasePageExtender {
     abstract canHandle(pageUrl: string): boolean;
