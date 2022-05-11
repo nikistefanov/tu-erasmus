@@ -1,22 +1,6 @@
 .tu-links {
-    @apply flex;
 
-    color: var(--tu-black);
 
-    &__item {
-
-        &:not(:first-of-type) {
-            @apply ml-4;
-        }
-
-        &.-active {
-
-            .tu-links__link::after {
-                -webkit-transform: translateX(0);
-                transform: translateX(0);
-            }
-        }
-    }
 
     &__link {
         display: inline-block;
@@ -51,5 +35,12 @@
                 transform: translateX(0);
             }
         }
+    }
+}
+
+@screen 2xl {
+    .tu-links {
+
+
     }
 }
