@@ -1,0 +1,11 @@
+.tu-editor {
+
+    &.-active {
+
+        angular-editor-toolbar {
+            position: sticky;
+            top: 155px;
+            z-index: 1;
+        }
+    }
+}

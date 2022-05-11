@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, forwardRef, Input, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, forwardRef, Input, ViewChild, ViewEncapsulation } from "@angular/core";
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 import { MatDialog } from "@angular/material/dialog";
 import { AngularEditorComponent, AngularEditorConfig } from "@kolkov/angular-editor";
@@ -13,7 +13,9 @@ export const EDITOR_CONTROL_VALUE_ACCESSOR: any = {
 @Component({
     selector: 'app-editor',
     templateUrl: './editor.component.html',
-    providers: [EDITOR_CONTROL_VALUE_ACCESSOR]
+    styleUrls: ['./editor.component.scss'],
+    providers: [EDITOR_CONTROL_VALUE_ACCESSOR],
+    encapsulation: ViewEncapsulation.None
 })
 export class EditorComponent implements ControlValueAccessor, AfterViewInit {
     @Input() placeholder: string;
@@ -22,6 +24,8 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
         minHeight: "300px"
     };
     @ViewChild("editor") editor: AngularEditorComponent;
+
+    active: boolean = false;
 
     private _value: string;
 
@@ -59,6 +63,14 @@ export class EditorComponent implements ControlValueAccessor, AfterViewInit {
         }
 
         this.insertCustomButton(this.editor.editorToolbar["er"].nativeElement);
+    }
+
+    handleFocus() {
+        this.active = true;
+    }
+
+    handleBlur() {
+        this.active = false;
     }
 
     private insertCustomButton(toolbar: HTMLElement) {
