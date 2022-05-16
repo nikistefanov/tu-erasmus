@@ -1,1 +1,1 @@
-<angular-editor [class.-active]="active" class="tu-editor" #editor (focus)="handleFocus()" (blur)="handleBlur()" [(ngModel)]="htmlContent" [config]="editorConfig" [placeholder]="placeholder"></angular-editor>
+<angular-editor [ngClass]="{'-sticky': toolbarSticky, '-active': active}" class="tu-editor" #editor (focus)="handleFocus()" (blur)="handleBlur()" [(ngModel)]="htmlContent" [config]="editorConfig" [placeholder]="placeholder"></angular-editor>

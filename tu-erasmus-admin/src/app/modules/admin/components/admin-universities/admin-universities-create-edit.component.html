@@ -13,7 +13,7 @@
             <input formControlName="website" type="text" name="website" matInput placeholder="Уеб страница">
         </mat-form-field>
         <div class="mt-5 mb-8">
-            <app-editor formControlName="description" placeholder="Описание"></app-editor>
+            <app-editor [toolbarSticky]="false" formControlName="description" placeholder="Описание"></app-editor>
         </div>
         <mat-form-field class="w-full" appearance="fill">
             <mat-label>Държава</mat-label>

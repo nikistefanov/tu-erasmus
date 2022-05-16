@@ -19,6 +19,7 @@ export const EDITOR_CONTROL_VALUE_ACCESSOR: any = {
 })
 export class EditorComponent implements ControlValueAccessor, AfterViewInit {
     @Input() placeholder: string;
+    @Input() toolbarSticky: boolean = true;
     @Input() editorConfig: AngularEditorConfig = {
         editable: true,
         minHeight: "300px"

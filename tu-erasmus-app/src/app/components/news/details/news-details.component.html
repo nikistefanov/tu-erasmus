@@ -2,7 +2,7 @@
     <ng-container *ngIf="news">
         <h1>{{news.name}}</h1>
         <p class="text-gray-400">{{news.created_at}}</p>
-        <div [innerHTML]="news.body"></div>
+        <div class="tu-article-body" [innerHTML]="news.body"></div>
     </ng-container>
 </ng-container>
 

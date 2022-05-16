@@ -1,7 +1,7 @@
 
 <ng-container *ngIf="!loading; else loadingTemplate">
     <h1 class="tu-main-title">{{pageData.heading}}</h1>
-    <div class="mt-14 overflow-auto">
+    <div class="mt-14 overflow-auto tu-article-body">
         <div [innerHTML]="pageData.body"></div>
     </div>
 </ng-container>
