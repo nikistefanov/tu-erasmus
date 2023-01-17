@@ -14,12 +14,12 @@
                     </li>
                 </ul>
                 <div class="ml-10" *ngIf="authService.isLogged">
-                    <button data-apptest="profileMenu" mat-icon-button [matMenuTriggerFor]="menu">
+                    <button data-apptest="profileMenu" mat-icon-button [matMenuTriggerFor]="menu" (click)="onMenuOpen()">
                         <mat-icon>account_circle</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu" xPosition="before">
                         <div class="border-0 border-b border-solid mb-1 font-bold text-center text-lg">
-                            {{userInfo.user.username}}
+                            {{userInfo?.user?.username}}
                         </div>
                         <a routerLink="/change-password" mat-menu-item>
                             <mat-icon>settings</mat-icon>

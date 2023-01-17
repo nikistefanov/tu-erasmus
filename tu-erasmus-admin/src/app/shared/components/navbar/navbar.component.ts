@@ -18,9 +18,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     private scrollSubscription: Subscription;
 
-    constructor(private scrollService: ScrollService, public authService: AuthService, private router: Router) {
-        this.userInfo = this.authService.getUserInfo();
-    }
+    constructor(private scrollService: ScrollService, public authService: AuthService, private router: Router) {}
 
     ngOnInit(): void {
         this.scrollSubscription = this.scrollService.registerScrollHandler(offset => {
@@ -30,6 +28,12 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.scrollSubscription.unsubscribe();
+    }
+
+    onMenuOpen() {
+        if (! this.userInfo) {
+            this.userInfo = this.authService.getUserInfo();
+        }
     }
 
     private triggerScrollChanges(scrollOffset: number) {
