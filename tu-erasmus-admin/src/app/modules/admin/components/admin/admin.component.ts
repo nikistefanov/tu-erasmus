@@ -24,7 +24,7 @@ export class AdminComponent {
         link: RoutePaths.ProjectsPage,
         icon: "request_quote"
     }, {
-        name: "Студентска мобилност",
+        name: "Студентска мобилност (КД103)",
         link: "",
         icon: "chevron_right",
         pages: [{
@@ -37,7 +37,7 @@ export class AdminComponent {
             icon: "school"
         }]
     }, {
-        name: "Мобилност персонал",
+        name: "Мобилност персонал (КД103)",
         link: "",
         icon: "chevron_right",
         pages: [{
@@ -50,7 +50,7 @@ export class AdminComponent {
             icon: "school"
         }]
     }, {
-        name: "Кредитна мобилност",
+        name: "Международна кредитна мобилност (КД107)",
         link: "",
         icon: "chevron_right",
         pages: [{
